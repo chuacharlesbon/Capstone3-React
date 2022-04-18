@@ -10,7 +10,7 @@ export default function CourseView(){
 const {user} = useContext(UserContext)
 const [quantity, setQuantity] = useState('')
 const [payment, setPayment] = useState('')
-const [cardType, setCardType] = useState('')
+const [cardType, setCardType] = useState('none')
 const [cardNumber, setCardNumber] = useState('')
 const [name, setName] = useState('');
 const [description, setDescription] = useState('');
@@ -85,6 +85,7 @@ const enroll = (courseId) => {
 
 
 useEffect(() => {
+
 	console.log(courseId)
 fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 .then(res => res.json())
@@ -126,39 +127,105 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 			<Card.Text>
 				Php {price}
 			</Card.Text>
+
 			<Form>
 			<Form.Group controlId="quantity">
-			<Form.Label>Enter product quantity:</Form.Label>
+			<Row className="align-items-center">
+			<Col>
+			<Form.Label>Enter quantity:</Form.Label>
+			</Col>
+			<Col>
 			<Form.Control type="number" min="1" max={`${stock}`} required value={quantity} onChange={e => setQuantity(e.target.value)}/>
+			</Col>
+			</Row>
 			</Form.Group>
 
 			<Form.Group controlId="payment">
+			<Row className="align-items-center mb-3">
+			<Col>
 			<Form.Label>Enter Amount:</Form.Label>
+			</Col>
+			<Col>
 			<Form.Control type="number"  required value={payment} onChange={e => setPayment(e.target.value)}/>
+			</Col>
+			</Row>
 			</Form.Group>
 
-			<Form.Group controlId="cardType">
+			{/*<Form.Group controlId="cardType">
 			<Form.Label>Enter Card Type:</Form.Label>
 			<Form.Control type="text"  required value={cardType} onChange={e => setCardType(e.target.value)}/>
-			</Form.Group>
+			</Form.Group>*/}
 
+			<label for="card">Choose Card Type:</label>
+			<select id="card" name="card" required value={cardType} onChange={e => setCardType(e.target.value)}>
+ 			<option value="none">--Select Card--</option>
+ 			<option value="Debit Card">Debit Card</option>
+  			<option value="Credit Card">Credit Card</option>
+  			<option value="PayPal">PayPal</option>
+  			<option value="GCASH">GCASH</option>
+  			<option value="Cash on Delivery" disabled>Cash on Delivery</option>
+			</select>
+			<Card.Text>You have chosen: {cardType}</Card.Text>
+
+			{/*<Form.Group controlId="cardType">
+			<Form.Label>Enter Card Type:</Form.Label>
+			<Form.Control type="text"  required value={cardType} onChange={e => setCardType(e.target.value)}/>
+			</Form.Group>*/}
+
+			{/*<Form.Group controlId="cardNumber">
+			<Form.Label>Enter {cardDetails}:</Form.Label>
+			<Form.Control type="text"  required value={cardNumber} onChange={e => setCardNumber(e.target.value)}/>
+			</Form.Group>*/}
+			
+			{ (cardType === "GCASH")?
+
+			<>
+			<Form.Group controlId="cardNumber">
+			<Form.Label>Enter Gcash Number:</Form.Label>
+			<Form.Control type="text"  required value={cardNumber} onChange={e => setCardNumber(e.target.value)}/>
+			</Form.Group>
+			</>
+
+			: (cardType === "PayPal")?
+			<>
+			<Form.Group controlId="cardNumber">
+			<Form.Label>Enter Paypal Email:</Form.Label>
+			<Form.Control type="text"  required value={cardNumber} onChange={e => setCardNumber(e.target.value)}/>
+			</Form.Group>
+			</>
+
+			: ( (cardType === "Debit Card") || (cardType === "Credit Card"))?
+
+			<>
 			<Form.Group controlId="cardNumber">
 			<Form.Label>Enter Card Number:</Form.Label>
 			<Form.Control type="text"  required value={cardNumber} onChange={e => setCardNumber(e.target.value)}/>
 			</Form.Group>
+			</>
+
+			:
+
+			<>
+			<Card.Text className="bg-danger p-2 text-white">Please Choose Payment Method</Card.Text>
+			</>
+
+			}
 
 			</Form>
 			<Card.Text className="mt-2">
 				Total Amount to be paid: <span className="bg-danger text-white p-1 rounded">{totalAmount}</span>
 			</Card.Text>
 			<Image src={image} style={style} className="mx-auto d-block"/>
-			{/*<Card.Subtitle>
-				Class Schedule
-			</Card.Subtitle>
-			<Card.Text>
-				8:00 AM to 5:00 PM 
-			</Card.Text>*/}
+			
+			{ (cardType === "none" )?
+
+			<Button className="bg-secondary text-white" disabled onClick={()=> enroll(courseId)}>Send Order</Button>
+
+			:
+
 			<Button className="background-play text-dark" onClick={()=> enroll(courseId)}>Send Order</Button>
+			}
+
 		</Card.Body>
 		</Col>
 		</Row>

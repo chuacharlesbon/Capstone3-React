@@ -16,7 +16,7 @@ body {
   min-height: 100%;
 }
 
-#top-body, .background-play {
+#top-body, .background-play, .card-btn:hover {
   background-image:  linear-gradient(20deg, orange, lightyellow, yellow, lightyellow, orange);
   background-size: 500%;
   animation-name: product;
@@ -113,6 +113,10 @@ body {
   background-color: lightgoldenrodyellow;
 }
 
+.carousel-descA, #adminProdBanner, #form-adminsearch, .adminOrderCard {
+  background-color: skyblue;
+}
+
 .card-title, .card-row, .orderbanner{
   padding-bottom:  0.5rem;
   border-bottom: 0.1rem solid gray;
@@ -126,3 +130,7 @@ body {
   background-color: lightgoldenrodyellow;
 }*/
 
+#footer {
+  bottom:  0;
+  width:  100%;
+}

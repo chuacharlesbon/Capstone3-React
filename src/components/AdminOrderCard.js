@@ -34,12 +34,13 @@ export default function OrderCard ({orderProp}) {
 	return (
 		<>
 		{/*<span>By: {username}</span>*/}
-		<Card className="my-2">
-		<span>By: {username}</span>
-		<Card.Body>
-			<Card.Title className="card-title text-left">
-			{productName}
-			</Card.Title>
+		<Card className="my-2 ">
+		
+		<Card.Body className="adminOrderCard">
+			<Card.Text className="card-title text-left">
+			<p>By: {username} {userId} </p>
+			<p>{productName} {productId}</p>
+			</Card.Text>
 
 			<Row className="m-1 p-1"> 
 
@@ -85,14 +86,15 @@ export default function OrderCard ({orderProp}) {
 
 			</Row>
 
-			<Row className="justify-content-center">
+			{/*<Row className="justify-content-center">
 			<Col xs={8} md={4} lg={3} xl={2} >
-			<Button /*variant="warning"*/ as= {Link} to={`/orders/payOrder/${_id}`} className="d-block my-2 background-play text-dark" >Complete Payment</Button>
+			<Button as= {Link} to={`/orders/payOrder/${_id}`} className="d-block my-2 background-play text-dark" >Complete Payment</Button>
 			</Col>
 			<Col xs={8} md={4} lg={3} xl={2} >
 			<Button variant="secondary" onClick={() => cancelOrder(`${_id}`)} className="d-block my-2 text-light" >Cancel Order</Button>
 			</Col>
-			</Row>
+			</Row>*/}
+
 		</Card.Body>
 		</Card>
 		</>

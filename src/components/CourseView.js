@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 export default function CourseView(){
 
 const {user} = useContext(UserContext)
-const [quantity, setQuantity] = useState('')
+const [quantity, setQuantity] = useState(0)
 const [name, setName] = useState('');
 const [description, setDescription] = useState('');
 const [price, setPrice] = useState(0)
@@ -110,18 +110,28 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 			</Card.Text>
 			<Form>
 			<Form.Group controlId="quantity">
-			<Form.Label>Enter product quantity:</Form.Label>
+			<Row className="align-items-center">
+			<Col>
+			<Form.Label>Enter quantity:</Form.Label>
+			</Col>
+			<Col>
 			<Form.Control type="number" min="1" max={`${stock}`} required value={quantity} onChange={e => setQuantity(e.target.value)}/>
+			</Col>
+			</Row>
 			</Form.Group>
 			</Form>
+
+
+
 			<Image src={image} style={style} className="mx-auto d-block"/>
-			{/*<Card.Subtitle>
-				Class Schedule
-			</Card.Subtitle>
-			<Card.Text>
-				8:00 AM to 5:00 PM 
-			</Card.Text>*/}
+			
+			{ (quantity < 1 )?
+
+			<Button className="bg-secondary text-white" disabled onClick={()=> enroll(courseId)}>Add to Cart</Button>	
+			:
 			<Button className="background-play text-dark" onClick={()=> enroll(courseId)}>Add to Cart</Button>
+			}
+
 		</Card.Body>
 		</Col>
 		</Row>

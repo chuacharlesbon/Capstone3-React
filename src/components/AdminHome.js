@@ -36,7 +36,7 @@ export default function AdminHome(){
       style={style}
     />
     <Carousel.Caption>
-      <h3 className="text-dark carousel-desc p-1">Start your day with a Smile!</h3>
+      <h3 className="text-dark carousel-descA p-1">Start your day with a Smile!</h3>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item  interval={2000}>
@@ -48,7 +48,7 @@ export default function AdminHome(){
     />
 
     <Carousel.Caption>
-      <h3 className="text-dark carousel-desc p-1">Have a nice Day!</h3>
+      <h3 className="text-dark carousel-descA p-1">Have a nice Day!</h3>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item  interval={2000}>
@@ -60,7 +60,7 @@ export default function AdminHome(){
     />
 
     <Carousel.Caption>
-      <h3  className="text-dark carousel-desc p-1">Take a Break. Take a Rest</h3>
+      <h3  className="text-dark carousel-descA p-1">Take a Break. Take a Rest</h3>
     </Carousel.Caption>
   </Carousel.Item>
    <Carousel.Item  interval={2000}>
@@ -71,7 +71,7 @@ export default function AdminHome(){
       style={style}
     />
     <Carousel.Caption>
-      <h3  className="text-dark carousel-desc p-1">Be Empowered! You're Not Alone</h3>
+      <h3  className="text-dark carousel-descA p-1">Be Empowered! You're Not Alone</h3>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

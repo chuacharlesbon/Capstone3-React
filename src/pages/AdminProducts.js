@@ -54,6 +54,11 @@ export default function AdminProducts () {
 
 	return (
 		<>
+			<Row id="adminProdBanner" className="mt-2 pt-4">
+			<Col>
+			<h3 className="text-center orderbanner">Manage Products Section</h3>
+			</Col>
+			</Row>
 			<Row className="justify-content-md-center">
 			{courses}
 			</Row>

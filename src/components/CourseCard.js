@@ -21,13 +21,13 @@ export default function CourseCard ({courseProp}) {
 	const [height, setHeight] =useState({
 
 		minHeight: "30rem",
-		backgroundColor: "lightyellow"
+		backgroundColor: "lightyellow",
 	})
 
 	return (
 		<Col lg={4} md={6} xl={3} xs={12}>
 		<Card  style={height} className="my-2">
-		<Card.Body  className="d-flex flex-column  justify-content-between">
+		<Card.Body  className="d-flex flex-column  justify-content-between card-body">
 			<Card.Title className="card-title">
 			{name}
 			</Card.Title>
@@ -44,9 +44,16 @@ export default function CourseCard ({courseProp}) {
 			Stock Available: {stockAvailable}
 			</Card.Text>
 			<Image src={image} style={style} className="mx-auto d-block"/>
-			<Row>
-			<Button /*variant="warning"*/ as= {Link} to={`/products/${_id}`} className="d-block my-2 background-play text-dark" >Add to Cart</Button>
-			<Button /*variant="warning"*/ as= {Link} to={`/products/orderFull/${_id}`} className="d-block my-2 background-play text-dark" >Buy Item</Button>
+
+			<Row className="justify-content-center">
+			<Col xs={6} >
+			<Button  as= {Link} to={`/products/${_id}`} className="d-block my-2 bg-light text-dark card-btn" >Add to Cart</Button>
+			</Col>
+
+			<Col xs={6} >
+			<Button  as= {Link} to={`/products/orderFull/${_id}`} className="d-block my-2 bg-light text-dark card-btn" >Buy Item</Button>
+			</Col>
+
 			</Row>
 		</Card.Body>
 		</Card>

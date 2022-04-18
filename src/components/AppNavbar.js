@@ -15,17 +15,17 @@ export default function AppNavbar(){
 
   const login = user.id
 
-  const [bg, setBg] = useState("warning")
+  const [bg, setBg] = useState("")
 
   useEffect(() => {
-    if(admin === true && login !== null){
+    if(login === null){
   
-    setBg("info")
-    } else if (admin !== true && login !== null){
-    
-    setBg("warning")
-    }else{
-    setBg("warning")
+    setBg("bg-warning")
+
+    }else if (login !== null && admin === true) {
+    setBg("bg-info")
+    }else {
+      setBg("bg-warning")
     }
     
   }, [bg])
@@ -50,11 +50,9 @@ fetch(`http://localhost:4000/users/getDetails`)
 }, [username])*/
 
 
-  //const [user, setUser] = useState(localStorage.getItem("email"))
-
   return (
 
-		<Navbar bg={bg} expand="lg" sticky="top" >
+		<Navbar className={bg} expand="lg" sticky="top" >
     <Container>
     <Navbar.Brand as={Link} to="/">ShopNetwork</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -77,12 +75,11 @@ fetch(`http://localhost:4000/users/getDetails`)
         <>
         <NavDropdown title="Manage Products" id="navbarScrollingDropdown"  className=" admin-btn text-center">
           <NavDropdown.Item  as={Link} to="/products/adminProducts" >Show Products List</NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/" >Search Products</NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/" >Modify Products</NavDropdown.Item>
-          <NavDropdown.Divider />
+          <NavDropdown.Item  as={Link} to="/products/getSingleProductByName" >Search Products</NavDropdown.Item>
+         {/* <NavDropdown.Divider />
           <NavDropdown.Item href="#action5" className="text-center">
            Delete Products
-          </NavDropdown.Item>
+          </NavDropdown.Item>*/}
         </NavDropdown>
         </>
 
@@ -143,7 +140,7 @@ fetch(`http://localhost:4000/users/getDetails`)
         <>
 
         <NavDropdown title="Manage Orders" id="navbarScrollingDropdown"  className="admin-btn text-center">
-          <NavDropdown.Item  as={Link} to="/" >Search Client Order</NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/orders/searchOrder" >Search Client Order</NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/" >Inspect Client Order<Badge bg="danger">9+</Badge></NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/" >Modify Client Order</NavDropdown.Item>
           <NavDropdown.Divider />

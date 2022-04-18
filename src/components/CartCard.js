@@ -92,7 +92,7 @@ export default function CartCard ({orderProp}) {
 			<Button /*variant="warning"*/ as= {Link} to={`/orders/payOrder/${_id}`} className="d-block my-2 background-play text-dark" >Buy Item</Button>
 			</Col>
 			<Col xs={8} md={4} lg={3} xl={2} >
-			<Button variant="secondary" onClick={() => cancelCart(`${_id}`)} className="d-block my-2 text-dark" >Remove from Cart</Button>
+			<Button variant="secondary" onClick={() => cancelCart(`${_id}`)} className="d-block my-2 text-light" >Remove from Cart</Button>
 			</Col>
 			</Row>
 		</Card.Body>

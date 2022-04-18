@@ -10,7 +10,7 @@ import AdminHome from './components/AdminHome'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
-import Error from './pages/Error'
+import ErrorPage from './pages/Error'
 import Footer from './components/Footer'
 import './App.css';
 // import Banner from './components/Banner'
@@ -24,6 +24,7 @@ import PayOrder from './components/PayOrder'
 import CancelOrder from './components/CancelOrder'
 import SearchItem from './pages/SearchItem'
 import AdminProducts from "./pages/AdminProducts"
+import SearchOrder from './pages/SearchOrder'
 
 import { UserProvider } from './UserContext'
 
@@ -34,6 +35,9 @@ function App() {
   const unsetUser = () => {
     localStorage.clear()
   }
+
+
+
 
 useEffect(() => {
   fetch('http://localhost:4000/users/details', {
@@ -80,6 +84,7 @@ useEffect(() => {
         <Route exact path="/products/adminProducts" element={<AdminProducts/>}/>
         <Route exact path="/orders" element={<UserOrders/>}/>
         <Route exact path="/orders/clearOrder" element={<ClearOrder/>}/>
+        <Route exact path="/orders/searchOrder" element={<SearchOrder/>}/>
         <Route exact path="/orders/payOrder/:courseId" element={<PayOrder/>}/>
         <Route exact path="/orders/cancelOrder/:courseId" element={<CancelOrder/>}/>
         <Route exact path="/orders/getCart" element={<CartOrder/>}/>
@@ -87,7 +92,7 @@ useEffect(() => {
         <Route exact path="/register" element={<Register/>}/>
         <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/logout" element={<Logout/>} />
-        <Route exact path="*" element={<Error/>}/>
+        <Route exact path="*" element={<ErrorPage/>}/>
       </Routes>
       </Container>
       <Footer/>

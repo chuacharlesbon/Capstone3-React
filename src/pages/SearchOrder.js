@@ -1,8 +1,7 @@
 import { useState, useEffect, Fragment, useContext } from 'react'
 import { Row, Col, Card, Button, Form, Container } from 'react-bootstrap'
-import CourseCard from "../components/CourseCard"
 import ProductBanner from "../components/ProductBanner"
-import AdminProdCard from "../components/AdminProdCard"
+import AdminOrderCard from "../components/AdminOrderCard"
 import UserContext from '../UserContext'
 
 export default function SearchItem() {
@@ -29,19 +28,28 @@ export default function SearchItem() {
 		console.log(searchItem)
 		e.preventDefault()
 
-		fetch(`http://localhost:4000/products/getSingleProductParams/${searchItem}`)
+		fetch(`http://localhost:4000/orders/searchOrderId/${searchItem}`,{
+			method: "GET",
+			headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${localStorage.getItem("token")}`
+		}
+		})
 		.then(res => {
 			console.log(res)
 			return res.json()
 		})
 		.then(data => {
-			console.log(data)
+			console.log(typeof data)
+
 			setCourses(data.map(course =>{
 				return (
-		<AdminProdCard key={course._id} courseProp={course}/>
+		<AdminOrderCard key={course._id} orderProp={course}/>
 
 	)
 			}))
+		
+		
 
 
 		})
@@ -82,7 +90,7 @@ export default function SearchItem() {
 
 		<>
 		<Form id="form-adminsearch" className="rounded p-3 my-3 mx-auto" onSubmit={e => searchItems(e)}>
-			<h4 className="text-center">Search Item Name</h4>
+			<h4 className="text-center">Search Order By ID</h4>
 			<Form.Group controlId="searchItem">
 			<Form.Control type="text" placeholder="Search Keyword" required value={searchItem} onChange={e => setSearchItem(e.target.value)}/>
 			<Form.Text className="text-muted"> Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' "" )

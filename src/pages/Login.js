@@ -88,12 +88,24 @@ export default function Login(props){
 			.then(data => {
 				console.log(data)
 
+				if(data.isAdmin === true){
 				setUser({
 					id: data._id,
 					isAdmin: data.isAdmin,
 					userName: data.firstName + " " + data.lastName,
 					email: data.email
 				})
+				} else {
+					setUser({
+					id: data._id,
+					isAdmin: data.isAdmin,
+					userName: data.firstName + " " + data.lastName,
+					email: data.email
+					})
+				}
+
+
+
 			}))
 		}
 
