@@ -1,0 +1,57 @@
+import { useState, useEffect } from 'react'
+import { Card, Button, Col, Container, Row } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import Image from "react-bootstrap/Image";
+
+export default function CourseCard ({courseProp}) {
+	//before using props, destructure the object
+
+	const {name, description, price, _id, source, stockAvailable} = courseProp
+	console.log(courseProp)
+
+	const [image, setImage] = useState(source)
+
+	const [style, setStyle] = useState({
+
+		width: "10rem",
+		height: "10rem"
+		
+	})
+
+	const [height, setHeight] =useState({
+
+		minHeight: "30rem",
+		backgroundColor: "lightyellow"
+	})
+
+	return (
+		<Col lg={4} md={6} xl={3} xs={12}>
+		<Card  style={height} className="my-2">
+		<Card.Body  className="d-flex flex-column  justify-content-between">
+			<Card.Title className="card-title">
+			{name}
+			</Card.Title>
+			<Card.Text>
+			<p><strong>Description: </strong>{description}</p> 
+			</Card.Text>
+			{/*<Card.Text>
+			{description}
+			</Card.Text>*/}
+			<Card.Subtitle>
+			Price: {price}
+			</Card.Subtitle>
+			<Card.Text>
+			Stock Available: {stockAvailable}
+			</Card.Text>
+			<Image src={image} style={style} className="mx-auto d-block"/>
+			<Row>
+			<Button /*variant="warning"*/ as= {Link} to={`/products/${_id}`} className="d-block my-2 background-play text-dark" >Add to Cart</Button>
+			<Button /*variant="warning"*/ as= {Link} to={`/products/orderFull/${_id}`} className="d-block my-2 background-play text-dark" >Buy Item</Button>
+			</Row>
+		</Card.Body>
+		</Card>
+		</Col>
+
+		
+		)
+}
