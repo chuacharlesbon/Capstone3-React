@@ -113,7 +113,7 @@ body {
   background-color: lightgoldenrodyellow;
 }
 
-.carousel-descA, #adminProdBanner, #form-adminsearch, .adminOrderCard, #form-create {
+.carousel-descA, #adminProdBanner, #form-adminsearch, .adminOrderCard, #form-create, .adminbanner {
   background-color: skyblue;
 }
 
@@ -162,4 +162,9 @@ body {
 .card-payorder{
   min-height: 30rem;
   background-color: lightyellow;
+}
+
+.admin-prodcard {
+  min-height: 10rem;
+  background-color: lightblue;
 }

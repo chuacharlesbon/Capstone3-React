@@ -1,40 +1,30 @@
 import { useState, useEffect } from 'react'
-import { Card, Button, Col, Container, Row, Accordion } from 'react-bootstrap'
+import { Card, Button, Col, Row, Accordion } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import Image from "react-bootstrap/Image";
 import Swal from 'sweetalert2'
 
 
 export default function AdminProdCard ({courseProp}) {
 	//before using props, destructure the object
 
-	const {name, description, price, _id, source, category, stockAvailable, remark, isActive, createdOn} = courseProp
+	const {name, price, _id, category, stockAvailable, remark, isActive, createdOn} = courseProp
 	//console.log(courseProp)
-
-	const [image, setImage] = useState(source)
 
 	const [status, setStatus] = useState('')
 
-	const [prodList, setProdList] = useState('')
+	/*const [prodList, setProdList] = useState('')
 
 	const collpaseId = prodList.indexOf(_id)
 
-	const [height, setHeight] =useState({
-
-		minHeight: "10rem",
-		backgroundColor: "lightblue"
-	})
-
-	useEffect(()=>{
-		if(isActive === false){
+	if(isActive === false){
 			setStatus("Archived")
 		}else {
 			setStatus("Active")
 		}
-	})
+*/
 
 	function deleteItem(id){
-		fetch(`http://localhost:4000/products/activate/${id}`, {
+		fetch(`http://localhost:4000/products/deleteSingleProduct/${id}`, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",
@@ -43,7 +33,7 @@ export default function AdminProdCard ({courseProp}) {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 	Swal.fire({
 				title: "Item Deleted from Database",
 				icon: "info"
@@ -61,7 +51,7 @@ export default function AdminProdCard ({courseProp}) {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 		Swal.fire({
 				title: "Item Activated on Database",
 				icon: "info",
@@ -72,8 +62,8 @@ export default function AdminProdCard ({courseProp}) {
 	}
 
 	function archiveItem(id){
-		fetch(`http://localhost:4000/products/deleteSingleProduct/${id}`, {
-		method: "DELETE",
+		fetch(`http://localhost:4000/products/archive/${id}`, {
+		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
 			Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -81,7 +71,7 @@ export default function AdminProdCard ({courseProp}) {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 		Swal.fire({
 				title: "Item Archived from Database",
 				icon: "info",
@@ -91,7 +81,7 @@ export default function AdminProdCard ({courseProp}) {
 	}
 
 	useEffect(()=>{
-		fetch('http://localhost:4000/products/getAllProductsLists', {
+		/*fetch('http://localhost:4000/products/getAllProductsLists', {
 			method: "GET",
 			headers: {
 					Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -99,10 +89,15 @@ export default function AdminProdCard ({courseProp}) {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data)
+			//console.log(data)
 			setProdList(data)
-		})
-	})
+		})*/
+			if(isActive === false){
+			setStatus("Archived")
+		}else {
+			setStatus("Active")
+		}
+	}, [status, isActive])
 
 
 	return (
@@ -112,8 +107,8 @@ export default function AdminProdCard ({courseProp}) {
     	<Accordion.Header ><h6 className="my-auto">{name} :</h6> {_id}</Accordion.Header>
     	<Accordion.Body>
      
-    	<Card  style={height} className="my-1">
-		<Card.Body  className="d-flex flex-column ">
+    	<Card  className="my-1 ">
+		<Card.Body  className="d-flex flex-column admin-prodcard">
 			<Card.Title className="card-title">
 			{name}
 			</Card.Title>
@@ -125,6 +120,7 @@ export default function AdminProdCard ({courseProp}) {
 			Product For Sale: {status}<br/>
 			Stock Available: {stockAvailable}<br/>
 			Category: {category}<br/>
+			Price: {price}<br/>
 			Details: {remark}<br/>
 			{createdOn}<br/>
 			</p>

@@ -11,20 +11,11 @@ export default function AppNavbar(){
 
   const username = user.userName
 
-  const admin = user.isAdmin
-
-  const login = user.id
-
   const [adminProdList, setAdminProdList] = useState("")
 
   const [userCartList, setUserCartList] = useState('')
 
   const [userOrderList, setUserOrderList] = useState('')
-
-  const [style, setStyle] = useState({
-    width: "4rem",
-    height: "4rem"
-  })
 
 useEffect(()=> {
   if(user.isAdmin === true && user.id !== null){
@@ -101,7 +92,7 @@ useEffect(()=> {
           <NavDropdown.Item  as={Link} to="/orders/searchOrder" disabled >Modify Client Order</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item as={Link} to="/"  className="text-center">
-            Others
+            Users List
             {/*<p id="newhead" className="row p-1  mx-auto justify-content-center align-items-center">NEW</p>*/}
           </NavDropdown.Item>
           
@@ -111,8 +102,8 @@ useEffect(()=> {
           <h6 className="p-1 mx-auto text-center">Admin:{username}</h6>
           <NavDropdown.Divider />
           <NavDropdown.Item  as={Link} to="/" >Notifications <Badge bg="danger">9+</Badge></NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/" >Client Messages<Badge bg="danger">9+</Badge></NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/" >Cleared Issues<Badge bg="danger">9+</Badge></NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/" >Client Messages <Badge bg="danger">9+</Badge></NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/" >Cleared Issues <Badge bg="danger">9+</Badge></NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5" className="text-center">
             <Nav.Link as={Link} to="/logout"  className=" text-center">
@@ -166,7 +157,6 @@ useEffect(()=> {
           <h6 className="p-1 mx-auto text-center">{username}</h6>
           <NavDropdown.Divider />
           <NavDropdown.Item  as={Link} to="/orders" >Notifications <Badge bg="danger">9+</Badge></NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/orders" >Transactions <Badge bg="danger">9+</Badge></NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/orders" >Messages <Badge bg="danger">9+</Badge></NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5" className="text-center">

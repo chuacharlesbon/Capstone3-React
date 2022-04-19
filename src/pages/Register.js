@@ -1,17 +1,14 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect} from 'react'
 import { Form, Button} from 'react-bootstrap'
 import { Navigate } from 'react-router-dom'
 import Swal from "sweetalert2"
-import UserContext from '../UserContext'
+
 
 export default function Register(){
 
 //do not use null for initial state due to server schema type: null might contradict turn to type: string 
 
 //set isnot a keyword, the state is destrcuturing
-	
-	const {user} = useContext(UserContext)
-  	//console.log(user)
 
   	const [firstName, setFirstName] = useState('')
   	const [lastName, setLastName] = useState('')
@@ -22,8 +19,6 @@ export default function Register(){
 	const [mobileNo, setMobileNo] = useState('')
 	const [registered, setRegistered] = useState(false)
 	const [ deliveryAdd, setDeliveryAdd] = useState('')
-
-	
 
 	console.log(email)
 	console.log(password1)
@@ -86,67 +81,19 @@ export default function Register(){
 			}
 		})
 
-		/*setFirstName('')
-		setLastName('')
-		setMobileNo('')
-		setEmail('')
-		setPassword1('')
-		setPassword2('')*/
-
-
 	}
 
 	useEffect(() => {
 		if((email !== "" && password1 !== "" ) && (password1 === password2)){
-			/*if(password1.length < 4){
-			setWeak({
-				display: "inline"
-			})
-			setModerate({
-				display: "none"
-			})
-			setStrong({
-				display: "none"
-			})
-			setIsActive(false)
-
-			} else if (password1.length < 6){
-			setWeak({
-				display: "none"
-			})
-			setModerate({
-				display: "inline"
-			})
-			setStrong({
-				display:"none"
-			})
-			setIsActive(true)
-
-			} else if (password1.length > 6){
-			setWeak({
-				display: "none"
-			})
-			setModerate({
-				display: "none"
-			})
-			setStrong({
-				display: "inline"
-			})
-			setIsActive(true)
-			}*/ /*else {
-				setIsActive(true)
-			}*/
+			
 			setIsActive(true)
 		} else {
 			setIsActive(false)
 
 		}
-	}, [email, password1, password2/*, weak, moderate, strong*/ ])
 
-	/*useEffect(() => {
-		if()
+	}, [email, password1, password2 ])
 
-	}, [password2, password1])*/
 
 	return(
 		( registered === true)?
