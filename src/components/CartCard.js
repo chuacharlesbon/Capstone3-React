@@ -33,18 +33,8 @@ export default function CartCard ({orderProp}) {
 	}
 
 
-
-
-	/*
-
-	const [height, setHeight] =useState({
-
-		minHeight: "30rem",
-		backgroundColor: "lightyellow"
-	})*/
-
 	return (
-		<Card  /*style={height}*/ className="my-2">
+		<Card className="my-2">
 		<Card.Body>
 			<span>By: {username}</span>
 			<Card.Title className="card-title text-left">

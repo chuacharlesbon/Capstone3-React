@@ -1,45 +1,54 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Card, Button, Col, Container, Row } from 'react-bootstrap'
 import {Link, useParams} from 'react-router-dom'
 import Image from "react-bootstrap/Image";
 import Swal from 'sweetalert2'
-
+import UserContext from '../UserContext'
 
 export default function OrderCard ({orderProp}) {
-	//before using props, destructure the object
 
-	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id } = orderProp
+	const {user} = useContext(UserContext)
+  	console.log(user)
+
+  	const adminName = user.userName
+
+	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin, byAdmin } = orderProp
 
 	const {courseId} = useParams()
 
-	function cancelOrder(id){
-		fetch(`http://localhost:4000/orders/cancelOrder/${id}`, {
+	function approveRefund(id){
+		fetch(`http://localhost:4000/orders/approveOrder/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
 			Authorization: `Bearer ${localStorage.getItem("token")}`
-		}
+		},
+		body: JSON.stringify({
+			admin: "Refund request approved. Process might take 3-5 banking days.",
+			byAdmin: adminName
+		})
 	})
 	.then(res => res.json())
 	.then(data => {
 		console.log(data)
 		Swal.fire({
-				title: "You cancelled your order",
+				title: "Order request approved",
 				icon: "success",
-				text: `If payment was made, refund will be processed accordingly.`
+				text: `Request sent to Bank for processing`
 			})
 	})
 	}
 
 	return (
 		<>
-		{/*<span>By: {username}</span>*/}
 		<Card className="my-2 ">
 		
 		<Card.Body className="adminOrderCard">
 			<Card.Text className="card-title text-left">
-			<p>By: {username} {userId} </p>
-			<p>{productName} {productId}</p>
+			<p>
+			By: {username} {userId} <br/>
+			{productName} {productId}<br/>
+			</p>
 			</Card.Text>
 
 			<Row className="m-1 p-1"> 
@@ -50,9 +59,11 @@ export default function OrderCard ({orderProp}) {
 			</Card.Subtitle>
 
 			<Card.Text>
-			<p>Quantity: {quantity}</p>
-			<p>Total Price: {totalPrice}</p>
-			<p>Balance: {balance}</p>
+			<p>
+			Quantity: {quantity}<br/>
+			Total Price: {totalPrice}<br/>
+			Balance: {balance}<br/>
+			</p>
 			</Card.Text>
 			</Col>
 
@@ -62,9 +73,10 @@ export default function OrderCard ({orderProp}) {
 			</Card.Subtitle>
 
 			<Card.Text>
-			<p>Updated amount paid: {payment}</p>
-			<p>Card Type: {cardType}</p>
-			<p>Card Number: {cardNumber}</p>
+			<p>Updated amount paid: {payment}<br/>
+			Card Type: {cardType}<br/>
+			Card Number: {cardNumber}<br/>
+			</p>
 			</Card.Text>
 			</Col>
 
@@ -76,24 +88,28 @@ export default function OrderCard ({orderProp}) {
 			</Card.Subtitle>
 
 			<Card.Text>
-			<p>Remarks: {remarks}</p>
-			<p>Status: {status}</p>
-			<p>Date added to cart/ordered: {dateOrder}</p>
-			<p>(Date Cancelled by User: {dateCancelled})</p>
+			<p>
+			Remarks: {remarks}<br/>
+			Status: {status}<br/>
+			Date added to cart/ordered: {dateOrder}<br/>
+			(Date Cancelled by User: {dateCancelled})<br/>
+			Acknowledgement: {admin}<br/>
+			Approved by: {byAdmin}
+			</p>
 			</Card.Text>
 			</Col>
 
 
 			</Row>
 
-			{/*<Row className="justify-content-center">
-			<Col xs={8} md={4} lg={3} xl={2} >
-			<Button as= {Link} to={`/orders/payOrder/${_id}`} className="d-block my-2 background-play text-dark" >Complete Payment</Button>
+			<Row className="justify-content-center">
+			<Col xs={8} md={6} lg={4} xl={3} >
+			<Button as= {Link} to={``} onClick={() => approveRefund(`${_id}`)} className="d-block my-2 bg-info text-dark" >Approve Refund Request</Button>
 			</Col>
-			<Col xs={8} md={4} lg={3} xl={2} >
+			{/*<Col xs={8} md={4} lg={3} xl={2} >
 			<Button variant="secondary" onClick={() => cancelOrder(`${_id}`)} className="d-block my-2 text-light" >Cancel Order</Button>
-			</Col>
-			</Row>*/}
+			</Col>*/}
+			</Row>
 
 		</Card.Body>
 		</Card>

@@ -61,28 +61,28 @@ body {
 
 @media screen and (min-width: 561px) /*Mobile (+/-) 6inch Setting section*/
 {
-#form-login, #form-register, #clear-order {
+#form-login, #form-register, #clear-order, #form-create {
   width:  60vw !important;
 }
 }
 
 @media screen and (min-width: 769px) /*Mobile (+/-) 6inch Setting section*/
 {
-#form-login, #form-register, #clear-order {
+#form-login, #form-register, #clear-order, #form-create {
   width:  45vw !important;
 }
 }
 
 @media screen and (min-width: 992px) /*Mobile (+/-) 6inch Setting section*/
 {
-#form-login, #form-register, #clear-order{
+#form-login, #form-register, #clear-order, #form-create{
   width:  35vw !important;
 }
 }
 
 @media screen and (min-width: 1024px) /*Mobile (+/-) 6inch Setting section*/
 {
-#form-login, #form-register, #clear-order {
+#form-login, #form-register, #clear-order, #form-create {
   width:  30vw !important;
 }
 }
@@ -113,7 +113,7 @@ body {
   background-color: lightgoldenrodyellow;
 }
 
-.carousel-descA, #adminProdBanner, #form-adminsearch, .adminOrderCard {
+.carousel-descA, #adminProdBanner, #form-adminsearch, .adminOrderCard, #form-create {
   background-color: skyblue;
 }
 

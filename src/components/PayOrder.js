@@ -18,7 +18,7 @@ const [price, setPrice] = useState(0)
 const [image, setImage] = useState('')
 const [stock, setStock] = useState('')
 const [ added, setAdded] = useState(false)
-const [newProdId, setNewProdId] = useState('')
+const [ProdId, setProdId] = useState('')
 const newStock = stock-quantity
 
 console.log(newStock)
@@ -40,6 +40,18 @@ const [height, setHeight] =useState({
 
 //useParams hook allows us to retrieve the courseId via the url
 const {courseId} = useParams()
+
+useEffect(() => {
+fetch(`http://localhost:4000/products/getSingleProduct/${ProdId}`)
+.then(res => res.json())
+.then(data => {
+	return setStock(data.stockAvailable)
+
+	
+	//setStock(data.stockAvailable)
+
+})
+}, [stock])
 
 const enroll = (courseId) => {
 	fetch(`http://localhost:4000/orders/payOrder/${courseId}`, {
@@ -84,7 +96,7 @@ const enroll = (courseId) => {
 			setAdded(false)
 		}
 	})
-	fetch(`http://localhost:4000/products/${newProdId}`, {
+	fetch(`http://localhost:4000/products/${ProdId}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
@@ -116,7 +128,7 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 	/*const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data*/
 	console.log(data)
 
-	setNewProdId(data[0].productId)
+	setProdId(data[0].productId)
 	setPayment(data[0].balance)
 	setTotalAmount(data[0].totalPrice)
 	setQuantity(data[0].quantity)
@@ -124,36 +136,8 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 	setPrice(data[0].balance)
 })
 
-fetch(`http://localhost:4000/products/getSingleProduct/${newProdId}`, {
-	method: "GET",
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${localStorage.getItem("token")}`
-		}
-})
-.then(res => res.json())
-.then(data => {
-	console.log(data)
-	setStock(data.stockAvailable)
+}, [courseId, name, price, quantity, payment, stock, ProdId])
 
-})
-
-/*fetch(`http://localhost:4000/products/${newProdId}`, {
-		method: "PUT",
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${localStorage.getItem("token")}`
-		},
-		body: JSON.stringify({
-				stockAvailable: stock-quantity
-			})
-})
-.then(res => res.json())
-.then(data => {
-	console.log(data)
-})*/
-
-}, [courseId, name, price, quantity, payment, stock])
 
 	return(
 		( added === true)?
@@ -169,12 +153,7 @@ fetch(`http://localhost:4000/products/getSingleProduct/${newProdId}`, {
 			<Card.Title>
 				{name}
 			</Card.Title>
-			{/*<Card.Subtitle>
-				Description:
-			</Card.Subtitle>
-			<Card.Text>
-				{description}
-			</Card.Text>*/}
+	
 			<Card.Subtitle>
 				Price:
 			</Card.Subtitle>
@@ -183,6 +162,7 @@ fetch(`http://localhost:4000/products/getSingleProduct/${newProdId}`, {
 			</Card.Text>
 			
 			<Card.Text>Ordered quantity: {quantity}</Card.Text>
+			<Card.Text>Stock Available: {stock}</Card.Text>
 			<Card.Text>Amount to be Paid: {price}</Card.Text>
 
 			<label for="card">Choose Card Type:</label>
@@ -194,7 +174,7 @@ fetch(`http://localhost:4000/products/getSingleProduct/${newProdId}`, {
 			</select>
 			<Card.Text>You have chosen: {cardType}</Card.Text>
 
-			
+		
 			<Form>
 			<Card.Text className="text-muted">We will never share your credentials to anyone. See Terms and Data Privacy</Card.Text>
 
@@ -207,13 +187,7 @@ fetch(`http://localhost:4000/products/getSingleProduct/${newProdId}`, {
 			<Card.Text className="mt-2">
 				Total Amount to be paid: <span className="bg-danger text-white p-1 rounded">{payment}</span>
 			</Card.Text>
-			{/*<Image src={image} style={style} className="mx-auto d-block"/>*/}
-			{/*<Card.Subtitle>
-				Class Schedule
-			</Card.Subtitle>
-			<Card.Text>
-				8:00 AM to 5:00 PM 
-			</Card.Text>*/}
+		
 			<Card.Text className="text-muted">Please check the details carefully before checking out.
 				<span className="rounded-circle px-2" id="icon-warning">!</span>
 			</Card.Text>

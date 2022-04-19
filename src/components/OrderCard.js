@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 export default function OrderCard ({orderProp}) {
 	//before using props, destructure the object
 
-	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id } = orderProp
+	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin } = orderProp
 
 	const {courseId} = useParams()
 
@@ -75,10 +75,14 @@ export default function OrderCard ({orderProp}) {
 			</Card.Subtitle>
 
 			<Card.Text>
-			<p>Remarks: {remarks}</p>
-			<p>Status: {status}</p>
-			<p>Date added to cart/ordered: {dateOrder}</p>
-			<p>(Date Cancelled by User: {dateCancelled})</p>
+			<p>
+			Remarks: {remarks}<br/>
+			Status: {status}<br/>
+			Date added to cart/ordered: {dateOrder}<br/>
+			(Date Cancelled by User: {dateCancelled})<br/>
+			Acknowledgement: {admin}
+			</p>
+
 			</Card.Text>
 			</Col>
 

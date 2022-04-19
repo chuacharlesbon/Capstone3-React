@@ -16,7 +16,9 @@ import './App.css';
 // import Banner from './components/Banner'
 // import Highlights from './components/Highlights'
 import Courses from "./pages/Courses"
+import AdminCreateProd from "./pages/AdminCreateProd"
 import UserOrders from "./pages/UserOrders"
+import UserTransactions from "./pages/UserTransactions"
 import CategoryFood from "./pages/CategoryFood"
 import ClearOrder from './pages/ClearOrder'
 import CartOrder from './pages/CartOrder'
@@ -82,12 +84,14 @@ useEffect(() => {
         <Route exact path="/products/getSingleProductByName" element={<SearchItem/>}/>
         <Route exact path="/products/orderFull/:courseId" element={<OrderViewFull/>}/>
         <Route exact path="/products/adminProducts" element={<AdminProducts/>}/>
+        <Route exact path="/products/addProducts" element={<AdminCreateProd/>}/>
         <Route exact path="/orders" element={<UserOrders/>}/>
         <Route exact path="/orders/clearOrder" element={<ClearOrder/>}/>
         <Route exact path="/orders/searchOrder" element={<SearchOrder/>}/>
         <Route exact path="/orders/payOrder/:courseId" element={<PayOrder/>}/>
         <Route exact path="/orders/cancelOrder/:courseId" element={<CancelOrder/>}/>
         <Route exact path="/orders/getCart" element={<CartOrder/>}/>
+        <Route exact path="/orders/getUserTransactions" element={<UserTransactions/>}/>
         {/*<Route exact path="/orders/:courseId" element={<UserOrders/>}/>*/}
         <Route exact path="/register" element={<Register/>}/>
         <Route exact path="/login" element={<Login/>}/>

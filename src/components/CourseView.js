@@ -108,6 +108,9 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 			<Card.Text>
 				Php {price}
 			</Card.Text>
+			<Card.Text>
+				Stock Available {stock}
+			</Card.Text>
 			<Form>
 			<Form.Group controlId="quantity">
 			<Row className="align-items-center">

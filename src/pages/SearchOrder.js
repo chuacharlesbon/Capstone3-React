@@ -55,35 +55,6 @@ export default function SearchItem() {
 		})
 	}
 
-	/*useEffect(() => {
-		e.preventDefault
-
-		fetch(`http:localhost://4000/products/getSingleProductByName`, {
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				name: searchItem
-			})
-		})
-		.then(res => {
-			console.log(res)
-			return res.json()
-		})
-		.then(data => {
-			console.log(data)
-			setCourses(data.map(course =>{
-				return (
-		//key used to identify each child
-		<CourseCard key={course._id} courseProp={course}/>
-
-	)
-			}))
-
-
-		})
-	})*/
 
 	return (
 		((user.isAdmin === true) && (user.id !== null) )?

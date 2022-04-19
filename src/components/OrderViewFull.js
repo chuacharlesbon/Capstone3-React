@@ -18,6 +18,7 @@ const [price, setPrice] = useState(0)
 const [image, setImage] = useState('')
 const [stock, setStock] = useState('')
 const [ added, setAdded] = useState(false)
+const [newProdId, setNewProdId] = useState('')
 const newStock = stock-quantity
 
 const totalAmount = price*quantity
@@ -81,6 +82,20 @@ const enroll = (courseId) => {
 			setAdded(false)
 		}
 	})
+	fetch(`http://localhost:4000/products/${newProdId}`, {
+		method: "PUT",
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${localStorage.getItem("token")}`
+		},
+		body: JSON.stringify({
+				stockAvailable: newStock
+			})
+})
+.then(res => res.json())
+.then(data => {
+	console.log(data)
+})
 }
 
 
@@ -92,6 +107,7 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 .then(data => {
 	console.log(data)
 
+	setNewProdId(data.productId)
 	setName(data.name)
 	setDescription(data.description)
 	setStock(data.stockAvailable)
@@ -127,7 +143,9 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 			<Card.Text>
 				Php {price}
 			</Card.Text>
-
+			<Card.Text>
+				Stock Available {stock}
+			</Card.Text>
 			<Form>
 			<Form.Group controlId="quantity">
 			<Row className="align-items-center">
