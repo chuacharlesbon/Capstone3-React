@@ -11,7 +11,7 @@ export default function Courses () {
 
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')
-		fetch('http://localhost:4000/products/categoryFood')
+		fetch('http://localhost:4000/products/categoryClothing')
 		.then(res => res.json())
 		.then(data => {
 			//console.log(data)

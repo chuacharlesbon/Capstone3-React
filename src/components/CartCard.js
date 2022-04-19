@@ -9,7 +9,7 @@ export default function CartCard ({orderProp}) {
 
 	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id } = orderProp
 
-	console.log(orderProp)
+	//console.log(orderProp)
 
 	const {courseId} = useParams()
 
@@ -23,7 +23,7 @@ export default function CartCard ({orderProp}) {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 		Swal.fire({
 				title: "Item removed from cart",
 				icon: "success",

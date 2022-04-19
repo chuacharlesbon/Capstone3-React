@@ -11,7 +11,7 @@ export default function AdminCreateProd(){
 //set isnot a keyword, the state is destrcuturing
 	
 	const {user} = useContext(UserContext)
-  	console.log(user)
+  	//console.log(user)
 
   	const [isActive, setIsActive] = useState(false)
   	const [created, setCreated] = useState(false)
@@ -41,11 +41,11 @@ export default function AdminCreateProd(){
 			})
 		})
 		.then(res => {
-			console.log(res)
+			//console.log(res)
 			return res.json()
 		})
 		.then(data => {
-			console.log(data)
+			//console.log(data)
 			setCreated(true)
 			Swal.fire({
 					title: "Item Uploaded Successful",
@@ -86,7 +86,7 @@ export default function AdminCreateProd(){
 		<>
 
 		<Form id="form-create" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => createItem(e)}>
-			<h1 className="text-center">Upload Product</h1>
+			<h1 className="text-center">Upload New Product</h1>
 			<Form.Group controlId="name">
 			<Form.Label>Product Name:</Form.Label>
 			<Form.Control type="text" placeholder="Enter your Product Name here" required value={name} onChange={e => setName(e.target.value)}/>
@@ -94,7 +94,7 @@ export default function AdminCreateProd(){
 			</Form.Text>
 			</Form.Group>
 
-			<Form.Group controlId="lastName">
+			<Form.Group controlId="description">
 			<Form.Label>Description:</Form.Label>
 			<Form.Control type="text" placeholder="Enter description here" required value={description} onChange={e => setDescription(e.target.value)}/>
 			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )

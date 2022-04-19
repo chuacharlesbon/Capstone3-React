@@ -8,8 +8,8 @@ import Swal from 'sweetalert2'
 export default function AdminProdCard ({courseProp}) {
 	//before using props, destructure the object
 
-	const {name, description, price, _id, source, stockAvailable, remark, isActive, createdOn} = courseProp
-	console.log(courseProp)
+	const {name, description, price, _id, source, category, stockAvailable, remark, isActive, createdOn} = courseProp
+	//console.log(courseProp)
 
 	const [image, setImage] = useState(source)
 
@@ -124,6 +124,7 @@ export default function AdminProdCard ({courseProp}) {
 			<p>ProductId: {_id}<br/>
 			Product For Sale: {status}<br/>
 			Stock Available: {stockAvailable}<br/>
+			Category: {category}<br/>
 			Details: {remark}<br/>
 			{createdOn}<br/>
 			</p>
@@ -134,7 +135,7 @@ export default function AdminProdCard ({courseProp}) {
 			<Row className="justify-content-center">
 			
 			<Col  xs={8} md={4} lg={3} xl={2} >
-			<Button  as= {Link} to={`//${_id}`} className="d-block my-2 btn-outline-warning text-light" >Modify</Button>
+			<Button  as= {Link} to={`/products/modifyProducts/${_id}`} className="d-block my-2 btn-outline-warning text-light" >Modify</Button>
 			</Col>
 
 			<Col  xs={8} md={4} lg={3} xl={2} >

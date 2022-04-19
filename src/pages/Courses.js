@@ -9,17 +9,6 @@ import Image from "react-bootstrap/Image";
 export default function Courses () {
 	const [courses, setCourses] = useState([])
 
-	/*const [image1, setImage1] = useState("./public/laptop.gif")
-
-	const [image2, setImage2] = useState("./public/mobile.gif")*/
-
-	const [style, setStyle] =useState({
-
-		width: "15rem",
-		height: "10rem"
-		
-	})
-
 
 	//console.log(coursesData);
 	//console.log(coursesData[0]);
@@ -28,7 +17,7 @@ export default function Courses () {
 		fetch('http://localhost:4000/products')
 		.then(res => res.json())
 		.then(data => {
-			console.log(data)
+			//console.log(data)
 			setCourses(data.map(course => {
 	
 	return (
@@ -40,14 +29,6 @@ export default function Courses () {
 	})
 	}, [])
 
-/*const courses = coursesData.map(course => {
-	console.log(course)
-	return (
-		//key used to identify each child
-		<CourseCard key={course.id} courseProp={course}/>
-
-	)
-})*/
 
 	return (
 		<>
@@ -58,7 +39,7 @@ export default function Courses () {
 			<Col xl={3} lg={4}  md={12} className="mx-auto text-center d-none d-md-flex d-lg-block">
 			<p className="d-lg-block d-none">This is an advertisement</p>
 			<Container>
-			<Image src="https://assets.mspimages.in/gear/gif_12_hgaufb.gif" style={style} className="mx-auto text-center d-none d-lg-block"/>
+			<Image src="https://assets.mspimages.in/gear/gif_12_hgaufb.gif" /*style={style}*/ className="mx-auto text-center d-none d-lg-block image-advertisement"/>
 			</Container>
 			</Col>
 
@@ -70,8 +51,8 @@ export default function Courses () {
 			<Col xl={3} lg={4} md={12} className="mx-auto text-center d-lg-block d-flex">
 			<p className="d-none d-lg-block">This is an advertisement</p>
 			<Container className="d-flex justify-content-center text-center d-lg-block">
-			<Image src="https://i.pinimg.com/originals/ec/70/da/ec70da5e912b5faaeba9647b0647d10a.gif" style={style} className="mx-auto text-center d-lg-block d-md-flex"/>
-			<Image src="https://assets.mspimages.in/gear/gif_12_hgaufb.gif" style={style} className="mx-auto text-center d-lg-none d-md-flex d-none"/>
+			<Image src="https://i.pinimg.com/originals/ec/70/da/ec70da5e912b5faaeba9647b0647d10a.gif" /*style={style}*/ className="mx-auto text-center d-lg-block d-md-flex image-advertisement"/>
+			<Image src="https://assets.mspimages.in/gear/gif_12_hgaufb.gif" /*style={style}*/ className="mx-auto text-center d-lg-none d-md-flex d-none image-advertisement"/>
 			</Container>
 			</Col>
 

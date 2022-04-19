@@ -11,7 +11,7 @@ export default function Register(){
 //set isnot a keyword, the state is destrcuturing
 	
 	const {user} = useContext(UserContext)
-  	console.log(user)
+  	//console.log(user)
 
   	const [firstName, setFirstName] = useState('')
   	const [lastName, setLastName] = useState('')
@@ -23,17 +23,7 @@ export default function Register(){
 	const [registered, setRegistered] = useState(false)
 	const [ deliveryAdd, setDeliveryAdd] = useState('')
 
-	const [weak, setWeak] = useState({
-		display: "inline"
-	})
-
-	const [moderate, setModerate] = useState({
-		display: "none"
-	})
-
-	const [strong, setStrong] = useState({
-		display: "none"
-	})
+	
 
 	console.log(email)
 	console.log(password1)
@@ -57,11 +47,11 @@ export default function Register(){
 			})
 		})
 		.then(res => {
-			console.log(res)
+			//console.log(res)
 			return res.json()
 		})
 		.then(data => {
-			console.log(data)
+			//console.log(data)
 
 
 //access is the properties of console.log(data)
@@ -107,8 +97,8 @@ export default function Register(){
 	}
 
 	useEffect(() => {
-		if((email !== "" && password1 !== "" ) || (password1 === password2)){
-			if(password1.length < 4){
+		if((email !== "" && password1 !== "" ) && (password1 === password2)){
+			/*if(password1.length < 4){
 			setWeak({
 				display: "inline"
 			})
@@ -143,23 +133,15 @@ export default function Register(){
 				display: "inline"
 			})
 			setIsActive(true)
-			} /*else {
+			}*/ /*else {
 				setIsActive(true)
 			}*/
+			setIsActive(true)
 		} else {
-			/*setWeak({
-				display: "none"
-			})
-			setModerate({
-				display: "none"
-			})
-			setStrong({
-				display: "none"
-			})*/
 			setIsActive(false)
 
 		}
-	}, [email, password1, password2, weak, moderate, strong ])
+	}, [email, password1, password2/*, weak, moderate, strong*/ ])
 
 	/*useEffect(() => {
 		if()
@@ -209,11 +191,37 @@ export default function Register(){
 			</Form.Text>
 			</Form.Group>
 
-			<Form.Group controlId="password1">
+			{/*<Form.Group controlId="password1">
 			<Form.Label>Password:</Form.Label>
 			<Form.Text style={weak} className="bg-danger text-white py-1 px-2 mx-2 rounded">Weak</Form.Text>
 			<Form.Text style={moderate} className="bg-warning text-white py-1 px-2 mx-2 rounded">Moderate</Form.Text>
 			<Form.Text style={strong} className="bg-success text-white py-1 px-2 mx-2 rounded">Strong</Form.Text>
+			<Form.Control type="password" placeholder="Input your password here" required value={password1} onChange={e => setPassword1(e.target.value)}/>
+			</Form.Group>*/}
+
+			<Form.Group controlId="password1">
+			<Form.Label>Password:</Form.Label>
+			{ (password1 === '')?
+
+			<Form.Text className="bg-secondary text-white py-1 px-2 mx-2 rounded">Empty</Form.Text>
+
+			: (password1.length < 4)  ?
+
+			<Form.Text className="bg-danger text-white py-1 px-2 mx-2 rounded">Weak</Form.Text>
+
+			: (password1.length < 7)  ?
+
+			<Form.Text className="bg-warning text-white py-1 px-2 mx-2 rounded">Moderate</Form.Text>
+
+			: (password1.length > 6 )  ?
+
+			<Form.Text  className="bg-success text-white py-1 px-2 mx-2 rounded">Strong</Form.Text>
+
+			:
+
+			<Form.Text className=" text-white py-1 px-2 mx-2 rounded"></Form.Text>
+
+			}
 			<Form.Control type="password" placeholder="Input your password here" required value={password1} onChange={e => setPassword1(e.target.value)}/>
 			</Form.Group>
 
@@ -225,7 +233,7 @@ export default function Register(){
 {/*rendering submit button based on isActive*/}
 			<Form.Group className="text-center d-block">
 			{ isActive ? 
-				<Button variant="success" type="submit" id="submitBtn" className="my-3 text-center mx-auto">Submit
+				<Button type="submit" id="submitBtn" className="my-3 text-center mx-auto background-play text-dark">Submit
 				</Button>
 				:
 				<Button variant="secondary" type="submit" id="submitBtn" className="my-3 text-center mx-auto" disabled>Submit

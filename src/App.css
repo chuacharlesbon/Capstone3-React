@@ -76,16 +76,16 @@ body {
 @media screen and (min-width: 992px) /*Mobile (+/-) 6inch Setting section*/
 {
 #form-login, #form-register, #clear-order, #form-create{
-  width:  35vw !important;
+  width:  40vw !important;
 }
 }
 
-@media screen and (min-width: 1024px) /*Mobile (+/-) 6inch Setting section*/
+/*@media screen and (min-width: 1024px) 
 {
 #form-login, #form-register, #clear-order, #form-create {
-  width:  30vw !important;
+  width:  35vw !important;
 }
-}
+}*/
 
 .nav-btn, .navhome-btn {
   transition: 0.8s;
@@ -133,4 +133,33 @@ body {
 #footer {
   bottom:  0;
   width:  100%;
+}
+
+.image-highlights {
+    height: 8rem;
+    width: 12rem;
+}
+
+.image-advertisement {
+  width: 15rem;
+  height: 10rem;
+}
+
+.image-clearorder {
+  width: 11rem;
+    height: 8rem;
+}
+.image-login {
+  width: 37rem;
+  height: 25rem;
+}
+
+.image-ads {
+  width: 16rem;
+  height: 3.2rem;
+}
+
+.card-payorder{
+  min-height: 30rem;
+  background-color: lightyellow;
 }

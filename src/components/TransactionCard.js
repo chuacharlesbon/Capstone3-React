@@ -28,7 +28,7 @@ export default function TransactionCard ({orderProp}) {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		///console.log(data)
 		setOrderId(data._id)
 		Swal.fire({
 				title: "You cancelled your order",
@@ -48,7 +48,7 @@ export default function TransactionCard ({orderProp}) {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data)
+			//console.log(data)
 			setTransaction(data)
 		})
 	})

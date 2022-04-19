@@ -7,20 +7,12 @@ import UserContext from '../UserContext'
 export default function SearchItem() {
 
 	const {user} = useContext(UserContext)
-  	console.log(user)
+  	//console.log(user)
 
 	const [searchItem, setSearchItem] = useState('')
 	const [courses, setCourses] = useState([])
-	const [style, setStyle] =useState({
-
-		width: "15rem",
-		height: "10rem"
-		
-	})
 
 	console.log(searchItem)
-	console.log(courses)
-	console.log(style)
 
 	/*const {searchItem} = useParams()*/
 
@@ -36,11 +28,11 @@ export default function SearchItem() {
 		}
 		})
 		.then(res => {
-			console.log(res)
+			//console.log(res)
 			return res.json()
 		})
 		.then(data => {
-			console.log(typeof data)
+			//console.log(typeof data)
 
 			setCourses(data.map(course =>{
 				return (

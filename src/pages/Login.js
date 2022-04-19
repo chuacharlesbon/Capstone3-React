@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
-import { Navigate } from 'react-router-dom'
-import { Form, Button} from 'react-bootstrap'
+import { Navigate, Link } from 'react-router-dom'
+import { Form, Button, Row, Col, Container} from 'react-bootstrap'
+import Image from "react-bootstrap/Image";
 import Swal from "sweetalert2"
 import UserContext from '../UserContext'
 
@@ -9,7 +10,7 @@ export default function Login(props){
 //allows us to consume the user coontext object and its properties to use for user validation
 
 	const {user, setUser} = useContext(UserContext)
-	console.log(user)
+	//console.log(user)
 
 //do not use null for initial state due to server schema type: null might contradict turn to type: string 
 
@@ -44,7 +45,7 @@ export default function Login(props){
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data)
+			//console.log(data)
 //access is the properties of console.log(data)
 			if(typeof data.accessToken !== "undefined"){
 				localStorage.setItem('token', data.accessToken)
@@ -86,7 +87,7 @@ export default function Login(props){
 			})
 			.then(res => (res.json())
 			.then(data => {
-				console.log(data)
+				//console.log(data)
 
 				if(data.isAdmin === true){
 				setUser({
@@ -144,6 +145,19 @@ export default function Login(props){
 		:
 
 		<>
+		<Container className="d-flex px-1 bg-light justify-content-center align-items-center text-center mt-5">
+		
+
+		<Col lg={5} className="d-none d-lg-block mx-auto">
+
+		<Image src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBzaG9wcGluZ3xlbnwwfHwwfHw%3D&w=1000&q=80" /*style={style}*/ className="mx-auto text-center d-none d-lg-block image-login img-fluid"/>
+		<h4>We are excited to welcome you!</h4>
+		<p>Create account with us!<Link to="/register" className="mx-2">Click Here</Link></p>
+
+
+		</Col>
+
+		<Col lg={5} className="mx-auto d-block text-center">
 		<Form  id="form-login" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => LoginUser(e)}>
 			<h1 className="text-center">Log In</h1><hr/>
 			<Form.Group controlId="userEmail">
@@ -175,6 +189,10 @@ export default function Login(props){
 			}
 			</Form.Group>
 		</Form>
+		</Col>
+		
+		</Container>
+
 		</>
 
 

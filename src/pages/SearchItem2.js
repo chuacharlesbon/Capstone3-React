@@ -2,7 +2,6 @@ import { useState, useEffect, Fragment, useContext } from 'react'
 import { Row, Col, Card, Button, Form, Container } from 'react-bootstrap'
 import CourseCard from "../components/CourseCard"
 import ProductBanner from "../components/ProductBanner"
-import AdminProdCard from "../components/AdminProdCard"
 import Advertisement from "../components/Advertisement"
 import UserContext from '../UserContext'
 
@@ -15,7 +14,6 @@ export default function SearchItem() {
 	const [courses, setCourses] = useState([])
 
 	console.log(searchItem)
-	//console.log(courses)
 
 	/*const {searchItem} = useParams()*/
 
@@ -32,7 +30,7 @@ export default function SearchItem() {
 			//console.log(data)
 			setCourses(data.map(course =>{
 				return (
-		<AdminProdCard key={course._id} courseProp={course}/>
+		<CourseCard key={course._id} courseProp={course}/>
 
 	)
 			}))
@@ -43,26 +41,7 @@ export default function SearchItem() {
 
 
 	return (
-		((user.isAdmin === true) && (user.id !== null) )?
-
-		<>
-		<Form id="form-adminsearch" className="rounded p-3 my-3 mx-auto" onSubmit={e => searchItems(e)}>
-			<h4 className="text-center">Search Item Name</h4>
-			<Form.Group controlId="searchItem">
-			<Form.Control type="text" placeholder="Search Keyword" required value={searchItem} onChange={e => setSearchItem(e.target.value)}/>
-			<Form.Text className="text-muted"> Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' "" )
-			</Form.Text>
-			</Form.Group>
-		<Button type="submit" className="my-3 text-center mx-auto text-dark background-play">Search
-				</Button>
-		</Form>
-
-		<Row className="justify-content-md-center">	
-		{courses}
-		</Row>
-		</>
-
-		:
+		
 
 		<>
 		<ProductBanner/>
@@ -80,7 +59,6 @@ export default function SearchItem() {
 		<Row className="justify-content-md-center">	
 		{courses}
 		</Row>
-
 		<Advertisement/>
 		</>
 		

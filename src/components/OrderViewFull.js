@@ -55,7 +55,7 @@ const enroll = (courseId) => {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 		const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data
 
 		if( balance === 0){
@@ -94,7 +94,7 @@ const enroll = (courseId) => {
 })
 .then(res => res.json())
 .then(data => {
-	console.log(data)
+	//console.log(data)
 })
 }
 
@@ -105,7 +105,7 @@ useEffect(() => {
 fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 .then(res => res.json())
 .then(data => {
-	console.log(data)
+	//console.log(data)
 
 	setNewProdId(data.productId)
 	setName(data.name)
@@ -235,7 +235,7 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 			</Card.Text>
 			<Image src={image} style={style} className="mx-auto d-block"/>
 			
-			{ (cardType === "none" )?
+			{ (cardNumber === "" )?
 
 			<Button className="bg-secondary text-white" disabled onClick={()=> enroll(courseId)}>Send Order</Button>
 

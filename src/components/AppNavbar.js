@@ -7,7 +7,7 @@ import UserContext from '../UserContext'
 export default function AppNavbar(){
 	
   const {user} = useContext(UserContext)
-  console.log(user)
+  //console.log(user)
 
   const username = user.userName
 
@@ -36,7 +36,7 @@ useEffect(()=> {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      //console.log(data)
       setAdminProdList(data.length)
 
     })
@@ -51,7 +51,7 @@ useEffect(()=> {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      //console.log(data)
       setUserCartList(data.length)
     })
     fetch('http://localhost:4000/orders/getUserOrders', {
@@ -63,7 +63,7 @@ useEffect(()=> {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      //console.log(data)
       setUserOrderList(data.length)
     })
 
@@ -141,7 +141,7 @@ useEffect(()=> {
       <Nav.Link as={Link} to="/" className="navhome-btn text-center">Home</Nav.Link>
        <NavDropdown title="Products" id="navbarScrollingDropdown"  className=" nav-btn text-center">
           <NavDropdown.Item  as={Link} to="/courses" >Show Products</NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/products/getSingleProductByName" >Search Product</NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/products/getSingleProductByName2" >Search Product</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item as={Link} to="/courses" className="text-center">
             What's New
@@ -193,7 +193,7 @@ useEffect(()=> {
       <Nav.Link as={Link} to="/" className="navhome-btn text-center">Home</Nav.Link>
        <NavDropdown title="Products" id="navbarScrollingDropdown"  className=" nav-btn text-center">
           <NavDropdown.Item  as={Link} to="/courses" >Show Products</NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/products/getSingleProductByName" >Search Product</NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/products/getSingleProductByName2" >Search Product</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item as={Link} to="/courses" className="text-center">
             What's New

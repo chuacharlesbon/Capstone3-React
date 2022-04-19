@@ -51,7 +51,7 @@ const enroll = (courseId) => {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 		const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data
 
 		if( balance === 0){
@@ -90,7 +90,7 @@ const enroll = (courseId) => {
 })
 .then(res => res.json())
 .then(data => {
-	console.log(data)
+	//console.log(data)
 })
 }
 
@@ -108,7 +108,7 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 .then(res => res.json())
 .then(data => {
 	/*const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data*/
-	console.log(data)
+	//console.log(data)
 
 	setNewProdId(data[0].productId)
 	setPayment(data[0].balance)
@@ -127,7 +127,7 @@ fetch(`http://localhost:4000/products/getSingleProduct/${newProdId}`, {
 })
 .then(res => res.json())
 .then(data => {
-	console.log(data)
+	//console.log(data)
 	setStock(data[0].stockAvailable)
 
 })

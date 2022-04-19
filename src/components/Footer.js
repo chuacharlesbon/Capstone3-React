@@ -8,7 +8,7 @@ export default function Footer () {
 
 
 	const {user} = useContext(UserContext)
-  	console.log(user)
+  	//console.log(user)
 	const [style, setStyle] = useState({
 		height: "2rem",
 		width: "6.5rem"

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import {Link} from 'react-router-dom'
 import { Row, Col, Container, Button, Carousel } from 'react-bootstrap';
 import Image from "react-bootstrap/Image";

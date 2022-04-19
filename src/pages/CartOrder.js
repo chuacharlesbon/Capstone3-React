@@ -10,7 +10,7 @@ import UserContext from '../UserContext'
 export default function CartOrder () {
 
 	const {user} = useContext(UserContext)
-	console.log(user)
+	//console.log(user)
 
 	const username = user.userName
 
@@ -18,37 +18,7 @@ export default function CartOrder () {
 
 	const [clear, setClear] = useState(false)
 
-	/*const [image1, setImage1] = useState("./public/laptop.gif")
-
-	const [image2, setImage2] = useState("./public/mobile.gif")*/
-
-	/*const [style, setStyle] =useState({
-
-		width: "15rem",
-		height: "10rem"
-		
-	})*/
-
-	/*const retrieveUserDetails = (token) => {
-			fetch('http://localhost:4000/users/details', {
-				method: "POST",
-				headers: {
-					Authorization: `Bearer ${token}`
-				}
-			})
-			.then(res => (res.json())
-			.then(data => {
-				console.log(data)
-
-				setUser({
-					id: data._id,
-					isAdmin: data.isAdmin
-				})
-			}))
-		}
-*/
-	//console.log(coursesData);
-	//console.log(coursesData[0]);
+	
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')
 		fetch('http://localhost:4000/orders/getCart', {
@@ -60,7 +30,7 @@ export default function CartOrder () {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data)
+			//console.log(data)
 			/*console.log(Object.keys(data))
 
 			const result = Object.keys(data).map(key => {
@@ -114,7 +84,7 @@ export default function CartOrder () {
 	return (
 			clear === true ?
 			<Navigate to="/orders/clearOrder"/>
-			:
+			: user.id !== null ?
 			<>
 			
 			<Row id="cartbanner" className="mt-2 pt-4">
@@ -127,6 +97,9 @@ export default function CartOrder () {
 			{orders}
 			</Row>
 			</>
+			:
+
+			<Navigate to="/login"/>
 		
 		)
 }

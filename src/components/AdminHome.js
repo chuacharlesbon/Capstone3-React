@@ -1,4 +1,4 @@
-import { useState, useEffect,useContext } from 'react'
+import { useState,useContext } from 'react'
 import {Link} from 'react-router-dom'
 import { Row, Col, Container, Button, Carousel } from 'react-bootstrap';
 import Image from "react-bootstrap/Image";
@@ -7,7 +7,7 @@ import UserContext from '../UserContext'
 export default function AdminHome(){
 
   const {user} = useContext(UserContext)
-  console.log(user)
+  //console.log(user)
 
   const username = user.userName
 

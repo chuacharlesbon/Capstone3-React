@@ -7,7 +7,7 @@ export default function CourseCard ({courseProp}) {
 	//before using props, destructure the object
 
 	const {name, description, price, _id, source, stockAvailable} = courseProp
-	console.log(courseProp)
+	//console.log(courseProp)
 
 	const [image, setImage] = useState(source)
 

@@ -10,13 +10,11 @@ import UserContext from '../UserContext'
 export default function UserOrders () {
 
 	const {user, setUser} = useContext(UserContext)
-	console.log(user)
+	//console.log(user)
 
 	const [orders, setOrders] = useState([])
 
 	const [clear, setClear] = useState(false)
-
-
 
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')
@@ -29,16 +27,7 @@ export default function UserOrders () {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data)
-			/*console.log(Object.keys(data))
-
-			const result = Object.keys(data).map(key => {
-				console.log(key)
-				console.log(data[key])
-
-				return {[key]: data[key]}
-			})
-			console.log(result)*/
+			
 			if ( data.length === 0){
 				setClear(true)
 				

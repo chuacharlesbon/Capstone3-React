@@ -45,7 +45,7 @@ const enroll = (courseId) => {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 		const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data
 
 		if( data.quantity === quantity ){
@@ -71,7 +71,7 @@ useEffect(() => {
 fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 .then(res => res.json())
 .then(data => {
-	console.log(data)
+	//console.log(data)
 
 	setName(data.name)
 	setDescription(data.description)

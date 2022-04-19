@@ -1,7 +1,6 @@
 import {useState, useEffect, useContext} from 'react'
 import {Container, Row, Col, Card, Button, Form} from 'react-bootstrap'
 import {useParams, Navigate} from 'react-router-dom'
-import Image from "react-bootstrap/Image";
 import UserContext from '../UserContext'
 import Swal from 'sweetalert2'
 
@@ -15,7 +14,7 @@ const [cardNumber, setCardNumber] = useState('')
 const [name, setName] = useState('');
 const [description, setDescription] = useState('');
 const [price, setPrice] = useState(0)
-const [image, setImage] = useState('')
+
 const [stock, setStock] = useState('')
 const [ added, setAdded] = useState(false)
 const [ProdId, setProdId] = useState('')
@@ -24,19 +23,6 @@ const newStock = stock-quantity
 console.log(newStock)
 
 const [totalAmount, setTotalAmount] = useState('')
-
-const [style, setStyle] = useState({
-
-		width: "10rem",
-		height: "10rem"
-		
-	})
-
-const [height, setHeight] =useState({
-
-		minHeight: "30rem",
-		backgroundColor: "lightyellow"
-	})
 
 //useParams hook allows us to retrieve the courseId via the url
 const {courseId} = useParams()
@@ -51,7 +37,7 @@ fetch(`http://localhost:4000/products/getSingleProduct/${ProdId}`)
 	//setStock(data.stockAvailable)
 
 })
-}, [stock])
+}, [stock, ProdId])
 
 const enroll = (courseId) => {
 	fetch(`http://localhost:4000/orders/payOrder/${courseId}`, {
@@ -69,7 +55,7 @@ const enroll = (courseId) => {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 		const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data
 
 		if( balance === 0){
@@ -108,7 +94,7 @@ const enroll = (courseId) => {
 })
 .then(res => res.json())
 .then(data => {
-	console.log(data)
+	//console.log(data)
 })
 }
 
@@ -126,7 +112,7 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 .then(res => res.json())
 .then(data => {
 	/*const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data*/
-	console.log(data)
+	//console.log(data)
 
 	setProdId(data[0].productId)
 	setPayment(data[0].balance)
@@ -149,7 +135,7 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 		<Container className="mt-5">
 		<Row>
 		<Col lg={4} md={6} xl={3} xs={12} className="mx-auto text-center">
-		<Card.Body   style={height} className="d-flex flex-column  justify-content-between">
+		<Card.Body   /*style={height}*/ className="d-flex flex-column  justify-content-between card-payorder">
 			<Card.Title>
 				{name}
 			</Card.Title>
@@ -161,27 +147,73 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 				Php {price}
 			</Card.Text>
 			
+
 			<Card.Text>Ordered quantity: {quantity}</Card.Text>
 			<Card.Text>Stock Available: {stock}</Card.Text>
 			<Card.Text>Amount to be Paid: {price}</Card.Text>
 
-			<label for="card">Choose Card Type:</label>
+			{/*<label for="card">Choose Card Type:</label>
 			<select id="card" name="card" required value={cardType} onChange={e => setCardType(e.target.value)}>
  			<option value="null">--Select Card--</option>
  			<option value="Debit Card">Debit Card</option>
   			<option value="Credit Card">Credit Card</option>
   			<option value="Cash on Delivery" disabled>Cash on Delivery</option>
 			</select>
-			<Card.Text>You have chosen: {cardType}</Card.Text>
+			<Card.Text>You have chosen: {cardType}</Card.Text>*/}
 
+			<label for="card">Choose Card Type:</label>
+			<select id="card" name="card" required value={cardType} onChange={e => setCardType(e.target.value)}>
+ 			<option value="none">--Select Card--</option>
+ 			<option value="Debit Card">Debit Card</option>
+  			<option value="Credit Card">Credit Card</option>
+  			<option value="PayPal">PayPal</option>
+  			<option value="GCASH">GCASH</option>
+  			<option value="Cash on Delivery" disabled>Cash on Delivery</option>
+			</select>
+			<Card.Text>You have chosen: {cardType}</Card.Text>
 		
 			<Form>
-			<Card.Text className="text-muted">We will never share your credentials to anyone. See Terms and Data Privacy</Card.Text>
 
+			{ (cardType === "GCASH")?
+
+			<>
+			<Form.Group controlId="cardNumber">
+			<Form.Label>Enter Gcash Number:</Form.Label>
+			<Form.Control type="text"  required value={cardNumber} onChange={e => setCardNumber(e.target.value)}/>
+			</Form.Group>
+			</>
+
+			: (cardType === "PayPal")?
+			<>
+			<Form.Group controlId="cardNumber">
+			<Form.Label>Enter Paypal Email:</Form.Label>
+			<Form.Control type="text"  required value={cardNumber} onChange={e => setCardNumber(e.target.value)}/>
+			</Form.Group>
+			</>
+
+			: ( (cardType === "Debit Card") || (cardType === "Credit Card"))?
+
+			<>
 			<Form.Group controlId="cardNumber">
 			<Form.Label>Enter Card Number:</Form.Label>
 			<Form.Control type="text"  required value={cardNumber} onChange={e => setCardNumber(e.target.value)}/>
 			</Form.Group>
+			</>
+
+			:
+
+			<>
+			<Card.Text className="bg-danger p-2 text-white">Please Choose Payment Method</Card.Text>
+			</>
+
+			}
+
+			<Card.Text className="text-muted">We will never share your credentials to anyone. See Terms and Data Privacy</Card.Text>
+
+			{/*<Form.Group controlId="cardNumber">
+			<Form.Label>Enter Card Number:</Form.Label>
+			<Form.Control type="text"  required value={cardNumber} onChange={e => setCardNumber(e.target.value)}/>
+			</Form.Group>*/}
 
 			</Form>
 			<Card.Text className="mt-2">
@@ -191,7 +223,16 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 			<Card.Text className="text-muted">Please check the details carefully before checking out.
 				<span className="rounded-circle px-2" id="icon-warning">!</span>
 			</Card.Text>
-			<Button className="background-play text-dark" onClick={()=> enroll(courseId)}>Confirm Order</Button>
+			{/*<Button className="background-play text-dark" onClick={()=> enroll(courseId)}>Confirm Order</Button>*/}
+			{ (cardNumber === "" )?
+
+			<Button className="bg-secondary text-white" disabled onClick={()=> enroll(courseId)}>Send Order</Button>
+
+			:
+
+			<Button className="background-play text-dark" onClick={()=> enroll(courseId)}>Send Order</Button>
+			}
+
 		</Card.Body>
 		</Col>
 		</Row>

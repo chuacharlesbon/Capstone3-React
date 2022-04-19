@@ -10,45 +10,12 @@ import UserContext from '../UserContext'
 export default function UserOrders () {
 
 	const {user, setUser} = useContext(UserContext)
-	console.log(user)
+	//console.log(user)
 
 	const [orders, setOrders] = useState([])
 
 	const [clear, setClear] = useState(false)
 
-
-
-	/*const [image1, setImage1] = useState("./public/laptop.gif")
-
-	const [image2, setImage2] = useState("./public/mobile.gif")*/
-
-	/*const [style, setStyle] =useState({
-
-		width: "15rem",
-		height: "10rem"
-		
-	})*/
-
-	/*const retrieveUserDetails = (token) => {
-			fetch('http://localhost:4000/users/details', {
-				method: "POST",
-				headers: {
-					Authorization: `Bearer ${token}`
-				}
-			})
-			.then(res => (res.json())
-			.then(data => {
-				console.log(data)
-
-				setUser({
-					id: data._id,
-					isAdmin: data.isAdmin
-				})
-			}))
-		}
-*/
-	//console.log(coursesData);
-	//console.log(coursesData[0]);
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')
 		fetch('http://localhost:4000/orders/getUserOrders', {
@@ -60,16 +27,7 @@ export default function UserOrders () {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data)
-			/*console.log(Object.keys(data))
-
-			const result = Object.keys(data).map(key => {
-				console.log(key)
-				console.log(data[key])
-
-				return {[key]: data[key]}
-			})
-			console.log(result)*/
+			
 			if ( data.length === 0){
 				setClear(true)
 				
@@ -89,27 +47,6 @@ export default function UserOrders () {
 	})
 	}, [])
 
-/*.then(data => {
-			console.log(data)
-			setCourses(data.map(course => {
-	
-	return (
-		
-		<CourseCard key={course._id} courseProp={course}/>
-
-	)
-	}))
-	})
-	}, [])*/
-
-/*const courses = coursesData.map(course => {
-	console.log(course)
-	return (
-		//key used to identify each child
-		<CourseCard key={course.id} courseProp={course}/>
-
-	)
-})*/
 
 	return (
 			clear === true ?

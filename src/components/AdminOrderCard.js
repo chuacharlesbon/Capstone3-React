@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import { Card, Button, Col, Container, Row } from 'react-bootstrap'
 import {Link, useParams} from 'react-router-dom'
 import Image from "react-bootstrap/Image";
@@ -8,7 +8,7 @@ import UserContext from '../UserContext'
 export default function OrderCard ({orderProp}) {
 
 	const {user} = useContext(UserContext)
-  	console.log(user)
+  	//console.log(user)
 
   	const adminName = user.userName
 
@@ -30,7 +30,7 @@ export default function OrderCard ({orderProp}) {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 		Swal.fire({
 				title: "Order request approved",
 				icon: "success",

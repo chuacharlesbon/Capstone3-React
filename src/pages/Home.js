@@ -11,7 +11,7 @@ import UserContext from '../UserContext'
 export default function Home () {
 
 const {user} = useContext(UserContext)
-  console.log(user)
+  //console.log(user)
 
   const username = user.userName
 

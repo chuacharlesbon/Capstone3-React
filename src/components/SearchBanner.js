@@ -17,8 +17,10 @@ export default function SearchItem() {
 	})
 
 	console.log(searchItem)
-	console.log(courses)
+	//console.log(courses)
 	console.log(style)
+
+	const itemfound = courses.length
 
 	/*const {searchItem} = useParams()*/
 
@@ -28,11 +30,11 @@ export default function SearchItem() {
 
 		fetch(`http://localhost:4000/products/getSingleProductParams/${searchItem}`)
 		.then(res => {
-			console.log(res)
+			//console.log(res)
 			return res.json()
 		})
 		.then(data => {
-			console.log(data)
+			//console.log(data)
 			setCourses(data.map(course =>{
 				return (
 		<CourseCard key={course._id} courseProp={course}/>
@@ -66,10 +68,14 @@ export default function SearchItem() {
 			<Form.Text className="text-muted"> Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' "" )
 			</Form.Text>
 			</Form.Group>
+			<Form.Text className="text-dark d-flex flex-row justify-content-start align-items-center">
+			<h6 className="my-auto mx-2">Results ({itemfound}) </h6> Items found with "{searchItem}" search
+			</Form.Text>
 		</Form>
 		</Accordion.Body>
   		</Accordion.Item>
   		</Accordion>
+
 
 		<Row className="justify-content-md-center">	
 		{courses}

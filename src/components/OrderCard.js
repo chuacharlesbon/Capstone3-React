@@ -22,7 +22,7 @@ export default function OrderCard ({orderProp}) {
 	})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
+		//console.log(data)
 		Swal.fire({
 				title: "You cancelled your order",
 				icon: "success",
@@ -91,7 +91,7 @@ export default function OrderCard ({orderProp}) {
 
 			<Row className="justify-content-center">
 			<Col xs={8} md={4} lg={3} xl={2} >
-			<Button /*variant="warning"*/ as= {Link} to={`/orders/payOrder/${_id}`} className="d-block my-2 background-play text-dark" >Complete Payment</Button>
+			<Button /*variant="warning"*/ as= {Link} to={`/orders/payOrder/${_id}`} className="d-block my-2 card-btn text-dark bg-white" >Complete Payment</Button>
 			</Col>
 			<Col xs={8} md={4} lg={3} xl={2} >
 			<Button variant="secondary" onClick={() => cancelOrder(`${_id}`)} className="d-block my-2 text-light" >Cancel Order</Button>
