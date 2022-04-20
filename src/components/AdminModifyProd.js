@@ -1,8 +1,7 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import { Form, Button} from 'react-bootstrap'
 import { Navigate, useParams } from 'react-router-dom'
 import Swal from "sweetalert2"
-import UserContext from '../UserContext'
 
 export default function AdminModifyProd(){
 
@@ -10,9 +9,9 @@ export default function AdminModifyProd(){
 
 //set isnot a keyword, the state is destrcuturing
 	
-	const {user} = useContext(UserContext)
+	//const {user} = useContext(UserContext)
   	//console.log(user)
-
+  	const [isActive, setIsActive] = useState(false)
   	const [created, setCreated] = useState(false)
   	const [name , setName ] = useState('')
   	const [ description, setDescription ] = useState('')
@@ -79,7 +78,15 @@ export default function AdminModifyProd(){
 	setPrice(data.price)
 	setCategory(data.category)
 })
-		}, [name, description, price, stockAvailable, category])
+		}, [name, description, price, stockAvailable, category, courseId])
+
+useEffect(()=>{
+			if(newname !== '' && newprice !== '' && newstockAvailable !== '' && newcategory !== ''){
+				setIsActive(true)
+			}else{
+				setIsActive(false)
+			}
+		}, [newname, newprice, newstockAvailable, newcategory, isActive])
 
 /*useEffect(()=> {
 	fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
@@ -115,34 +122,37 @@ export default function AdminModifyProd(){
 			<h1 className="text-center">Modify Product</h1>
 			<Form.Group controlId="newname">
 			<Form.Label>Product Name: </Form.Label>
-			<Form.Control type="text" placeholder={name} value={newname} onChange={e => setnewName(e.target.value)}/>
+			<Form.Control type="text" placeholder={name} required value={newname} onChange={e => setnewName(e.target.value)}/>
 			<Form.Text className="text-muted"> Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' "" )
 			</Form.Text>
 			</Form.Group>
 
 			<Form.Group controlId="newdescription">
 			<Form.Label>Description: </Form.Label>
-			<Form.Control type="text" placeholder={description} value={newdescription} onChange={e => setnewDescription(e.target.value)}/>
+			<Form.Control type="text" placeholder={description} required value={newdescription} onChange={e => setnewDescription(e.target.value)}/>
 			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )
 			</Form.Text>
 			</Form.Group>
 
 			<Form.Group controlId="newprice">
 			<Form.Label>Input Product Price: </Form.Label>
-			<Form.Control type="number" placeholder={price} value={newprice} onChange={e => setnewPrice(e.target.value)}/>
+			<Form.Control type="number" placeholder={price} required value={newprice} onChange={e => setnewPrice(e.target.value)}/>
 			</Form.Group>
 
 			<Form.Group controlId="newstockAvailable">
 			<Form.Label>Stock Available: </Form.Label>
-			<Form.Control type="number" placeholder={stockAvailable} value={newstockAvailable} onChange={e => setnewStockAvailable(e.target.value)}/>
+			<Form.Control type="number" placeholder={stockAvailable} required value={newstockAvailable} onChange={e => setnewStockAvailable(e.target.value)}/>
 			</Form.Group>
 
 			<Form.Group controlId="newcategory">
 			<Form.Label>Product Category: </Form.Label>
-			<Form.Control type="text" placeholder={category} value={newcategory} onChange={e => setnewCategory(e.target.value)}/>
+			<Form.Control type="text" placeholder={category} required value={newcategory} onChange={e => setnewCategory(e.target.value)}/>
 			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )
 			</Form.Text>
 			</Form.Group>
+
+			<Form.Text className="bg-danger p-1 rounded text-light">Reminders:</Form.Text>
+			<Form.Text className="text-dark mx-2">Please be reminded that all fields should not be empty</Form.Text>
 
 			{/*<Form.Group controlId="source">
 			<Form.Label>Source:</Form.Label>
@@ -151,8 +161,17 @@ export default function AdminModifyProd(){
 
 			<Form.Group className="text-center d-block">
 			
+			{ isActive ? 
 				<Button variant="success" type="submit" id="submitBtn" className="my-3 text-center mx-auto">Submit
 				</Button>
+				:
+				<Button variant="secondary" type="submit" id="submitBtn" className="my-3 text-center mx-auto" disabled>Submit
+				</Button>
+			}
+
+
+				{/*<Button variant="success" type="submit" id="submitBtn" className="my-3 text-center mx-auto">Submit
+				</Button>*/}
 			
 			</Form.Group>
 		</Form>

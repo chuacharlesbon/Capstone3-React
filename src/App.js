@@ -1,12 +1,10 @@
 import { useState, useEffect} from 'react'
 import { Container } from 'react-bootstrap'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import {Link} from 'react-router-dom'
 import CourseView from './components/CourseView'
 import OrderViewFull from './components/OrderViewFull'
 import AppNavbar from './components/AppNavbar'
 import Home from './pages/Home'
-import AdminHome from './components/AdminHome'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
@@ -16,6 +14,7 @@ import './App.css';
 // import Banner from './components/Banner'
 // import Highlights from './components/Highlights'
 import Courses from "./pages/Courses"
+import AdminMessages from "./pages/AdminMessages"
 import AdminCreateProd from "./pages/AdminCreateProd"
 import AdminModifyProd from "./components/AdminModifyProd"
 import UserOrders from "./pages/UserOrders"
@@ -24,6 +23,7 @@ import CategoryFood from "./pages/CategoryFood"
 import CategoryClothing from "./pages/CategoryClothing"
 import CategoryMachines from "./pages/CategoryMachines"
 import ClearOrder from './pages/ClearOrder'
+import PublicMessage from './pages/PublicMessage'
 import CartOrder from './pages/CartOrder'
 import PayOrder from './components/PayOrder'
 import CancelOrder from './components/CancelOrder'
@@ -31,6 +31,7 @@ import SearchItem from './pages/SearchItem'
 import SearchItem2 from './pages/SearchItem2'
 import AdminProducts from "./pages/AdminProducts"
 import SearchOrder from './pages/SearchOrder'
+import RefreshLog from './pages/RefreshLog'
 
 import { UserProvider } from './UserContext'
 
@@ -83,6 +84,7 @@ useEffect(() => {
         <Highlights/>*/}
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/courses" element={<Courses/>}/>
+        <Route exact path="/messages/AdminMes" element={<AdminMessages/>}/>
         <Route exact path="/courses/categoryFood" element={<CategoryFood/>}/>
         <Route exact path="/courses/categoryClothing" element={<CategoryClothing/>}/>
         <Route exact path="/courses/categoryMachines" element={<CategoryMachines/>}/>
@@ -104,6 +106,8 @@ useEffect(() => {
         <Route exact path="/register" element={<Register/>}/>
         <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/logout" element={<Logout/>} />
+        <Route exact path="/refresh" element={<RefreshLog/>} />
+        <Route exact path="/messages" element={<PublicMessage/>} />
         <Route exact path="*" element={<ErrorPage/>}/>
       </Routes>
       </Container>

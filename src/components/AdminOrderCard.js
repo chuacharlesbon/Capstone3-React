@@ -14,7 +14,6 @@ export default function OrderCard ({orderProp}) {
 
 	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin, byAdmin } = orderProp
 
-	const {courseId} = useParams()
 
 	function approveRefund(id){
 		fetch(`http://localhost:4000/orders/approveOrder/${id}`, {
@@ -32,7 +31,7 @@ export default function OrderCard ({orderProp}) {
 	.then(data => {
 		//console.log(data)
 		Swal.fire({
-				title: "Order request approved",
+				title: "Refund request approved",
 				icon: "success",
 				text: `Request sent to Bank for processing`
 			})
@@ -78,6 +77,30 @@ export default function OrderCard ({orderProp}) {
 			Card Number: {cardNumber}<br/>
 			</p>
 			</Card.Text>
+
+			{ (cardType === "Debit Card")?
+
+			<Image src="https://i.pinimg.com/736x/9c/23/d7/9c23d7c3aaa2d14960845a5f824e6c28.jpg" className="mx-2 image-payment"/>
+			:  (cardType === "Credit Card")?
+
+			<Image src="https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo-2000-2006.png" className="mx-2 image-payment"/>
+
+			:  (cardType === "GCASH")?
+
+			<Image src="https://orangemagazine.ph/wp-content/uploads/2022/03/GCash-Logo.png" className="mx-2 image-payment"/>
+
+			:  (cardType === "PayPal")?
+
+			<Image src="https://1000logos.net/wp-content/uploads/2021/04/Paypal-logo.png" className="mx-2 image-payment"/>
+
+			:
+
+			<Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzcz5ZOSbGDAXtWlGuxXDmCI9_AZhIQ0XqDgi4G5AzaUO_iU0lZkowZPLw1HLEBPqrP40&usqp=CAU" className="mx-2 image-payment"/>
+
+			}
+			
+			
+
 			</Col>
 
 			{/*</Row>*/}

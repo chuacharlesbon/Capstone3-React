@@ -1,16 +1,15 @@
-import { useState, useEffect } from 'react'
-import { Card, Button, Col, Container, Row } from 'react-bootstrap'
-import {Link, useParams} from 'react-router-dom'
-import Image from "react-bootstrap/Image";
+
+import { Card, Button, Col, Row } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 
 export default function OrderCard ({orderProp}) {
 	//before using props, destructure the object
 
-	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin } = orderProp
+	const { username, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin } = orderProp
 
-	const {courseId} = useParams()
+	//const {courseId} = useParams()
 
 	function cancelOrder(id){
 		fetch(`http://localhost:4000/orders/cancelOrder/${id}`, {

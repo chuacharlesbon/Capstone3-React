@@ -1,5 +1,5 @@
-import { useState, useEffect,useContext } from 'react'
-import { Row, Col, Card, Button } from 'react-bootstrap'
+import { useState,useContext } from 'react'
+import { Row, Col, Button } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Image from "react-bootstrap/Image";
 import UserContext from '../UserContext'
@@ -61,9 +61,9 @@ export default function Footer () {
 		</Col>
 
 		<Col xs={12} md={6} lg={4}  className="text-center mx-auto my-2" >
-			<h6>Contact</h6>
+			<h6>Email Us!</h6>
 			<p>shopnetwork@gmail.com</p>
-			<p>charleschua00@gmail.com</p>
+			<p><p><Button variant="warning" as={Link} to="/messages">Contact Admin</Button></p></p>
 			<p>(+63) 948-3944-738</p>
 		</Col>
 		<p className="text-center mx-auto">

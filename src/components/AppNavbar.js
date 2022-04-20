@@ -102,7 +102,7 @@ useEffect(()=> {
           <h6 className="p-1 mx-auto text-center">Admin:{username}</h6>
           <NavDropdown.Divider />
           <NavDropdown.Item  as={Link} to="/" >Notifications <Badge bg="danger">9+</Badge></NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/" >Client Messages <Badge bg="danger">9+</Badge></NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/messages/AdminMes" >Client Messages <Badge bg="danger">9+</Badge></NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/" >Cleared Issues <Badge bg="danger">9+</Badge></NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5" className="text-center">

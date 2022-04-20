@@ -109,7 +109,7 @@ body {
   background-color: lightblue;
 }
 
-.nav-btn:hover, .navhome-btn:hover, .banner, .carousel-desc, #form-register, #form-login, #clear-order, #form-search, #prodBanner, #prodComp, #prodFood, #cartbanner, #orderbanner{
+.nav-btn:hover, .navhome-btn:hover, .banner, .carousel-desc, #form-register, #form-login, #clear-order, #form-search, #prodBanner, #prodComp, #prodFood, #cartbanner, #orderbanner, #form-message{
   background-color: lightgoldenrodyellow;
 }
 
@@ -167,4 +167,14 @@ body {
 .admin-prodcard {
   min-height: 10rem;
   background-color: lightblue;
+}
+
+.image-message {
+  width: 24rem;
+  height: 15rem;
+}
+
+.image-payment {
+  width: 7.3rem;
+  height: 4rem;
 }

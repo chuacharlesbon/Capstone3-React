@@ -1,23 +1,19 @@
-import { useState, useEffect, useContext} from 'react'
-import {Row, Col, Container, Button} from 'react-bootstrap'
-import {Link, Navigate} from 'react-router-dom'
-import coursesData from "../data/coursesData"
+import { useState} from 'react'
+import {Row, Col, Button} from 'react-bootstrap'
+import { Navigate} from 'react-router-dom'
 import TransactionCard from "../components/TransactionCard"
 /*import ClearOrder from "../components/ClearOrder"*/
-import Image from "react-bootstrap/Image";
-import UserContext from '../UserContext'
 
 export default function UserOrders () {
 
-	const {user, setUser} = useContext(UserContext)
+	//const {user, setUser} = useContext(UserContext)
 	//console.log(user)
 
 	const [orders, setOrders] = useState([])
 
 	const [clear, setClear] = useState(false)
 
-	useEffect(() => {
-		//fetch('http://localhost:4000/courses')
+	function refreshData(){
 		fetch('http://localhost:4000/orders/getUserTransactions', {
 			method: "GET",
 			headers: {
@@ -45,8 +41,37 @@ export default function UserOrders () {
 	}))
 	} 
 	})
-	}, [])
+	}
 
+/*	useEffect(() => {
+		fetch('http://localhost:4000/orders/getUserTransactions', {
+			method: "GET",
+			headers: {
+
+					Authorization: `Bearer ${localStorage.getItem("token")}`
+				}
+		})
+		.then(res => res.json())
+		.then(data => {
+			
+			if ( data.length === 0){
+				setClear(true)
+				
+			<Navigate to="/orders/clearOrder"/>
+				
+			} else if ( data.length > 0 ){
+			setClear(false)
+			setOrders(data.map(order => {
+	
+	return (
+		
+		<TransactionCard key={order._id} orderProp={order}/>
+
+	)
+	}))
+	} 
+	})
+	}, [])*/
 
 
 	return (
@@ -59,6 +84,7 @@ export default function UserOrders () {
 			<h3 className="text-center orderbanner">Order History and Payment Transactions</h3>
 			</Col>
 			</Row>
+			<Button className="bg-secondary my-2" onClick={() => refreshData()}>Refresh Data</Button>
 			<Row className="justify-content-md-center">
 			{orders}
 			</Row>
