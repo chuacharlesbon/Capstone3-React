@@ -103,7 +103,7 @@ useEffect(()=> {
           <NavDropdown.Divider />
           <NavDropdown.Item  as={Link} to="/" >Notifications <Badge bg="danger">9+</Badge></NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/messages/AdminMes" >Client Messages <Badge bg="danger">9+</Badge></NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/" >Cleared Issues <Badge bg="danger">9+</Badge></NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/messages/AdminMesClear" >Cleared Issues <Badge bg="danger">9+</Badge></NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5" className="text-center">
             <Nav.Link as={Link} to="/logout"  className=" text-center">
@@ -157,7 +157,9 @@ useEffect(()=> {
           <h6 className="p-1 mx-auto text-center">{username}</h6>
           <NavDropdown.Divider />
           <NavDropdown.Item  as={Link} to="/orders" >Notifications <Badge bg="danger">9+</Badge></NavDropdown.Item>
-          <NavDropdown.Item  as={Link} to="/orders" >Messages <Badge bg="danger">9+</Badge></NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/messages/UserMes" >New Messages <Badge bg="danger">9+</Badge></NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/messages/UserMesClear" >Message Inbox <Badge bg="danger">9+</Badge></NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/messages/newMessage" >Create Message </NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5" className="text-center">
             <Nav.Link as={Link} to="/logout"  className=" text-center">

@@ -2,24 +2,21 @@ import { useState, useEffect, useContext} from 'react'
 import { Form, Button, Row, Col} from 'react-bootstrap'
 import Swal from "sweetalert2"
 import Advertisement from '../components/Advertisement'
-import MessageBanner from '../components/MessageBanner'
 import UserContext from '../UserContext'
 
-export default function PublicMessage(){
+export default function UserPvtMessage(){
 
 	const {user} = useContext(UserContext)
-
-	const userId = user.id
 
 	const [isActive, setIsActive] = useState(false)
 	const [sender, setSender] = useState('')
 	const [receiver, setReceiver] = useState('')
 	const [content, setContent] = useState('')
 
-	function sendPMessage(e){
+	function sendPvtMessage(e){
 		e.preventDefault()
 
-		fetch('http://localhost:4000/messages', {
+		fetch('http://localhost:4000/messages/newMessage', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -40,7 +37,7 @@ export default function PublicMessage(){
 			if(data.receiver === receiver){
 			let ticket = data._id
 			Swal.fire({
-					title: "Message Sent to Admin",
+					title: `Message Sent to ${receiver}`,
 					icon: "success",
 					text: `Your Message Ticket is ${ticket}`,
 					showClass: {
@@ -76,41 +73,32 @@ export default function PublicMessage(){
 
 	return(
 		<>
-		<MessageBanner/>
+		<Row className="mt-2 pt-4 banner">
+			<Col>
+			<h3 className="text-center orderbanner">Create a Message</h3>
+			</Col>
+			</Row>
 
 		<Row className="justify-content-center">
 		<Col xs={12} md={8} lg={6} xl={5}>
 
-		<Form id="form-message" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => sendPMessage(e)}>
-			
-			{ (userId !== null)?
+		<Form id="form-message" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => sendPvtMessage(e)}>
 
 			<Form.Group controlId="sender">
 			<Form.Label>Sender Email: {user.userName}</Form.Label>
-			<Form.Control type="email" placeholder={user.email} required onChange={e => setSender(user.email)}/>
+			<Form.Control type="email" value={user.email} disabled required onChange={e => setSender(user.email)}/>
 			</Form.Group>
-
-			:
-
-			<Form.Group controlId="sender">
-			<Form.Label>Your Name or Email:</Form.Label>
-			<Form.Control type="text" placeholder="shopnetwork@mail.com | ShopNetwork Inc" required value={sender} onChange={e => setSender(e.target.value)}/>
-			<Form.Text className="text-muted"> Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' "" )
-			</Form.Text>
-			</Form.Group>
-
-			}
 
 			<Form.Group controlId="receiver">
-			<Form.Label>Receiver Name:</Form.Label>
-			<Form.Control type="text" placeholder="Admin" required value={receiver} onChange={e => setReceiver(e.target.value)}/>
+			<Form.Label>Receiver Email:</Form.Label>
+			<Form.Control type="text" placeholder="user@mail.com" required value={receiver} onChange={e => setReceiver(e.target.value)}/>
 			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )
 			</Form.Text>
 			</Form.Group>
 
 			<Form.Group controlId="content">
 			<Form.Label>Message:</Form.Label>
-			<Form.Control as="textarea" placeholder="Hi Admin, (Your message)" required value={content} onChange={e => setContent(e.target.value)}/>
+			<Form.Control as="textarea" placeholder={`Hi ${receiver}, (Your message)`} required value={content} onChange={e => setContent(e.target.value)}/>
 			</Form.Group>
 
 {/*rendering submit button based on isActive*/}

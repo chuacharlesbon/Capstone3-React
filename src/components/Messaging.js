@@ -2,7 +2,7 @@ import { useState, useEffect, useContext} from 'react'
 import { Form, Button, Row, Col} from 'react-bootstrap'
 import Swal from "sweetalert2"
 import Advertisement from '../components/Advertisement'
-import MessageBanner from '../components/MessageBanner'
+import AboutMessage from '../components/AboutMessage'
 import UserContext from '../UserContext'
 
 export default function PublicMessage(){
@@ -65,18 +65,18 @@ export default function PublicMessage(){
 	}
 
 	useEffect(() => {
-		if(content !== "" && receiver !== "") {
+		if(content !== "" && sender !== "") {
 			setIsActive(true)
 		} else {
 			setIsActive(false)
 
 		}
 
-	}, [ isActive, content, receiver ])
+	}, [ isActive, content, sender ])
 
 	return(
 		<>
-		<MessageBanner/>
+		<AboutMessage/>
 
 		<Row className="justify-content-center">
 		<Col xs={12} md={8} lg={6} xl={5}>
@@ -102,8 +102,8 @@ export default function PublicMessage(){
 			}
 
 			<Form.Group controlId="receiver">
-			<Form.Label>Receiver Name:</Form.Label>
-			<Form.Control type="text" placeholder="Admin" required value={receiver} onChange={e => setReceiver(e.target.value)}/>
+			<Form.Label>My Email : charlessbonchua@gmail.com </Form.Label>
+			<Form.Control type="text"  disabled value="Admin" onChange={e => setReceiver(e.target.value)}/>
 			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )
 			</Form.Text>
 			</Form.Group>

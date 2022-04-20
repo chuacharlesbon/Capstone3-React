@@ -15,6 +15,9 @@ import './App.css';
 // import Highlights from './components/Highlights'
 import Courses from "./pages/Courses"
 import AdminMessages from "./pages/AdminMessages"
+import UserMessages from "./pages/UserMessages"
+import AdminMessagesClear from "./pages/AdminMessagesClear"
+import UserMessagesClear from "./pages/UserMessagesClear"
 import AdminCreateProd from "./pages/AdminCreateProd"
 import AdminModifyProd from "./components/AdminModifyProd"
 import UserOrders from "./pages/UserOrders"
@@ -23,7 +26,9 @@ import CategoryFood from "./pages/CategoryFood"
 import CategoryClothing from "./pages/CategoryClothing"
 import CategoryMachines from "./pages/CategoryMachines"
 import ClearOrder from './pages/ClearOrder'
+import ClearMessage from './pages/ClearMessage'
 import PublicMessage from './pages/PublicMessage'
+import UserPvtMessages from './pages/UserPvtMessages'
 import CartOrder from './pages/CartOrder'
 import PayOrder from './components/PayOrder'
 import CancelOrder from './components/CancelOrder'
@@ -32,6 +37,7 @@ import SearchItem2 from './pages/SearchItem2'
 import AdminProducts from "./pages/AdminProducts"
 import SearchOrder from './pages/SearchOrder'
 import RefreshLog from './pages/RefreshLog'
+import About from './pages/About'
 
 import { UserProvider } from './UserContext'
 
@@ -85,6 +91,9 @@ useEffect(() => {
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/courses" element={<Courses/>}/>
         <Route exact path="/messages/AdminMes" element={<AdminMessages/>}/>
+        <Route exact path="/messages/UserMes" element={<UserMessages/>}/>
+        <Route exact path="/messages/AdminMesClear" element={<AdminMessagesClear/>}/>
+        <Route exact path="/messages/UserMesClear" element={<UserMessagesClear/>}/>
         <Route exact path="/courses/categoryFood" element={<CategoryFood/>}/>
         <Route exact path="/courses/categoryClothing" element={<CategoryClothing/>}/>
         <Route exact path="/courses/categoryMachines" element={<CategoryMachines/>}/>
@@ -108,6 +117,9 @@ useEffect(() => {
         <Route exact path="/logout" element={<Logout/>} />
         <Route exact path="/refresh" element={<RefreshLog/>} />
         <Route exact path="/messages" element={<PublicMessage/>} />
+        <Route exact path="/messages/clearMessage" element={<ClearMessage/>} />
+        <Route exact path="/messages/newMessage" element={<UserPvtMessages/>} />
+        <Route exact path="/about" element={<About/>} />
         <Route exact path="*" element={<ErrorPage/>}/>
       </Routes>
       </Container>

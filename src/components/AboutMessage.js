@@ -14,8 +14,8 @@ export default function MessageBanner(){
 	</Col>
 
 	<Col  xs={12} md={6} lg={5} xl={4}  className="ml-auto my-2">
-	<h4>We're Happy to Hear it from You!</h4>
-	<p>Message Us Now!</p>
+	<h4>Feel Free to Connect!</h4>
+	<p>Message Me Now!</p>
 	</Col>
 
 

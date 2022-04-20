@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { Navigate, Link } from 'react-router-dom'
-import { Form, Button, Row, Col, Container} from 'react-bootstrap'
+import { Form, Button, Col, Container} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import Swal from "sweetalert2"
 import UserContext from '../UserContext'
@@ -19,7 +19,7 @@ export default function Login(props){
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [ isActive, setIsActive] = useState(true)
-	const [message, setMessage] = useState(' We will never share your credentials with anyone else.')
+	const [message] = useState(' We will never share your credentials with anyone else.')
 	const [message1, setMessage1] = useState('')
 
 	const [style, setStyle] = useState({
@@ -136,7 +136,7 @@ export default function Login(props){
 		
 		(user.isAdmin !== true && user.id !== null )?
 		<>
-		<Navigate to="/orders"/>
+		<Navigate to="/courses"/>
 		</>
 		: (user.isAdmin === true && user.id !== null )?
 

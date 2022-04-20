@@ -16,7 +16,7 @@ body {
   min-height: 100%;
 }
 
-#top-body, .background-play, .card-btn:hover {
+#top-body, .background-play, .card-btn:hover, .clear-message:hover {
   background-image:  linear-gradient(20deg, orange, lightyellow, yellow, lightyellow, orange);
   background-size: 500%;
   animation-name: product;
@@ -177,4 +177,31 @@ body {
 .image-payment {
   width: 7.3rem;
   height: 4rem;
+}
+
+.image-footer {
+    height: 2rem;
+    width: 6.5rem;
+}
+
+.image-profile {
+  width: 15rem;
+  height: 15rem;
+}
+
+.aboutback {
+  background-image: url(https://scontent.fmnl17-4.fna.fbcdn.net/v/t1.15752-9/277800795_4793215084124175_6992699692024128947_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEc40g_wA8f3oUhILArQ6stLzFksj_3VmcvMWSyP_dWZxKDdXcg4D8W0ElT4Ycx7YjWBZtyd0Wok8zXLl_emQkI&_nc_ohc=IKZq18wsdPwAX-RBCmd&_nc_ht=scontent.fmnl17-4.fna&oh=03_AVK5_zmeF5OvuvfXlg0OtBeADhZL04HtZ_nmfL7ZJEBQTA&oe=62846975);
+  background-attachment: scroll;
+  background-size: 100%; 
+  background-repeat: no-repeat;
+  height: 30rem;
+}
+
+.image-zuitt {
+  width: 15rem;
+  height: 5rem;
+}
+.image-banner {
+  width: 40rem;
+  height: 27rem;
 }
