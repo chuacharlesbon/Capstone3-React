@@ -12,17 +12,6 @@ export default function AdminProdCard ({courseProp}) {
 
 	const [status, setStatus] = useState('')
 
-	/*const [prodList, setProdList] = useState('')
-
-	const collpaseId = prodList.indexOf(_id)
-
-	if(isActive === false){
-			setStatus("Archived")
-		}else {
-			setStatus("Active")
-		}
-*/
-
 	function deleteItem(id){
 		fetch(`http://localhost:4000/products/deleteSingleProduct/${id}`, {
 		method: "DELETE",

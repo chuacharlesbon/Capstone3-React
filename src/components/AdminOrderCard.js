@@ -1,6 +1,6 @@
-import { useEffect, useContext } from 'react'
-import { Card, Button, Col, Container, Row } from 'react-bootstrap'
-import {Link, useParams} from 'react-router-dom'
+import {  useContext } from 'react'
+import { Card, Button, Col,Row } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import Image from "react-bootstrap/Image";
 import Swal from 'sweetalert2'
 import UserContext from '../UserContext'
@@ -8,7 +8,6 @@ import UserContext from '../UserContext'
 export default function OrderCard ({orderProp}) {
 
 	const {user} = useContext(UserContext)
-  	//console.log(user)
 
   	const adminName = user.userName
 

@@ -8,7 +8,6 @@ export default function Footer () {
 
 
 	const {user} = useContext(UserContext)
-  	//console.log(user)
   	const isAdmin = user.isAdmin
 
   	const userId = user.id
@@ -27,6 +26,7 @@ export default function Footer () {
 
 		<Col xs={12}  md={6} lg={4}  className="text-center mx-auto my-3">
 		<h6>Visit us!</h6>
+		<Button className="bg-warning btn-border-warning"><a target="_blank" href="https://www.linkedin.com/in/charles-chua-12116122a" rel="noopener noreferrer" title="Go to LinkedIn Profile" className="text-dark">LinkedIn</a></Button>
 
 		</Col>
 
@@ -55,7 +55,8 @@ export default function Footer () {
 		</Col>
 
 		<Col xs={12}  md={6} lg={4}  className="text-center mx-auto my-2">
-		<h6>Visit us!</h6>
+		<h6 className="mb-4">Visit us!</h6>
+		<a target="_blank" href="https://www.linkedin.com/in/charles-chua-12116122a" rel="noopener noreferrer" title="Go to LinkedIn Profile" className="text-dark">LinkedIn</a>
 
 		</Col>
 

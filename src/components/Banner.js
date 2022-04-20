@@ -3,7 +3,6 @@ import { Row, Col, Container, Button, Carousel } from 'react-bootstrap';
 
 export default function Banner(){
 
-
 	return (
 		<Row className="banner row align-items-center justify-content-center">
 		<Col lg={4} xs={12} className="">

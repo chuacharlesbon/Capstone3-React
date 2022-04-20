@@ -1,18 +1,15 @@
-import {useState, useEffect, useContext} from 'react'
+import {useState, useEffect} from 'react'
 import {Container, Row, Col, Card, Button, Form} from 'react-bootstrap'
 import {useParams, Navigate} from 'react-router-dom'
-import UserContext from '../UserContext'
 import Swal from 'sweetalert2'
 
 export default function PayOrder(){
 
-const {user} = useContext(UserContext)
 const [quantity, setQuantity] = useState('')
 const [payment, setPayment] = useState('')
 const [cardType, setCardType] = useState('')
 const [cardNumber, setCardNumber] = useState('')
 const [name, setName] = useState('');
-const [description, setDescription] = useState('');
 const [price, setPrice] = useState(0)
 
 const [stock, setStock] = useState('')
@@ -33,8 +30,6 @@ fetch(`http://localhost:4000/products/getSingleProduct/${ProdId}`)
 .then(data => {
 	return setStock(data.stockAvailable)
 
-	
-	//setStock(data.stockAvailable)
 
 })
 }, [stock, ProdId])
@@ -56,7 +51,7 @@ const enroll = (courseId) => {
 	.then(res => res.json())
 	.then(data => {
 		//console.log(data)
-		const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data
+		const { balance } = data
 
 		if( balance === 0){
 			Swal.fire({
@@ -122,7 +117,7 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 	setPrice(data[0].balance)
 })
 
-}, [courseId, name, price, quantity, payment, stock, ProdId])
+}, [courseId, name, price, quantity, payment, stock, ProdId, cardType])
 
 
 	return(

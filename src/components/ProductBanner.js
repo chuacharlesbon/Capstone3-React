@@ -1,11 +1,11 @@
-import { useState, useEffect} from 'react'
+import { useState} from 'react'
 import {Link} from 'react-router-dom'
 import {Row, Col, Container, Button} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 
 export default function ProductBanner() {
 
-		const [style, setStyle] =useState({
+		const [style] =useState({
 
 		width: "15rem",
 		height: "10rem"

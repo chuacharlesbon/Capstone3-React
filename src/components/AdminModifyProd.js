@@ -10,7 +10,7 @@ export default function AdminModifyProd(){
 //set isnot a keyword, the state is destrcuturing
 	
 	//const {user} = useContext(UserContext)
-  	//console.log(user)
+
   	const [isActive, setIsActive] = useState(false)
   	const [created, setCreated] = useState(false)
   	const [name , setName ] = useState('')

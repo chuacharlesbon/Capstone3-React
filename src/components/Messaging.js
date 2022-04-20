@@ -13,7 +13,7 @@ export default function PublicMessage(){
 
 	const [isActive, setIsActive] = useState(false)
 	const [sender, setSender] = useState('')
-	const [receiver, setReceiver] = useState('')
+	const [receiver, setReceiver] = useState('Admin')
 	const [content, setContent] = useState('')
 
 	function sendPMessage(e){
@@ -32,7 +32,7 @@ export default function PublicMessage(){
 			})
 		})
 		.then(res => {
-			//console.log(res)
+	
 			return res.json()
 		})
 		.then(data => {
@@ -103,14 +103,14 @@ export default function PublicMessage(){
 
 			<Form.Group controlId="receiver">
 			<Form.Label>My Email : charlessbonchua@gmail.com </Form.Label>
-			<Form.Control type="text"  disabled value="Admin" onChange={e => setReceiver(e.target.value)}/>
+			<Form.Control type="text"  disabled value="Admin" onChange={e => setReceiver("Admin")}/>
 			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )
 			</Form.Text>
 			</Form.Group>
 
 			<Form.Group controlId="content">
 			<Form.Label>Message:</Form.Label>
-			<Form.Control as="textarea" placeholder="Hi Admin, (Your message)" required value={content} onChange={e => setContent(e.target.value)}/>
+			<Form.Control as="textarea" placeholder="Hi Charles, (Your message)" required value={content} onChange={e => setContent(e.target.value)}/>
 			</Form.Group>
 
 {/*rendering submit button based on isActive*/}

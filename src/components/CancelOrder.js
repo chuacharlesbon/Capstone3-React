@@ -1,21 +1,15 @@
-import {useState, useEffect, useContext} from 'react'
-import {Container, Row, Col, Card, Button, Form} from 'react-bootstrap'
+import {useState, useEffect} from 'react'
+import {Container, Row, Col, Card, Button} from 'react-bootstrap'
 import {useParams, Navigate} from 'react-router-dom'
-import Image from "react-bootstrap/Image";
-import UserContext from '../UserContext'
 import Swal from 'sweetalert2'
 
 export default function PayOrder(){
 
-const {user} = useContext(UserContext)
 const [quantity, setQuantity] = useState('')
 const [payment, setPayment] = useState('')
-const [cardType, setCardType] = useState('')
-const [cardNumber, setCardNumber] = useState('')
+const [cardType] = useState('')
 const [name, setName] = useState('');
-const [description, setDescription] = useState('');
 const [price, setPrice] = useState(0)
-const [image, setImage] = useState('')
 const [stock, setStock] = useState('')
 const [ added, setAdded] = useState(false)
 const [newProdId, setNewProdId] = useState('')
@@ -23,16 +17,9 @@ const newStock = stock-quantity
 
 console.log(newStock)
 
-const [totalAmount, setTotalAmount] = useState('')
+const [ setTotalAmount] = useState('')
 
-const [style, setStyle] = useState({
-
-		width: "10rem",
-		height: "10rem"
-		
-	})
-
-const [height, setHeight] =useState({
+const [height] =useState({
 
 		minHeight: "30rem",
 		backgroundColor: "lightyellow"
@@ -52,7 +39,7 @@ const enroll = (courseId) => {
 	.then(res => res.json())
 	.then(data => {
 		//console.log(data)
-		const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data
+		const { balance } = data
 
 		if( balance === 0){
 			Swal.fire({
@@ -90,7 +77,6 @@ const enroll = (courseId) => {
 })
 .then(res => res.json())
 .then(data => {
-	//console.log(data)
 })
 }
 
@@ -107,9 +93,7 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 })
 .then(res => res.json())
 .then(data => {
-	/*const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data*/
-	//console.log(data)
-
+	
 	setNewProdId(data[0].productId)
 	setPayment(data[0].balance)
 	setTotalAmount(data[0].totalPrice)
@@ -127,12 +111,12 @@ fetch(`http://localhost:4000/products/getSingleProduct/${newProdId}`, {
 })
 .then(res => res.json())
 .then(data => {
-	//console.log(data)
+
 	setStock(data[0].stockAvailable)
 
 })
 
-}, [courseId, name, price, quantity, payment, stock])
+}, [courseId, name, price, quantity, payment, stock, setTotalAmount, newProdId, cardType])
 
 	return(
 		( added === true)?

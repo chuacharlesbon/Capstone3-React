@@ -4,8 +4,6 @@ import Image from "react-bootstrap/Image";
 
 export default function MessageBanner(){
 
-
-
 	return(
 
 	<Row className="justify-content-center banner align-items-center p-3">

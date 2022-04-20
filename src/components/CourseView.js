@@ -16,14 +16,14 @@ const [image, setImage] = useState('')
 const [stock, setStock] = useState('')
 const [ added, setAdded] = useState(false)
 
-const [style, setStyle] = useState({
+const [style] = useState({
 
 		width: "10rem",
 		height: "10rem"
 		
 	})
 
-const [height, setHeight] =useState({
+const [height] =useState({
 
 		minHeight: "30rem",
 		backgroundColor: "lightyellow"
@@ -45,8 +45,7 @@ const enroll = (courseId) => {
 	})
 	.then(res => res.json())
 	.then(data => {
-		//console.log(data)
-		const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data
+		const { quantity } = data
 
 		if( data.quantity === quantity ){
 			Swal.fire({
@@ -83,9 +82,13 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 }, [courseId])
 
 	return(
-		( added === true)?
+		( added === true && user.id !== null)?
 
 		<Navigate to="/courses"/>
+
+		:  (user.id === null)?
+
+		<Navigate to="/login"/>
 
 		:
 

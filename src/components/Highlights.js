@@ -5,10 +5,6 @@ import Image from "react-bootstrap/Image";
 
 export default function Highlights () {
 
-	/*const [style, setStyle] = useState({
-		height: "8rem",
-		width: "12rem"
-	})*/
 
 	return (
 		<Row className="mt-3 mb-3">

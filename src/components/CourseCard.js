@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { Card, Button, Col, Container, Row } from 'react-bootstrap'
+import { useState} from 'react'
+import { Card, Button, Col, Row } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Image from "react-bootstrap/Image";
 
@@ -7,18 +7,17 @@ export default function CourseCard ({courseProp}) {
 	//before using props, destructure the object
 
 	const {name, description, price, _id, source, stockAvailable} = courseProp
-	//console.log(courseProp)
 
-	const [image, setImage] = useState(source)
+	const [image] = useState(source)
 
-	const [style, setStyle] = useState({
+	const [style] = useState({
 
 		width: "10rem",
 		height: "10rem"
 		
 	})
 
-	const [height, setHeight] =useState({
+	const [height] =useState({
 
 		minHeight: "30rem",
 		backgroundColor: "lightyellow",

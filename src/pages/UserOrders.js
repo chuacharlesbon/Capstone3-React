@@ -55,7 +55,8 @@ export default function UserOrders () {
 			<>
 			<Row id="orderbanner" className="mt-2 pt-4">
 			<Col>
-			<h3 className="text-center orderbanner">Order Section</h3>
+			<h3 className="text-center orderbanner">Pending Orders Section</h3>
+			<p className="text-center">Reminders: Please Confirm Payment as acknowledgement to approve the delivery process. Orders listed are considered as reversible. Acknowledged payments will no longer be refunded. For refund, please confirm cancel order to request admin for refund processing.</p>
 			</Col>
 			</Row>
 			<Row className="justify-content-md-center">

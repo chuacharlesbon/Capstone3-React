@@ -23,14 +23,13 @@ const newStock = stock-quantity
 
 const totalAmount = price*quantity
 
-const [style, setStyle] = useState({
+const [style] = useState({
 
 		width: "10rem",
 		height: "10rem"
-		
 	})
 
-const [height, setHeight] =useState({
+const [height] =useState({
 
 		minHeight: "30rem",
 		backgroundColor: "lightyellow"
@@ -56,13 +55,13 @@ const enroll = (courseId) => {
 	.then(res => res.json())
 	.then(data => {
 		//console.log(data)
-		const { balance, dateOrder, productId, productName, quantity, status, totalPrice, userId, userName, _v, _id } = data
+		const { balance } = data
 
 		if( balance === 0){
 			Swal.fire({
 				title: "Ordered Successfully",
 				icon: "success",
-				text: `Your order is now on process. You may check the details in the Order Page`
+				text: `You will be directed order page. Please acknowledge the Payment to start the delivery process.`
 			})
 			setQuantity('')
 			setAdded(true)
@@ -118,9 +117,13 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 }, [courseId])
 
 	return(
-		( added === true)?
+		( added === true && user.id !== null)?
 
 		<Navigate to="/orders"/>
+
+		: (user.id === null)?
+
+		<Navigate to="/login"/>
 
 		:
 

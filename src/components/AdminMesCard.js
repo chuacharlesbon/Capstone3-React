@@ -1,8 +1,5 @@
-import { useState } from 'react'
-import { Card, Button, Col, Row, Accordion, InputGroup, FormControl } from 'react-bootstrap'
 
-
-
+import { Card, Col, Row, Accordion, InputGroup } from 'react-bootstrap'
 
 export default function AdminMesCard ({courseProp}) {
 	//before using props, destructure the object
