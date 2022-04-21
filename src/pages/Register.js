@@ -1,7 +1,8 @@
-import { useState, useEffect} from 'react'
+import { useState, useEffect, useContext} from 'react'
 import { Form, Button} from 'react-bootstrap'
 import { Navigate } from 'react-router-dom'
 import Swal from "sweetalert2"
+import UserContext from "../UserContext"
 
 
 export default function Register(){
@@ -9,6 +10,7 @@ export default function Register(){
 //do not use null for initial state due to server schema type: null might contradict turn to type: string 
 
 //set isnot a keyword, the state is destrcuturing
+	const {user} = useContext(UserContext)
 
   	const [firstName, setFirstName] = useState('')
   	const [lastName, setLastName] = useState('')
@@ -96,9 +98,14 @@ export default function Register(){
 
 
 	return(
-		( registered === true)?
+		( registered === true && user.id !== null)?
 
 		<Navigate to="/login"/>
+
+		: (user.id !== null)?
+
+		<Navigate to="/login"/>
+
 		:
 		
 		<Form id="form-register" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => registerUser(e)}>

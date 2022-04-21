@@ -50,7 +50,7 @@ export default function Footer () {
 		<Col xs={12}  md={6} lg={4} className="text-center mx-auto my-2">
 		<p><Button variant="warning" as={Link} to="/about">About the Developer</Button></p>
 		<p><Button variant="warning" as={Link} to="/">About ShopNetwork</Button></p>
-		<p><Button  variant="warning" as={Link} to="/">Terms | Data Privacy</Button></p>
+		<p><Button  variant="warning" as={Link} to="/terms">Terms | Data Privacy</Button></p>
 		</Col>
 
 		<Col xs={12}  md={6} lg={4}  className="text-center mx-auto my-2">

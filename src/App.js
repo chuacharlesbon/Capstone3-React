@@ -38,6 +38,7 @@ import AdminProducts from "./pages/AdminProducts"
 import SearchOrder from './pages/SearchOrder'
 import RefreshLog from './pages/RefreshLog'
 import About from './pages/About'
+import Terms from './pages/Terms'
 
 import { UserProvider } from './UserContext'
 
@@ -121,6 +122,7 @@ useEffect(() => {
         <Route exact path="/messages/clearMessage" element={<ClearMessage/>} />
         <Route exact path="/messages/newMessage" element={<UserPvtMessages/>} />
         <Route exact path="/about" element={<About/>} />
+        <Route exact path="/terms" element={<Terms/>} />
         <Route exact path="*" element={<ErrorPage/>}/>
       </Routes>
       </Container>
