@@ -43,9 +43,14 @@ export default function CartOrder () {
 
 
 	return (
-			clear === true ?
+			
+
+			(clear === true && user.id !== null)?
+
 			<Navigate to="/orders/clearOrder"/>
+
 			: user.id !== null ?
+
 			<>
 			
 			<Row id="cartbanner" className="mt-2 pt-4">

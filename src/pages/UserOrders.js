@@ -1,13 +1,13 @@
-import { useState, useEffect} from 'react'
+import { useState, useEffect, useContext} from 'react'
 import {Row, Col} from 'react-bootstrap'
 import {Navigate} from 'react-router-dom'
 import OrderCard from "../components/OrderCard"
 /*import ClearOrder from "../components/ClearOrder"*/
-//import UserContext from '../UserContext'
+import UserContext from '../UserContext'
 
 export default function UserOrders () {
 
-	//const {user, setUser} = useContext(UserContext)
+	const {user} = useContext(UserContext)
 	//console.log(user)
 
 	const [orders, setOrders] = useState([])
@@ -46,9 +46,11 @@ export default function UserOrders () {
 	}, [])
 
 	return (
-			clear === true ?
+			(clear === true && user.id !== null)?
+			
 			<Navigate to="/orders/clearOrder"/>
-			:
+
+			: user.id !== null?
 			<>
 			<Row id="orderbanner" className="mt-2 pt-4">
 			<Col>
@@ -60,6 +62,10 @@ export default function UserOrders () {
 			{orders}
 			</Row>
 			</>
+
+			:
+
+			<Navigate to="/login"/>
 			
 		
 		)

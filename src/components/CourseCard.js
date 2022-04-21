@@ -54,6 +54,7 @@ export default function CourseCard ({courseProp}) {
 			</Col>
 
 			</Row>
+			
 		</Card.Body>
 		</Card>
 		</Col>

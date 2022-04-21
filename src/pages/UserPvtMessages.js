@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext} from 'react'
 import { Form, Button, Row, Col} from 'react-bootstrap'
+import {Navigate} from 'react-router-dom'
 import Swal from "sweetalert2"
 import Advertisement from '../components/Advertisement'
 import UserContext from '../UserContext'
@@ -72,6 +73,8 @@ export default function UserPvtMessage(){
 	}, [ isActive, content, receiver ])
 
 	return(
+		(user.id !== null)?
+
 		<>
 		<Row className="mt-2 pt-4 banner">
 			<Col>
@@ -119,5 +122,8 @@ export default function UserPvtMessage(){
 		<Advertisement/>
 		</>
 
+		:
+
+		<Navigate to="/messages"/>
 		)
 }

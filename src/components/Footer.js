@@ -20,12 +20,12 @@ export default function Footer () {
 		<Col xs={12}  md={6} lg={4} className="text-center mx-auto my-3">
 		<p><Button variant="info" as={Link} to="/about">About the Developer</Button></p>
 		<p><Button variant="info" as={Link} to="/">About ShopNetwork</Button></p>
-		<p><Button  variant="info" as={Link} to="/">FAQs</Button></p>
+		<p><Button  variant="info" as={Link} to="/">Terms | Data Privacy</Button></p>
 		</Col>
 
 		<Col xs={12}  md={6} lg={4}  className="text-center mx-auto my-3">
 		<h6>Visit us!</h6>
-		<Button className="bg-warning btn-border-warning"><a target="_blank" href="https://www.linkedin.com/in/charles-chua-12116122a" rel="noopener noreferrer" title="Go to LinkedIn Profile" className="text-dark">LinkedIn</a></Button>
+		<Button className="bg-info btn-border-none"><a target="_blank" href="https://www.linkedin.com/in/charles-chua-12116122a" rel="noopener noreferrer" title="Go to LinkedIn Profile" className="text-dark">LinkedIn</a></Button>
 
 		</Col>
 
@@ -50,7 +50,7 @@ export default function Footer () {
 		<Col xs={12}  md={6} lg={4} className="text-center mx-auto my-2">
 		<p><Button variant="warning" as={Link} to="/about">About the Developer</Button></p>
 		<p><Button variant="warning" as={Link} to="/">About ShopNetwork</Button></p>
-		<p><Button  variant="warning" as={Link} to="/">FAQs</Button></p>
+		<p><Button  variant="warning" as={Link} to="/">Terms | Data Privacy</Button></p>
 		</Col>
 
 		<Col xs={12}  md={6} lg={4}  className="text-center mx-auto my-2">
