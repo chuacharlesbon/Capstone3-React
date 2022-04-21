@@ -20,7 +20,7 @@ export default function ClearOrder ({orderProp}) {
 		<h6>Hi there {username}!</h6>
 		<h3>It seems you have no items listed here for a while.</h3>
 		<Image src="https://c.tenor.com/d021xNuyYuEAAAAM/snoopy-grocery.gif" className="mx-auto d-block image-clearorder"/>
-		<Button as= {Link} to="/courses" className="d-block my-2 background-play text-dark" >Go to Shop</Button>
+		<Button as= {Link} to="/products" className="d-block my-2 background-play text-dark" >Go to Shop</Button>
 		<Button  as= {Link} to="/" className="d-block my-2 background-play text-dark" >Go to Home</Button>
 		</Container>
 		

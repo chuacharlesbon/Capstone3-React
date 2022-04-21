@@ -56,16 +56,16 @@ export default function Courses () {
 			<Container>
 			<Row>
 			<Col xs={8} md={3} lg={2} className="text-center mx-auto m-1">
-			<Button className="text-center mx-auto p-1 bg-warning text-dark d-block"  as={Link} to="/courses/categoryFood"><h6>Foods &#62;&#62;</h6></Button>
+			<Button className="text-center mx-auto p-1 bg-warning text-dark d-block"  as={Link} to="/products/categoryFood"><h6>Foods &#62;&#62;</h6></Button>
 			</Col>
 			<Col xs={8} md={3} lg={2}  className="text-center mx-auto m-1">
-			<Button className="text-center mx-auto p-1 bg-warning text-dark d-block" as={Link} to="/courses/categoryMachines"><h6>Machines &#62;&#62;</h6></Button>
+			<Button className="text-center mx-auto p-1 bg-warning text-dark d-block" as={Link} to="/products/categoryMachines"><h6>Machines &#62;&#62;</h6></Button>
 			</Col>
 			<Col xs={8} md={3} lg={2}  className="text-center mx-auto m-1">
-			<Button className="text-center mx-auto p-1 bg-warning text-dark d-block" as={Link} to="/courses/categoryClothing"><h6>Clothing &#62;&#62;</h6></Button>
+			<Button className="text-center mx-auto p-1 bg-warning text-dark d-block" as={Link} to="/products/categoryClothing"><h6>Clothing &#62;&#62;</h6></Button>
 			</Col>
 			<Col xs={8} md={3} lg={2}  className="text-center mx-auto m-1">
-			<Button className="text-center mx-auto p-1 bg-warning text-dark d-block" as={Link} to="/courses"><h6>All Products &#62;&#62;</h6></Button>
+			<Button className="text-center mx-auto p-1 bg-warning text-dark d-block" as={Link} to="/products"><h6>All Products &#62;&#62;</h6></Button>
 			</Col>
 			</Row>
 			</Container>

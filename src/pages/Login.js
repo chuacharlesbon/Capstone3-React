@@ -136,7 +136,7 @@ export default function Login(props){
 		
 		(user.isAdmin !== true && user.id !== null )?
 		<>
-		<Navigate to="/courses"/>
+		<Navigate to="/products/categoryFood"/>
 		</>
 		: (user.isAdmin === true && user.id !== null )?
 

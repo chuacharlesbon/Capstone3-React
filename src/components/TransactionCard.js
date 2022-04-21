@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Image from "react-bootstrap/Image";
 import { Card, Col, Row, Accordion } from 'react-bootstrap'
 //import Swal from 'sweetalert2'
 
@@ -59,6 +60,28 @@ export default function TransactionCard ({orderProp}) {
 			<p>Card Type: {cardType}</p>
 			<p>Card Number: {cardNumber}</p>
 			</Card.Text>
+
+			{ (cardType === "Debit Card")?
+
+			<Image src="https://i.pinimg.com/736x/9c/23/d7/9c23d7c3aaa2d14960845a5f824e6c28.jpg" className="mx-2 image-payment"/>
+			:  (cardType === "Credit Card")?
+
+			<Image src="https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo-2000-2006.png" className="mx-2 image-payment"/>
+
+			:  (cardType === "GCASH")?
+
+			<Image src="https://orangemagazine.ph/wp-content/uploads/2022/03/GCash-Logo.png" className="mx-2 image-payment"/>
+
+			:  (cardType === "PayPal")?
+
+			<Image src="https://1000logos.net/wp-content/uploads/2021/04/Paypal-logo.png" className="mx-2 image-payment"/>
+
+			:
+
+			<Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzcz5ZOSbGDAXtWlGuxXDmCI9_AZhIQ0XqDgi4G5AzaUO_iU0lZkowZPLw1HLEBPqrP40&usqp=CAU" className="mx-2 image-payment"/>
+
+			}
+
 			</Col>
 
 			<Col md={12} lg={4} className="mx-auto">

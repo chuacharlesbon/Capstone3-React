@@ -21,7 +21,7 @@ export default function Highlights () {
 			</Card.Text>
 			<Card.Text className="text-center mx-auto">
 				<p>Buy your favorite items with ShopNetwork platform using a mobile phone or browser.</p>
-				<Button className="text-center mx-auto p-3 background-play text-dark" as={Link} to="/">Fast and Easy with a Tap!</Button>
+				<Button className="text-center mx-auto p-3 background-play text-dark" as={Link} to="/login">Fast and Easy with a Tap!</Button>
 			</Card.Text>
 
 			</Card.Body>
@@ -40,7 +40,7 @@ export default function Highlights () {
 			</Card.Text>
 			<Card.Text  className="text-center mx-auto">
 				<p>500 Credit Bonus Points for newly registered users from April 15, 2022 to May 15, 2022</p>
-				<Button className="text-center mx-auto p-3 background-play text-dark" as={Link} to="/">Extend your Card to New Possibilities!</Button>
+				<Button className="text-center mx-auto p-3 background-play text-dark" as={Link} to="/login">Extend your Card to New Possibilities!</Button>
 			</Card.Text>
 
 			</Card.Body>
@@ -60,7 +60,7 @@ export default function Highlights () {
 			</Card.Text>
 			<Card.Text  className="text-center mx-auto">
 				<p>Not just a shopper but also a retailer. Let ShopNetwork connect you to people! </p>
-				<Button className="text-center mx-auto p-3 background-play text-dark" as={Link} to="/">Build your Online Shop Now!</Button>
+				<Button className="text-center mx-auto p-3 background-play text-dark" as={Link} to="/login">Build your Online Shop Now!</Button>
 			</Card.Text>
 
 			</Card.Body>

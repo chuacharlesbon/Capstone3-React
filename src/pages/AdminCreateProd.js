@@ -122,8 +122,14 @@ export default function AdminCreateProd(){
 			</Form.Group>
 
 			<Form.Group controlId="source">
-			<Form.Label>Source:</Form.Label>
-			<Form.Control type="text" value={source} onChange={e => setSource(e.target.value)}/>
+			<Form.Label>Image:</Form.Label>
+			<Form.Control type="text" value={source} placeholder="https://www.link.com.jpg" onChange={e => setSource(e.target.value)}/>
+			</Form.Group>
+
+			<Form.Group>
+			<Form.Label className="my-1">Or Upload Photo:</Form.Label>
+			<Form.Control type="file" className="my-2"/>
+			<Form.Text className="bg-secondary p-1 text-light rounded">Max. File size: 5MB (gif,jpg,jpeg,png)</Form.Text>
 			</Form.Group>
 
 			<Form.Group className="text-center d-block">

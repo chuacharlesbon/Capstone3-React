@@ -91,14 +91,14 @@ useEffect(() => {
        {/* <Banner/>
         <Highlights/>*/}
         <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/courses" element={<Courses/>}/>
+        <Route exact path="/products" element={<Courses/>}/>
         <Route exact path="/messages/AdminMes" element={<AdminMessages/>}/>
         <Route exact path="/messages/UserMes" element={<UserMessages/>}/>
         <Route exact path="/messages/AdminMesClear" element={<AdminMessagesClear/>}/>
         <Route exact path="/messages/UserMesClear" element={<UserMessagesClear/>}/>
-        <Route exact path="/courses/categoryFood" element={<CategoryFood/>}/>
-        <Route exact path="/courses/categoryClothing" element={<CategoryClothing/>}/>
-        <Route exact path="/courses/categoryMachines" element={<CategoryMachines/>}/>
+        <Route exact path="/products/categoryFood" element={<CategoryFood/>}/>
+        <Route exact path="/products/categoryClothing" element={<CategoryClothing/>}/>
+        <Route exact path="/products/categoryMachines" element={<CategoryMachines/>}/>
         <Route exact path="/products/:courseId" element={<CourseView/>}/>
         <Route exact path="/products/getSingleProductByName" element={<SearchItem/>}/>
         <Route exact path="/products/getSingleProductByName2" element={<SearchItem2/>}/>

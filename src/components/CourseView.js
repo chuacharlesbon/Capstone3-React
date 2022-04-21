@@ -88,7 +88,7 @@ fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${cour
 
 		: ( added === true && user.id !== null)?
 
-		<Navigate to="/courses"/>
+		<Navigate to="/products"/>
 
 		:  (user.id === null)?
 

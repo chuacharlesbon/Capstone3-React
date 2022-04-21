@@ -9,7 +9,7 @@ export default function Banner(){
 			<Container className="my-3 p-3">
 				<h1>ShopNetwork Inc</h1>
 				<p>Discover something new.</p>
-				<Button variant="primary" className="background-play text-dark" as={Link} to="/courses">Shop Now!</Button>
+				<Button variant="primary" className="background-play text-dark" as={Link} to="/products/categoryFood">Shop Now!</Button>
 			</Container>
 		</Col>
 		<Col  lg={8}  xs={12}>

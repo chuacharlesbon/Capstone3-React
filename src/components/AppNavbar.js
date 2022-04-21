@@ -141,10 +141,10 @@ useEffect(()=> {
       <Nav className="ml-auto">
       <Nav.Link as={Link} to="/" className="navhome-btn text-center">Home</Nav.Link>
        <NavDropdown title="Products" id="navbarScrollingDropdown"  className=" nav-btn text-center">
-          <NavDropdown.Item  as={Link} to="/courses" >Show Products</NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/products/categoryFood" >Show Products</NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/products/getSingleProductByName2" >Search Product</NavDropdown.Item>
           <NavDropdown.Divider />
-          <NavDropdown.Item as={Link} to="/courses" className="text-center">
+          <NavDropdown.Item as={Link} to="/products/categoryClothing" className="text-center">
             What's New
               <p id="newhead" className="row p-1  mx-auto justify-content-center align-items-center">Hot deals!</p>
           </NavDropdown.Item>
@@ -197,10 +197,10 @@ useEffect(()=> {
       <Nav className="ml-auto">
       <Nav.Link as={Link} to="/" className="navhome-btn text-center">Home</Nav.Link>
        <NavDropdown title="Products" id="navbarScrollingDropdown"  className=" nav-btn text-center">
-          <NavDropdown.Item  as={Link} to="/courses" >Show Products</NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/products/categoryFood" >Show Products</NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/products/getSingleProductByName2" >Search Product</NavDropdown.Item>
           <NavDropdown.Divider />
-          <NavDropdown.Item as={Link} to="/courses" className="text-center">
+          <NavDropdown.Item as={Link} to="/products/categoryClothing" className="text-center">
             What's New
               <p id="newhead" className="row p-1  mx-auto justify-content-center align-items-center">Hot deals!</p>
           </NavDropdown.Item>

@@ -20,7 +20,7 @@ export default function ClearMessage ({orderProp}) {
 		<h3>It seems you have no personal messages here for a while.</h3>
 		<Image src="https://i.pinimg.com/originals/76/ac/f2/76acf2613cd00198554521e2784f59ad.gif" className="mx-auto d-block image-clearorder"/>
 		<Button as= {Link} to="/messages/newMessage" className="d-block my-2 clear-message text-dark bg-white" >Chat User</Button>
-		<Button  as= {Link} to="/courses" className="d-block my-2 clear-message text-dark bg-white" >Go to Shops</Button>
+		<Button  as= {Link} to="/products" className="d-block my-2 clear-message text-dark bg-white" >Go to Shops</Button>
 		</Container>
 		
 		</Col>	

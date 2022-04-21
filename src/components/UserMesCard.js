@@ -74,7 +74,7 @@ export default function UserMesCard ({courseProp}) {
 		</Card>
 
 		<Button as={Link} to="/messages/newMessage" className="clear-message m-2  bg-warning text-dark">Reply</Button>
-		<Button as={Link} to="/messages/newMessage"  className="clear-message m-2 bg-secondary text-dark">Delete</Button>
+		<Button as={Link} to="/messages/newMessage" disabled className=" m-2 bg-secondary text-dark">Delete</Button>
 
     	</Accordion.Body>
   		</Accordion.Item>
