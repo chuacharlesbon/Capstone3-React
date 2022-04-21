@@ -7,7 +7,7 @@ import UserContext from '../UserContext'
 export default function AppNavbar(){
 	
   const {user} = useContext(UserContext)
-  //console.log(user)
+
 
   const username = user.userName
 

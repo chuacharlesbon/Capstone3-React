@@ -13,7 +13,6 @@ export default function OrderCard ({orderProp}) {
 
 	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin, byAdmin } = orderProp
 
-
 	function approveRefund(id){
 		fetch(`http://localhost:4000/orders/approveOrder/${id}`, {
 		method: "PUT",

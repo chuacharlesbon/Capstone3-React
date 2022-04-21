@@ -7,7 +7,7 @@ import TransactionCard from "../components/TransactionCard"
 export default function UserOrders () {
 
 	//const {user, setUser} = useContext(UserContext)
-	//console.log(user)
+
 
 	const [orders, setOrders] = useState([])
 

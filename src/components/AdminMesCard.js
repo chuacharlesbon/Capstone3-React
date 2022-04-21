@@ -25,8 +25,6 @@ export default function AdminMesCard ({courseProp}) {
 		})
 	}
 
-
-
 	return (
 <>
 		<Accordion className="my-1 bg-info">

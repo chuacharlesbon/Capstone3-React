@@ -82,7 +82,11 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 }, [courseId])
 
 	return(
-		( added === true && user.id !== null)?
+		(user.isAdmin === true)?
+
+		<Navigate to="/orders/searchOrder"/>
+
+		: ( added === true && user.id !== null)?
 
 		<Navigate to="/courses"/>
 
@@ -126,7 +130,6 @@ fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
 			</Row>
 			</Form.Group>
 			</Form>
-
 
 
 			<Image src={image} style={style} className="mx-auto d-block"/>

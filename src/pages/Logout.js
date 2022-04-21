@@ -13,12 +13,11 @@ export default function Logout(){
 	useEffect(() => {
 	//set user state to original value
 		setUser({id: null})
-	}, [])
+	}, [setUser])
 
 	return (
 
 		<Navigate to="/" />
 
 		)
-
 }

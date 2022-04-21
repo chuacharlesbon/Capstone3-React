@@ -16,7 +16,6 @@ export default function MessageBanner(){
 	<p>Message Us Now!</p>
 	</Col>
 
-
 	</Row>
 
 

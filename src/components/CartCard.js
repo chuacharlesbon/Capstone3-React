@@ -27,7 +27,6 @@ export default function CartCard ({orderProp}) {
 	})
 	}
 
-
 	return (
 		<Card className="my-2">
 		<Card.Body>

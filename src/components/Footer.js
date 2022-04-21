@@ -6,7 +6,6 @@ import UserContext from '../UserContext'
 
 export default function Footer () {
 
-
 	const {user} = useContext(UserContext)
   	const isAdmin = user.isAdmin
 
@@ -74,7 +73,6 @@ export default function Footer () {
 		<p className="text-center mx-auto">&copy;All Rights Reserved 2022 Philippines</p>
 		</Row>
 		</>
-
 	
 		)
 }

@@ -5,7 +5,6 @@ import Image from "react-bootstrap/Image";
 
 export default function Highlights () {
 
-
 	return (
 		<Row className="mt-3 mb-3">
 

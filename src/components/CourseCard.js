@@ -57,7 +57,6 @@ export default function CourseCard ({courseProp}) {
 		</Card.Body>
 		</Card>
 		</Col>
-
 		
 		)
 }

@@ -8,7 +8,7 @@ export default function AdminProdCard ({courseProp}) {
 	//before using props, destructure the object
 
 	const {name, price, _id, category, stockAvailable, remark, isActive, createdOn} = courseProp
-	//console.log(courseProp)
+
 
 	const [status, setStatus] = useState('')
 

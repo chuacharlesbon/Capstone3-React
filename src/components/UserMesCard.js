@@ -27,7 +27,6 @@ export default function UserMesCard ({courseProp}) {
 	}
 
 
-
 	return (
 <>
 		<Accordion className="my-1">

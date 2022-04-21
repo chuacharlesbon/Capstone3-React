@@ -1,12 +1,12 @@
 import { useState,useContext } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Navigate} from 'react-router-dom'
 import { Row, Col, Container, Button, Carousel } from 'react-bootstrap';
 import UserContext from '../UserContext'
+
 
 export default function AdminHome(){
 
   const {user} = useContext(UserContext)
-
 
   const username = user.userName
 
@@ -16,6 +16,12 @@ export default function AdminHome(){
 	})
 
 	return (
+    (user.isAdmin !== true)?
+
+     <Navigate to="/"/>
+
+     :
+
 		<Row className="bg-info row align-items-center justify-content-center mt-2">
 		<Col lg={4} xs={12} className="">
 			<Container className="my-3 p-3">

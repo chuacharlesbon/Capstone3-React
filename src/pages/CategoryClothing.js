@@ -1,7 +1,6 @@
 import { useState, useEffect} from 'react'
 import {Row, Col, Container, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import coursesData from "../data/coursesData"
 import CourseCard from "../components/CourseCard"
 import SearchBanner from "../components/SearchBanner"
 import Image from "react-bootstrap/Image";
@@ -16,7 +15,6 @@ export default function Courses () {
 		.then(data => {
 			//console.log(data)
 			setCourses(data.map(course => {
-	
 	return (
 		//key used to identify each child
 		<CourseCard key={course._id} courseProp={course}/>

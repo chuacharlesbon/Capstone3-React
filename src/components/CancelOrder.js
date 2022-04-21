@@ -80,7 +80,6 @@ const enroll = (courseId) => {
 })
 }
 
-
 useEffect(() => {
 	console.log(courseId)
 	console.log(cardType)

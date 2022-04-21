@@ -11,7 +11,7 @@ export default function AdminCreateProd(){
 //set isnot a keyword, the state is destrcuturing
 	
 	const {user} = useContext(UserContext)
-  	//console.log(user)
+ 
 
   	const [isActive, setIsActive] = useState(false)
   	const [created, setCreated] = useState(false)
@@ -66,14 +66,17 @@ export default function AdminCreateProd(){
 			}else{
 				setIsActive(false)
 			}
-		})
+		}, [setIsActive, name, category, price, stockAvailable])
 
 
 //access is the properties of console.log(data)
 			
 	return (
+		(user.isAdmin !== true)?
+
+		<Navigate to="/error"/>
 		
-		(created === true)?
+		: (created === true &&  user.isAdmin === true)?
 
 		<>
 

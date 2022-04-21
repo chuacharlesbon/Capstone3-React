@@ -1,17 +1,16 @@
-import { useState, useEffect} from 'react'
+import { useState, useEffect,useContext} from 'react'
 import {Row, Col, Container, Button} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
-import coursesData from "../data/coursesData"
+import {Link, Navigate} from 'react-router-dom'
 import CourseCard from "../components/CourseCard"
 import SearchBanner from "../components/SearchBanner"
 import Image from "react-bootstrap/Image";
+import UserContext from '../UserContext'
 
 export default function Courses () {
 	const [courses, setCourses] = useState([])
 
+	const {user} = useContext(UserContext)
 
-	//console.log(coursesData);
-	//console.log(coursesData[0]);
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')
 		fetch('http://localhost:4000/products')
@@ -29,8 +28,12 @@ export default function Courses () {
 	})
 	}, [])
 
-
 	return (
+		(user.isAdmin === true)?
+
+		<Navigate to="/products/adminProducts"/>
+
+		:
 		<>
 			<Container id="prodBanner">
 			<Container>

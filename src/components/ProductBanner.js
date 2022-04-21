@@ -11,7 +11,6 @@ export default function ProductBanner() {
 		height: "10rem"
 		
 	})
-
 	return(
 		<>
 		<Container id="prodComp">

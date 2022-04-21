@@ -1,7 +1,6 @@
 import { useState, useEffect} from 'react'
 import {Row, Col, Container, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import coursesData from "../data/coursesData"
 import CourseCard from "../components/CourseCard"
 import SearchBanner from "../components/SearchBanner"
 import Image from "react-bootstrap/Image";
@@ -25,7 +24,6 @@ export default function Courses () {
 	}))
 	})
 	}, [])
-
 
 	return (
 		<>

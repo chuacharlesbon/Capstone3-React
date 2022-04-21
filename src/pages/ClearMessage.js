@@ -11,7 +11,6 @@ export default function ClearMessage ({orderProp}) {
   		//console.log(user)
 
   	const username = user.userName
-
 	return (
 	
 		<Row className="text-center mx-auto justify-content-center mt-5">

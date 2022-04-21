@@ -26,7 +26,6 @@ export default function ClearOrder ({orderProp}) {
 		
 		</Col>	
 		</Row>	
-
 		
 		)
 }

@@ -30,7 +30,6 @@ fetch(`http://localhost:4000/products/getSingleProduct/${ProdId}`)
 .then(data => {
 	return setStock(data.stockAvailable)
 
-
 })
 }, [stock, ProdId])
 
@@ -139,7 +138,7 @@ fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
 				Price:
 			</Card.Subtitle>
 			<Card.Text>
-				Php {price}
+				Php {totalAmount}
 			</Card.Text>
 			
 

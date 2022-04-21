@@ -7,7 +7,6 @@ export default function RefreshLog(){
 
 	const {unsetUser, setUser} =useContext(UserContext)
 
-
 	unsetUser()
 	//localStorage.clear();
 

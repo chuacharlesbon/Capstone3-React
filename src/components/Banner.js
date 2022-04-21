@@ -67,6 +67,5 @@ export default function Banner(){
 		</Row>
 
 
-
 		)
 }

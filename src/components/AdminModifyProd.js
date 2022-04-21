@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Form, Button} from 'react-bootstrap'
 import { Navigate, useParams } from 'react-router-dom'
 import Swal from "sweetalert2"
+import UserContext from '../UserContext'
 
 export default function AdminModifyProd(){
 
@@ -9,7 +10,7 @@ export default function AdminModifyProd(){
 
 //set isnot a keyword, the state is destrcuturing
 	
-	//const {user} = useContext(UserContext)
+	const {user} = useContext(UserContext)
 
   	const [isActive, setIsActive] = useState(false)
   	const [created, setCreated] = useState(false)
@@ -88,31 +89,20 @@ useEffect(()=>{
 			}
 		}, [newname, newprice, newstockAvailable, newcategory, isActive])
 
-/*useEffect(()=> {
-	fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
-.then(res => res.json())
-.then(data => {
-	console.log(data)
-	console.log('test')
 
-	setName(data.name)
-	setDescription(data.description)
-	setStockAvailable(data.stockAvailable)
-	setPrice(data.price)
-})
-}, [name, description, price, stockAvailable])*/
-
-//access is the properties of console.log(data)
-			
 	return (
 		
-		(created === true)?
+		(created === true && user.isAdmin === true)?
 
 		<>
 
 		<Navigate to="/products/adminProducts"/>
 
 		</>
+
+		: (user.isAdmin !== true)?
+
+		<Navigate to="/error"/>
 
 		:
 		

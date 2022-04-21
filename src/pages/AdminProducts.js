@@ -25,27 +25,6 @@ export default function AdminProducts () {
 	})
 	} 
 
-	/*useEffect(() => {
-		
-		fetch('http://localhost:4000/products/getAllProductsLists',{
-			method: 'GET',
-			headers: {
-				Authorization: `Bearer ${localStorage.getItem("token")}`
-			}
-		})
-		.then(res => res.json())
-		.then(data => {
-			setCourses(data.map(course => {
-	
-	return (
-		//key used to identify each child
-		<AdminProdCard key={course._id} courseProp={course}/>
-
-	)
-	}))
-	})
-	}, [])*/
-
 
 	return (
 		<>

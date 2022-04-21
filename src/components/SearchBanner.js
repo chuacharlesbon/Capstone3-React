@@ -1,7 +1,7 @@
-import ReactDOM from 'react-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState, useEffect, Fragment } from 'react'
-import { Row, Col, Card, Button, Form, Container, Accordion } from 'react-bootstrap'
+//import ReactDOM from 'react-dom'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState, Fragment } from 'react'
+import { Row, Col, Button, Form, Accordion } from 'react-bootstrap'
 import CourseCard from "../components/CourseCard"
 
 export default function SearchItem() {
@@ -9,19 +9,17 @@ export default function SearchItem() {
 
 	const [searchItem, setSearchItem] = useState('')
 	const [courses, setCourses] = useState([])
-	const [style, setStyle] =useState({
+	const [style] =useState({
 
 		width: "15rem",
 		height: "10rem"
 		
 	})
-
 	console.log(searchItem)
-	//console.log(courses)
+
 	console.log(style)
 
 	const itemfound = courses.length
-
 	/*const {searchItem} = useParams()*/
 
 	function searchItems(e) {

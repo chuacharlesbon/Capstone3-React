@@ -12,7 +12,6 @@ export default function CartOrder () {
 	const [orders, setOrders] = useState([])
 
 	const [clear, setClear] = useState(false)
-
 	
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')

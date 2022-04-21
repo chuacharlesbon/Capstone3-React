@@ -97,7 +97,6 @@ const enroll = (courseId) => {
 })
 }
 
-
 useEffect(() => {
 
 	console.log(courseId)

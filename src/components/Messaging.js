@@ -102,7 +102,7 @@ export default function PublicMessage(){
 			}
 
 			<Form.Group controlId="receiver">
-			<Form.Label>My Email : charlessbonchua@gmail.com </Form.Label>
+			<Form.Label>My Email : charlessbonnchua@gmail.com </Form.Label>
 			<Form.Control type="text"  disabled value="Admin" onChange={e => setReceiver("Admin")}/>
 			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )
 			</Form.Text>

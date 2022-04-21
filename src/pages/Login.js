@@ -10,7 +10,7 @@ export default function Login(props){
 //allows us to consume the user coontext object and its properties to use for user validation
 
 	const {user, setUser} = useContext(UserContext)
-	//console.log(user)
+
 
 //do not use null for initial state due to server schema type: null might contradict turn to type: string 
 

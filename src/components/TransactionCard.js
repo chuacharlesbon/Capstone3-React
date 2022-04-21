@@ -1,57 +1,21 @@
-import { useState, useEffect } from 'react'
-import { Card, Button, Col, Container, Row, Accordion } from 'react-bootstrap'
-import {Link, useParams} from 'react-router-dom'
-import Image from "react-bootstrap/Image";
-import Swal from 'sweetalert2'
+import { useState } from 'react'
+import { Card, Col, Row, Accordion } from 'react-bootstrap'
+//import Swal from 'sweetalert2'
 
 
 export default function TransactionCard ({orderProp}) {
 	//before using props, destructure the object
 
-	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin } = orderProp
+	const { username, productName, quantity, totalPrice, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin } = orderProp
 
-	const {courseId} = useParams()
+	//const {courseId} = useParams()
 
-	const [transaction, setTransaction] = useState('')
+	const [transaction] = useState('')
 
-	const [orderId, setOrderId] = useState('')
+	const [orderId] = useState('')
 
 	const collpaseId = transaction.indexOf(orderId)
 
-	function cancelOrder(id){
-		fetch(`http://localhost:4000/orders/cancelOrder/${id}`, {
-		method: "PUT",
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: `Bearer ${localStorage.getItem("token")}`
-		}
-	})
-	.then(res => res.json())
-	.then(data => {
-		///console.log(data)
-		setOrderId(data._id)
-		Swal.fire({
-				title: "You cancelled your order",
-				icon: "success",
-				text: `If payment was made, refund will be processed accordingly.`
-			})
-	})
-	}
-
-	useEffect(()=>{
-		fetch('http://localhost:4000/orders/getUserTransactions', {
-			method: "GET",
-			headers: {
-					/*Authorization: `Bearer ${token}`*/
-					Authorization: `Bearer ${localStorage.getItem("token")}`
-				}
-		})
-		.then(res => res.json())
-		.then(data => {
-			//console.log(data)
-			setTransaction(data)
-		})
-	})
 
 	return (
 		<>
@@ -91,7 +55,7 @@ export default function TransactionCard ({orderProp}) {
 			</Card.Subtitle>
 
 			<Card.Text>
-			<p>Updated amount paid: {payment}</p>
+			{/*<p>Updated amount paid: {payment}</p>*/}
 			<p>Card Type: {cardType}</p>
 			<p>Card Number: {cardNumber}</p>
 			</Card.Text>

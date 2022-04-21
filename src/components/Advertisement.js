@@ -19,6 +19,5 @@ export default function Advertisement ({orderProp}) {
 		</Col>	
 		</Row>	
 
-		
 		)
 }

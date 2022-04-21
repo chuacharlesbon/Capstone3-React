@@ -1,13 +1,13 @@
-import { useState, useEffect, Fragment, useContext } from 'react'
-import { Row, Col, Card, Button, Form, Container } from 'react-bootstrap'
+import { useState, Fragment } from 'react'
+import { Row, Button, Form } from 'react-bootstrap'
 import CourseCard from "../components/CourseCard"
 import ProductBanner from "../components/ProductBanner"
 import Advertisement from "../components/Advertisement"
-import UserContext from '../UserContext'
+//import UserContext from '../UserContext'
 
 export default function SearchItem() {
 
-	const {user} = useContext(UserContext)
+	//const {user} = useContext(UserContext)
   	//console.log(user)
 
 	const [searchItem, setSearchItem] = useState('')
@@ -34,7 +34,6 @@ export default function SearchItem() {
 
 	)
 			}))
-
 
 		})
 	}
