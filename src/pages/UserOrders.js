@@ -16,7 +16,7 @@ export default function UserOrders () {
 
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')
-		fetch('http://localhost:4000/orders/getUserOrders', {
+		fetch('https://immense-lake-17505.herokuapp.com/orders/getUserOrders', {
 			method: "GET",
 			headers: {
 					/*Authorization: `Bearer ${token}`*/

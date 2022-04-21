@@ -19,7 +19,7 @@ export default function PublicMessage(){
 	function sendPMessage(e){
 		e.preventDefault()
 
-		fetch('http://localhost:4000/messages', {
+		fetch('https://immense-lake-17505.herokuapp.com/messages', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ export default function AdminProdCard ({courseProp}) {
 	const [status, setStatus] = useState('')
 
 	function deleteItem(id){
-		fetch(`http://localhost:4000/products/deleteSingleProduct/${id}`, {
+		fetch(`https://immense-lake-17505.herokuapp.com/products/deleteSingleProduct/${id}`, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",
@@ -31,7 +31,7 @@ export default function AdminProdCard ({courseProp}) {
 	})}
 
 	function activateItem(id){
-		fetch(`http://localhost:4000/products/activate/${id}`, {
+		fetch(`https://immense-lake-17505.herokuapp.com/products/activate/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
@@ -51,7 +51,7 @@ export default function AdminProdCard ({courseProp}) {
 	}
 
 	function archiveItem(id){
-		fetch(`http://localhost:4000/products/archive/${id}`, {
+		fetch(`https://immense-lake-17505.herokuapp.com/products/archive/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",

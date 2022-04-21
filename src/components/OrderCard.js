@@ -10,7 +10,7 @@ export default function OrderCard ({orderProp}) {
 	const { username, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin } = orderProp
 
 	function cancelOrder(id){
-		fetch(`http://localhost:4000/orders/cancelOrder/${id}`, {
+		fetch(`https://immense-lake-17505.herokuapp.com/orders/cancelOrder/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",

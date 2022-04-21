@@ -14,7 +14,7 @@ export default function UserOrders () {
 	const [clear, setClear] = useState(false)
 
 	function refreshData(){
-		fetch('http://localhost:4000/orders/getUserTransactions', {
+		fetch('https://immense-lake-17505.herokuapp.com/orders/getUserTransactions', {
 			method: "GET",
 			headers: {
 					/*Authorization: `Bearer ${token}`*/

@@ -53,7 +53,7 @@ function App() {
 
 
 useEffect(() => {
-  fetch('http://localhost:4000/users/details', {
+  fetch('https://immense-lake-17505.herokuapp.com/users/details', {
     method: "POST",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`

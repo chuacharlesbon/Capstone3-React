@@ -13,7 +13,7 @@ export default function SearchItem() {
 		console.log(searchItem)
 		e.preventDefault()
 
-		fetch(`http://localhost:4000/products/getSingleProductParams/${searchItem}`)
+		fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProductParams/${searchItem}`)
 		.then(res => {
 			return res.json()
 		})

@@ -39,7 +39,7 @@ const [height] =useState({
 const {courseId} = useParams()
 
 const enroll = (courseId) => {
-	fetch(`http://localhost:4000/orders/orderFull/${courseId}`, {
+	fetch(`https://immense-lake-17505.herokuapp.com/orders/orderFull/${courseId}`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -81,7 +81,7 @@ const enroll = (courseId) => {
 			setAdded(false)
 		}
 	})
-	fetch(`http://localhost:4000/products/${newProdId}`, {
+	fetch(`https://immense-lake-17505.herokuapp.com/products/${newProdId}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
@@ -100,7 +100,7 @@ const enroll = (courseId) => {
 useEffect(() => {
 
 	console.log(courseId)
-fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
+fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${courseId}`)
 .then(res => res.json())
 .then(data => {
 	//console.log(data)

@@ -19,7 +19,7 @@ export default function AppNavbar(){
 
 useEffect(()=> {
   if(user.isAdmin === true && user.id !== null){
-    fetch('http://localhost:4000/products/getAllProductsLists',{
+    fetch('https://immense-lake-17505.herokuapp.com/products/getAllProductsLists',{
       method: 'GET',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -33,7 +33,7 @@ useEffect(()=> {
     })
   }//end of if statement
   else if (user.isAdmin !== true && user.id !== null){
-    fetch('http://localhost:4000/orders/getCart', {
+    fetch('https://immense-lake-17505.herokuapp.com/orders/getCart', {
       method: "GET",
       headers: {
           /*Authorization: `Bearer ${token}`*/
@@ -45,7 +45,7 @@ useEffect(()=> {
       //console.log(data)
       setUserCartList(data.length)
     })
-    fetch('http://localhost:4000/orders/getUserOrders', {
+    fetch('https://immense-lake-17505.herokuapp.com/orders/getUserOrders', {
       method: "GET",
       headers: {
           /*Authorization: `Bearer ${token}`*/

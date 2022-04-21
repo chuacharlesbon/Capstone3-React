@@ -32,7 +32,7 @@ export default function AdminModifyProd(){
 	function modifyItem(e){
 		e.preventDefault()
 
-		fetch(`http://localhost:4000/products/${courseId}`, {
+		fetch(`https://immense-lake-17505.herokuapp.com/products/${courseId}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export default function AdminModifyProd(){
 
 		useEffect(()=>{
 
-			fetch(`http://localhost:4000/products/getSingleProduct/${courseId}`)
+			fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${courseId}`)
 .then(res => res.json())
 .then(data => {
 

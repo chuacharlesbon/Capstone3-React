@@ -17,7 +17,7 @@ export default function UserPvtMessage(){
 	function sendPvtMessage(e){
 		e.preventDefault()
 
-		fetch('http://localhost:4000/messages/newMessage', {
+		fetch('https://immense-lake-17505.herokuapp.com/messages/newMessage', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

@@ -6,7 +6,7 @@ export default function AdminMessagesClear () {
 	const [courses, setCourses] = useState([])
 
 	function refreshData(){
-		fetch('http://localhost:4000/messages/readMessages',{
+		fetch('https://immense-lake-17505.herokuapp.com/messages/readMessages',{
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${localStorage.getItem("token")}`

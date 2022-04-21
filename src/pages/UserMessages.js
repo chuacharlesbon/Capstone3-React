@@ -12,7 +12,7 @@ export default function AdminMessages () {
 	const [clear, setClear] = useState(false)
 
 	function refreshData(){
-		fetch('http://localhost:4000/messages/userMessages',{
+		fetch('https://immense-lake-17505.herokuapp.com/messages/userMessages',{
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${localStorage.getItem("token")}`

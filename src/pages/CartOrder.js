@@ -15,7 +15,7 @@ export default function CartOrder () {
 	
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')
-		fetch('http://localhost:4000/orders/getCart', {
+		fetch('https://immense-lake-17505.herokuapp.com/orders/getCart', {
 			method: "GET",
 			headers: {
 					/*Authorization: `Bearer ${token}`*/

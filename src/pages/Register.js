@@ -27,7 +27,7 @@ export default function Register(){
 	function registerUser(e){
 		e.preventDefault()
 
-		fetch('http://localhost:4000/users/register', {
+		fetch('https://immense-lake-17505.herokuapp.com/users/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

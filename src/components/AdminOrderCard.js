@@ -14,7 +14,7 @@ export default function OrderCard ({orderProp}) {
 	const { userId, username, productId, productName, quantity, totalPrice, payment, balance, cardType, cardNumber, remarks, status, dateOrder, dateCancelled, _id, admin, byAdmin } = orderProp
 
 	function approveRefund(id){
-		fetch(`http://localhost:4000/orders/approveOrder/${id}`, {
+		fetch(`https://immense-lake-17505.herokuapp.com/orders/approveOrder/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",

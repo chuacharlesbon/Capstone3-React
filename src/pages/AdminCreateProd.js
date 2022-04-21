@@ -25,7 +25,7 @@ export default function AdminCreateProd(){
 	function createItem(e){
 		e.preventDefault()
 
-		fetch('http://localhost:4000/products', {
+		fetch('https://immense-lake-17505.herokuapp.com/products', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

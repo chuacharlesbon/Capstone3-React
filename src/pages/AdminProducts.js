@@ -6,7 +6,7 @@ export default function AdminProducts () {
 	const [courses, setCourses] = useState([])
 
 	function refreshData(){
-		fetch('http://localhost:4000/products/getAllProductsLists',{
+		fetch('https://immense-lake-17505.herokuapp.com/products/getAllProductsLists',{
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${localStorage.getItem("token")}`

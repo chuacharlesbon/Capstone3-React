@@ -25,7 +25,7 @@ const [totalAmount, setTotalAmount] = useState('')
 const {courseId} = useParams()
 
 useEffect(() => {
-fetch(`http://localhost:4000/products/getSingleProduct/${ProdId}`)
+fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${ProdId}`)
 .then(res => res.json())
 .then(data => {
 	return setStock(data.stockAvailable)
@@ -34,7 +34,7 @@ fetch(`http://localhost:4000/products/getSingleProduct/${ProdId}`)
 }, [stock, ProdId])
 
 const enroll = (courseId) => {
-	fetch(`http://localhost:4000/orders/payOrder/${courseId}`, {
+	fetch(`https://immense-lake-17505.herokuapp.com/orders/payOrder/${courseId}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
@@ -76,7 +76,7 @@ const enroll = (courseId) => {
 			setAdded(false)
 		}
 	})
-	fetch(`http://localhost:4000/products/${ProdId}`, {
+	fetch(`https://immense-lake-17505.herokuapp.com/products/${ProdId}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
@@ -96,7 +96,7 @@ const enroll = (courseId) => {
 useEffect(() => {
 	console.log(courseId)
 	console.log(cardType)
-fetch(`http://localhost:4000/orders/thisOrder/${courseId}`, {
+fetch(`https://immense-lake-17505.herokuapp.com/orders/thisOrder/${courseId}`, {
 	method: "GET",
 		headers: {
 			"Content-Type": "application/json",

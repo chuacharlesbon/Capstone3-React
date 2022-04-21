@@ -20,7 +20,7 @@ export default function SearchItem() {
 		console.log(searchItem)
 		e.preventDefault()
 
-		fetch(`http://localhost:4000/orders/searchOrderId/${searchItem}`,{
+		fetch(`https://immense-lake-17505.herokuapp.com/orders/searchOrderId/${searchItem}`,{
 			method: "GET",
 			headers: {
 			"Content-Type": "application/json",

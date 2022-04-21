@@ -8,7 +8,7 @@ export default function AdminMesCard ({courseProp}) {
 	//console.log(courseProp)
 
 	function setMarkRead(_id){
-		fetch(`http://localhost:4000/messages/markRead/${_id}`, {
+		fetch(`https://immense-lake-17505.herokuapp.com/messages/markRead/${_id}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
