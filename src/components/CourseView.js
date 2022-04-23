@@ -47,7 +47,7 @@ const enroll = (courseId) => {
 	.then(data => {
 		const { quantity } = data
 
-		if( data.quantity === quantity ){
+		if( data.quantity === quantity && user.id !== undefined){
 			Swal.fire({
 				title: "Added to Cart",
 				icon: "success",

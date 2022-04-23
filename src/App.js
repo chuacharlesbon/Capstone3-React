@@ -10,9 +10,8 @@ import Login from './pages/Login'
 import Logout from './pages/Logout'
 import ErrorPage from './pages/Error'
 import Footer from './components/Footer'
+import LogDisplay from './components/LogDisplay'
 import './App.css';
-// import Banner from './components/Banner'
-// import Highlights from './components/Highlights'
 import Courses from "./pages/Courses"
 import AdminMessages from "./pages/AdminMessages"
 import UserMessages from "./pages/UserMessages"
@@ -82,7 +81,7 @@ useEffect(() => {
     <UserProvider value={{user, setUser, unsetUser}}>
     <Router>
       <AppNavbar/>
-      
+      <LogDisplay/>
       <Container id="top" className="pb-5">
       <Routes>
 {/*v5 routing
@@ -123,6 +122,7 @@ useEffect(() => {
         <Route exact path="/messages/newMessage" element={<UserPvtMessages/>} />
         <Route exact path="/about" element={<About/>} />
         <Route exact path="/terms" element={<Terms/>} />
+        <Route exact path="/refreshlog" element={<RefreshLog/>} />
         <Route exact path="*" element={<ErrorPage/>}/>
       </Routes>
       </Container>

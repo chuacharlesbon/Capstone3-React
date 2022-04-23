@@ -45,11 +45,11 @@ export default function CartOrder () {
 	return (
 			
 
-			(clear === true && user.id !== null)?
+			(clear === true && user.id !== null && user.id !== undefined)?
 
 			<Navigate to="/orders/clearOrder"/>
 
-			: user.id !== null ?
+			: (user.id !== null && user.id !== undefined)?
 
 			<>
 			

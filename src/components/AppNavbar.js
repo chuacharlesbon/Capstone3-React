@@ -103,7 +103,24 @@ useEffect(()=> {
         </NavDropdown>
         {/*<Nav.Link as={Link} to="/orders"  className="nav-btn">Orders</Nav.Link>*/}
         <NavDropdown title="Options" id="navbarScrollingDropdown"  className="admin-btn text-center">
-          <h6 className="p-1 mx-auto text-center">Admin:{username}</h6>
+
+
+          {
+          (user.id === undefined || user.isAdmin === undefined || user.email === undefined)?
+          <>
+          <p className="text-center">Session expired</p>
+          <p className="text-center"><Link to="/refreshlog" className="text-center mx-auto">Click here</Link></p>
+          </>
+          :
+
+          <h6 className="p-1 mx-auto text-center">Admin {username}</h6>
+
+
+
+          }
+
+
+
           <NavDropdown.Divider />
           <NavDropdown.Item  as={Link} to="/" >Notifications <Badge bg="danger"></Badge></NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/messages/AdminMes" >Client Messages <Badge bg="danger">9+</Badge></NavDropdown.Item>
@@ -130,7 +147,7 @@ useEffect(()=> {
 
 </>
 
-: (user.isAdmin !== true && user.id !== null)?
+: (user.isAdmin !== true && user.id !== null && user.id !== undefined)?
 
 <>
 <Navbar className="bg-warning" expand="lg" sticky="top" >
@@ -163,8 +180,22 @@ useEffect(()=> {
           
         </NavDropdown>
         {/*<Nav.Link as={Link} to="/orders"  className="nav-btn">Orders</Nav.Link>*/}
-        <NavDropdown title="Options" id="navbarScrollingDropdown"  className="nav-btn text-center">
+        <NavDropdown title="Options" id="navbarScrollingDropdown"  className="nav-btn text-center mx-auto">
+          {
+          (user.id === undefined || user.isAdmin === undefined || user.email === undefined)?
+          <>
+          <p className="text-center">Session expired</p>
+          <p className="text-center"><Link to="/refreshlog" className="text-center mx-auto">Click here</Link></p>
+          </>
+          :
+
           <h6 className="p-1 mx-auto text-center">{username}</h6>
+
+
+
+          }
+
+
           <NavDropdown.Divider />
           <NavDropdown.Item  as={Link} to="/orders" >Notifications <Badge bg="danger">9+</Badge></NavDropdown.Item>
           <NavDropdown.Divider />
@@ -184,6 +215,36 @@ useEffect(()=> {
     </Navbar.Collapse>
   </Container>
 </Navbar>
+</>
+
+: (user.id === null)?
+
+<>
+<Navbar className="bg-warning" expand="lg" sticky="top" >
+    <Container>
+    <Navbar.Brand as={Link} to="/">ShopNetwork</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="ml-auto">
+      <Nav.Link as={Link} to="/" className="navhome-btn text-center">Home</Nav.Link>
+       <NavDropdown title="Products" id="navbarScrollingDropdown"  className=" nav-btn text-center">
+          <NavDropdown.Item  as={Link} to="/products/categoryFood" >Show Products</NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/products/getSingleProductByName2" >Search Product</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item as={Link} to="/products/categoryClothing" className="text-center">
+            What's New
+              <p id="newhead" className="row p-1  mx-auto justify-content-center align-items-center">Hot deals!</p>
+          </NavDropdown.Item>
+        </NavDropdown>
+        </Nav>
+         <Nav className="">
+        <Nav.Link as={Link} to="/register"  className="nav-btn text-center">Register</Nav.Link>
+        <Nav.Link as={Link} to="/login"  className="nav-btn text-center">LOGIN</Nav.Link>
+        </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+
 </>
 
 :
@@ -215,8 +276,6 @@ useEffect(()=> {
 </Navbar>
 
 </>
-
-
 
 
 
