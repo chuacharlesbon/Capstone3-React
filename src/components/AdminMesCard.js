@@ -39,7 +39,7 @@ export default function AdminMesCard ({courseProp}) {
 
 		<Row className="my-2">
 		<Col xs={10} md={6} lg={4} xl={3}>
-		<InputGroup className="check-box my-auto">
+		<InputGroup className="check-box my-auto p-0">
     	<InputGroup.Checkbox aria-label="markread" className="" onChange={e => setMarkRead(_id)}/>
     	<span className="m-2">Mark as Read</span>
     	</InputGroup>

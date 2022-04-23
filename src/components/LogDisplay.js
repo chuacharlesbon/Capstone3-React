@@ -12,7 +12,7 @@ export default function LogDisplay() {
 		(user.id === null)?
 
 		<>
-		<Row className="mx-3 banner justify-contents-center mx-auto text-center align-items-center">
+		<Row className="mx-3 banner justify-contents-center mx-auto text-center align-items-center ">
 
 		<p className="mt-1 mb-0">Welcome!</p>
 
@@ -22,7 +22,7 @@ export default function LogDisplay() {
 		: ((user.id === undefined || user.isAdmin === undefined || user.email === undefined || user.userName === undefined) && user.id !== null)  ?
 
 		<>
-		<Row className="mx-3 bg-secondary">
+		<Row className="px-3 bg-secondary">
 		<Col>
 		<span className="text-light mx-2">Something's not right.</span>
 		<Link to="/refreshlog" className="mx-2 text-info">Click Here</Link>

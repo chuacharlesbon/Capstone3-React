@@ -102,11 +102,7 @@ export default function Register(){
 
 		<Navigate to="/login"/>
 
-		: (user.id !== null)?
-
-		<Navigate to="/login"/>
-
-		:
+		: (user.id === undefined || user.isAdmin === undefined || user.email === undefined)?
 		
 		<Form id="form-register" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => registerUser(e)}>
 			<h1 className="text-center">Registration Section</h1>
@@ -196,6 +192,99 @@ export default function Register(){
 			</Form.Group>
 		</Form>
 
+		: (user.id !== null)?
+
+		<Navigate to="/login"/>
+
+		:
+
+		<Form id="form-register" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => registerUser(e)}>
+			<h1 className="text-center">Registration Section</h1>
+			<Form.Group controlId="firstName">
+			<Form.Label>First Name:</Form.Label>
+			<Form.Control type="text" placeholder="Enter your First Name here" required value={firstName} onChange={e => setFirstName(e.target.value)}/>
+			<Form.Text className="text-muted"> Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' "" )
+			</Form.Text>
+			</Form.Group>
+
+			<Form.Group controlId="lastName">
+			<Form.Label>Last Name:</Form.Label>
+			<Form.Control type="text" placeholder="Enter your Last Name here" required value={lastName} onChange={e => setLastName(e.target.value)}/>
+			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )
+			</Form.Text>
+			</Form.Group>
+
+			<Form.Group controlId="mobileNo">
+			<Form.Label>Mobile Number</Form.Label>
+			<Form.Control type="text" placeholder="+639-xxxxxxxxx {+6391234567890}" required value={mobileNo} onChange={e => setMobileNo(e.target.value)}/>
+			<Form.Text className="text-muted"> You can use your landline number
+			</Form.Text>
+			</Form.Group>
+
+			<Form.Group controlId="deliveryAdd">
+			<Form.Label>Delivery Address:</Form.Label>
+			<Form.Control type="text" placeholder="Enter your delivery address here" required value={deliveryAdd} onChange={e => setDeliveryAdd(e.target.value)}/>
+			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )
+			</Form.Text>
+			</Form.Group>
+
+			<Form.Group controlId="userEmail">
+			<Form.Label>Email Address</Form.Label>
+			<Form.Control type="email" placeholder="Enter your email here" required value={email} onChange={e => setEmail(e.target.value)}/>
+			<Form.Text className="text-muted"> We will never share your email with anyone else.
+			</Form.Text>
+			</Form.Group>
+
+			{/*<Form.Group controlId="password1">
+			<Form.Label>Password:</Form.Label>
+			<Form.Text style={weak} className="bg-danger text-white py-1 px-2 mx-2 rounded">Weak</Form.Text>
+			<Form.Text style={moderate} className="bg-warning text-white py-1 px-2 mx-2 rounded">Moderate</Form.Text>
+			<Form.Text style={strong} className="bg-success text-white py-1 px-2 mx-2 rounded">Strong</Form.Text>
+			<Form.Control type="password" placeholder="Input your password here" required value={password1} onChange={e => setPassword1(e.target.value)}/>
+			</Form.Group>*/}
+
+			<Form.Group controlId="password1">
+			<Form.Label>Password:</Form.Label>
+			{ (password1 === '')?
+
+			<Form.Text className="bg-secondary text-white py-1 px-2 mx-2 rounded">Empty</Form.Text>
+
+			: (password1.length < 4)  ?
+
+			<Form.Text className="bg-danger text-white py-1 px-2 mx-2 rounded">Weak</Form.Text>
+
+			: (password1.length < 7)  ?
+
+			<Form.Text className="bg-warning text-white py-1 px-2 mx-2 rounded">Moderate</Form.Text>
+
+			: (password1.length > 6 )  ?
+
+			<Form.Text  className="bg-success text-white py-1 px-2 mx-2 rounded">Strong</Form.Text>
+
+			:
+
+			<Form.Text className=" text-white py-1 px-2 mx-2 rounded"></Form.Text>
+
+			}
+			<Form.Control type="password" placeholder="Input your password here" required value={password1} onChange={e => setPassword1(e.target.value)}/>
+			</Form.Group>
+
+			<Form.Group  controlId="password2">
+			<Form.Label>Confirm Password</Form.Label>
+			< Form.Control type="password" placeholder="Input your password again" required  value={password2} onChange={e => setPassword2(e.target.value)}/>
+			</Form.Group>
+
+{/*rendering submit button based on isActive*/}
+			<Form.Group className="text-center d-block">
+			{ isActive ? 
+				<Button type="submit" id="submitBtn" className="my-3 text-center mx-auto background-play text-dark">Submit
+				</Button>
+				:
+				<Button variant="secondary" type="submit" id="submitBtn" className="my-3 text-center mx-auto" disabled>Submit
+				</Button>
+			}
+			</Form.Group>
+		</Form>
 		)
 }
 

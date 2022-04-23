@@ -134,13 +134,66 @@ export default function Login(props){
 
 	return(
 		
-		(user.isAdmin !== true && user.id !== null )?
+		(user.isAdmin !== true && user.id !== null && user.id !== undefined)?
 		<>
 		<Navigate to="/products/categoryFood"/>
 		</>
 		: (user.isAdmin === true && user.id !== null )?
 
 		<Navigate to="/"/>
+
+		: (user.id === undefined)?
+
+		<>
+		<Container className="d-flex px-1 bg-light justify-content-center align-items-center text-center mt-5">
+		
+
+		<Col lg={5} className="d-none d-lg-block mx-auto">
+
+		<Image src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBzaG9wcGluZ3xlbnwwfHwwfHw%3D&w=1000&q=80" /*style={style}*/ className="mx-auto text-center d-none d-lg-block image-login img-fluid"/>
+		<h4>We are excited to welcome you!</h4>
+		<p>Create account with us!<Link to="/register" className="mx-2">Click Here</Link></p>
+
+
+		</Col>
+
+		<Col lg={5} className="mx-auto d-block text-center">
+		<Form  id="form-login" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => LoginUser(e)}>
+			<h1 className="text-center">Log In</h1><hr/>
+			<Form.Group controlId="userEmail">
+			<Form.Label><h5>Email Address:</h5></Form.Label>
+			<Form.Text className="text-muted d-block">Please use registered email.
+			</Form.Text>
+			<Form.Control type="email" placeholder="Enter your email here" required value={email} onChange={e => setEmail(e.target.value)}/>
+			</Form.Group>
+
+			<Form.Group className="my-2" controlId="password">
+			<Form.Label><h5>Enter your Password:</h5></Form.Label>
+			<Form.Text className="d-block" style={style}>{message1}
+			</Form.Text>
+			<Form.Control type="password" placeholder="Input your password here" required value={password} onChange={e => setPassword(e.target.value)}/>
+			</Form.Group>
+
+			<Form.Text className="text-muted d-block">{message}
+			</Form.Text>
+			<input type="checkbox" className="mx-2" value="keeplogin"/>Keep me logged in
+			
+
+			<Form.Group className="text-center d-block">
+			{ isActive ? 
+				<Button variant="success" type="submit" id="submitBtn" className="my-3 text-center row justify-contents-center">LOGIN
+				</Button>
+				:
+				<Button variant="secondary" type="submit" id="submitBtn" className="my-3 text-center row justify-contents-center" disabled>LOGIN
+				</Button>
+			}
+			</Form.Group>
+		</Form>
+		</Col>
+		
+		</Container>
+
+		</>
 
 		:
 
@@ -194,7 +247,6 @@ export default function Login(props){
 		</Container>
 
 		</>
-
 
 		)
 }

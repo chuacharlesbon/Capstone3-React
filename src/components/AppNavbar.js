@@ -180,7 +180,9 @@ useEffect(()=> {
           
         </NavDropdown>
         {/*<Nav.Link as={Link} to="/orders"  className="nav-btn">Orders</Nav.Link>*/}
-        <NavDropdown title="Options" id="navbarScrollingDropdown"  className="nav-btn text-center mx-auto">
+        <NavDropdown title="Options" id="navbarScrollingDropdown"  className="nav-btn text-center">
+
+
           {
           (user.id === undefined || user.isAdmin === undefined || user.email === undefined)?
           <>
@@ -194,6 +196,7 @@ useEffect(()=> {
 
 
           }
+
 
 
           <NavDropdown.Divider />
