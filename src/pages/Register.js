@@ -82,11 +82,34 @@ export default function Register(){
 				})
 			}
 		})
+		fetch('https://immense-lake-17505.herokuapp.com/messages', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${localStorage.getItem("token")}`
+			},
+			body: JSON.stringify({
+				sender: "ShopNetwork Inc",
+				receiver: email,
+				content: `Hi ${firstName} ${lastName}, Welcome to ShopNetwork! Thank you for accomplishing the Registration. You may click the link to let us give you a tour about the platform, or you may proceed to Products section to Get Started. `
+			})
+		})
+		.then(res => {
+			//console.log(res)
+			return res.json()
+		})
+		.then(data => {
+			if(data.receiver === email){
+				console.log("User Welcome message sent.")
+			}else {
+				console.log("Something went wrong")
+			}
+		})
 
 	}
 
 	useEffect(() => {
-		if((email !== "" && password1 !== "" ) && (password1 === password2)){
+		if((email !== "" && password1 !== "" && password1.length > 6) && (password1 === password2)){
 			
 			setIsActive(true)
 		} else {
@@ -98,7 +121,7 @@ export default function Register(){
 
 
 	return(
-		( registered === true && user.id !== null)?
+		( registered === true )?
 
 		<Navigate to="/login"/>
 
@@ -150,7 +173,7 @@ export default function Register(){
 			</Form.Group>*/}
 
 			<Form.Group controlId="password1">
-			<Form.Label>Password:</Form.Label>
+			<Form.Label>Password: </Form.Label>
 			{ (password1 === '')?
 
 			<Form.Text className="bg-secondary text-white py-1 px-2 mx-2 rounded">Empty</Form.Text>
@@ -174,6 +197,8 @@ export default function Register(){
 			}
 			<Form.Control type="password" placeholder="Input your password here" required value={password1} onChange={e => setPassword1(e.target.value)}/>
 			</Form.Group>
+
+			<Form.Text>Must be at least 8 characters.</Form.Text>
 
 			<Form.Group  controlId="password2">
 			<Form.Label>Confirm Password</Form.Label>

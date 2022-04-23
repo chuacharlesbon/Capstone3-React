@@ -26,6 +26,24 @@ export default function UserMesCard ({courseProp}) {
 		})
 	}
 
+	function deleteItem(_id){
+		fetch(`https://immense-lake-17505.herokuapp.com/messages/delete/${_id}`, {
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${localStorage.getItem("token")}`
+			}
+		})
+		.then(res => {
+			//console.log(res)
+			return res.json()
+		})
+		.then(data => {
+			
+			console.log(data)
+		})
+	}
+
 
 	return (
 <>
@@ -69,12 +87,23 @@ export default function UserMesCard ({courseProp}) {
 			{content}
 			</p>
 			</Card.Text>
+
+			{
+			(sender === "ShopNetwork Inc")?
+			<>
+			<Link to="/" className="mx-2">Give Me a Tour!</Link>
+			<Link to="/products/categoryFood" className="mx-2">Go to Shop</Link>
+			</>
 			
+			:
+
+			<Card.Text></Card.Text>
+			}
 		</Card.Body>
 		</Card>
 
 		<Button as={Link} to="/messages/newMessage" className="clear-message m-2  bg-warning text-dark">Reply</Button>
-		<Button as={Link} to="/messages/newMessage" disabled className=" m-2 bg-secondary text-dark">Delete</Button>
+		<Button className=" m-2 bg-secondary text-dark" onClick={() => deleteItem(`${_id}`)}>Delete</Button>
 
     	</Accordion.Body>
   		</Accordion.Item>

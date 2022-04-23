@@ -22,11 +22,24 @@ export default function Terms(){
 		</Container>
 		</Col>
 
-		<Col xs={11} md={10} lg={8} className="text-center">
-		<h6 className="orderbanner mb-3">Data Privacy</h6>
+		<Col xs={11} md={10} lg={8} >
+		<h6 className="orderbanner my-3 text-center">Data Privacy</h6>
 		<Container className="bg-light p-3 text-left">
 		<p>Credentials:</p>
 		<p>All credentials (such as passwords, bank, id ) of registered users are confidential and will NEVER be given to any authority.</p>
+
+		</Container>
+		</Col>
+
+		<Col xs={11} md={10} lg={8} className="text-left">
+		<h6 className="orderbanner mb-3"> </h6>
+		<Container className="bg-light p-3 text-left">
+		{/*<p>Credentials:</p>*/}
+		<p>App versions:</p>
+		<p>Updated: Sat Apr 23 2022 20:43:56 GMT+0800 (Singapore Standard Time)</p>
+		<p>ver. 1.3.5 : Bug fix, Logs and Routing updates </p>
+		<p>ver. 1.2.0 : Meesaging System</p>
+		<p>ver. 1.0.0</p>
 
 		</Container>
 		</Col>

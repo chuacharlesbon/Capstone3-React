@@ -1,5 +1,5 @@
-
-import { Card, Col, Row, Accordion, InputGroup } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import { Card, Col, Row, Accordion, InputGroup, Button } from 'react-bootstrap'
 
 export default function AdminMesCard ({courseProp}) {
 	//before using props, destructure the object
@@ -10,6 +10,24 @@ export default function AdminMesCard ({courseProp}) {
 	function setMarkRead(_id){
 		fetch(`https://immense-lake-17505.herokuapp.com/messages/markRead/${_id}`, {
 			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${localStorage.getItem("token")}`
+			}
+		})
+		.then(res => {
+			//console.log(res)
+			return res.json()
+		})
+		.then(data => {
+			
+			console.log(data)
+		})
+	}
+
+	function deleteItem(_id){
+		fetch(`https://immense-lake-17505.herokuapp.com/messages/delete/${_id}`, {
+			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -69,6 +87,9 @@ export default function AdminMesCard ({courseProp}) {
 			
 		</Card.Body>
 		</Card>
+
+		<Button as={Link} to="/messages/newMessage" className="clear-message m-2  bg-warning text-dark">Reply</Button>
+		<Button className=" m-2 bg-secondary text-dark" onClick={() => deleteItem(`${_id}`)}>Delete</Button>
 
     	</Accordion.Body>
   		</Accordion.Item>
