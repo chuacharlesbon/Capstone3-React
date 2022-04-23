@@ -17,7 +17,7 @@ export default function RefreshLog(){
 
 	return (
 
-		<Navigate to="/login" />
+		<Navigate to="/" />
 
 		)
 

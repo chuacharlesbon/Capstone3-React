@@ -25,7 +25,7 @@ export default function LogDisplay() {
 		<Row className="px-3 bg-secondary">
 		<Col>
 		<span className="text-light mx-2">Something's not right.</span>
-		<Link to="/refreshlog" className="mx-2 text-info">Click Here</Link>
+		<Link to="/refreshlog" className="mx-2 text-info">Refresh logs here</Link>
 		</Col>
 		</Row>
 		</>
