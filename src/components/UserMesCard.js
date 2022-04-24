@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import { Card, Col, Row, Accordion, InputGroup, Button } from 'react-bootstrap'
+import Swal from "sweetalert2"
 
 
 export default function UserMesCard ({courseProp}) {
@@ -23,6 +24,10 @@ export default function UserMesCard ({courseProp}) {
 		.then(data => {
 			
 			console.log(data)
+			Swal.fire({
+					title: "Message set as Read.",
+					icon: "info"
+				})
 		})
 	}
 
@@ -41,6 +46,10 @@ export default function UserMesCard ({courseProp}) {
 		.then(data => {
 			
 			console.log(data)
+			Swal.fire({
+					title: "Message has been deleted.",
+					icon: "info"
+				})
 		})
 	}
 
