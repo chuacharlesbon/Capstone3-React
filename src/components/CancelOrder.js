@@ -15,7 +15,7 @@ const [ added, setAdded] = useState(false)
 const [newProdId, setNewProdId] = useState('')
 const newStock = stock-quantity
 
-console.log(newStock)
+//console.log(newStock)
 
 const [ setTotalAmount] = useState('')
 
@@ -81,8 +81,8 @@ const enroll = (courseId) => {
 }
 
 useEffect(() => {
-	console.log(courseId)
-	console.log(cardType)
+	//console.log(courseId)
+	//console.log(cardType)
 fetch(`https://immense-lake-17505.herokuapp.com/orders/thisOrder/${courseId}`, {
 	method: "GET",
 		headers: {

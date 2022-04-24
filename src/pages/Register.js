@@ -22,9 +22,9 @@ export default function Register(){
 	const [registered, setRegistered] = useState(false)
 	const [ deliveryAdd, setDeliveryAdd] = useState('')
 
-	console.log(email)
-	console.log(password1)
-	console.log(password2)
+	//console.log(email)
+	//console.log(password1)
+	//console.log(password2)
 
 	function registerUser(e){
 		e.preventDefault()

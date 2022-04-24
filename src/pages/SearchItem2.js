@@ -18,7 +18,7 @@ export default function SearchItem() {
 	/*const {searchItem} = useParams()*/
 
 	function searchItems(e) {
-		console.log(searchItem)
+		//console.log(searchItem)
 		e.preventDefault()
 
 		fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProductParams/${searchItem}`)

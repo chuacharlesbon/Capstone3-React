@@ -12,12 +12,12 @@ export default function SearchItem() {
 	const [searchItem, setSearchItem] = useState('')
 	const [courses, setCourses] = useState([])
 
-	console.log(searchItem)
+	//console.log(searchItem)
 
 	/*const {searchItem} = useParams()*/
 
 	function searchItems(e) {
-		console.log(searchItem)
+		//console.log(searchItem)
 		e.preventDefault()
 
 		fetch(`https://immense-lake-17505.herokuapp.com/orders/searchOrderId/${searchItem}`,{

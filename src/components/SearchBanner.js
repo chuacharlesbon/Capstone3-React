@@ -9,21 +9,21 @@ export default function SearchItem() {
 
 	const [searchItem, setSearchItem] = useState('')
 	const [courses, setCourses] = useState([])
-	const [style] =useState({
+	/*const [style] =useState({
 
 		width: "15rem",
 		height: "10rem"
 		
-	})
-	console.log(searchItem)
+	})*/
+	//console.log(searchItem)
 
-	console.log(style)
+	//console.log(style)
 
 	const itemfound = courses.length
 	/*const {searchItem} = useParams()*/
 
 	function searchItems(e) {
-		console.log(searchItem)
+		//console.log(searchItem)
 		e.preventDefault()
 
 		fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProductParams/${searchItem}`)

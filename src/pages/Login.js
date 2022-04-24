@@ -26,8 +26,8 @@ export default function Login(props){
 		color: "red"
 	})
 
-	console.log(email)
-	console.log(password)
+	//console.log(email)
+	//console.log(password)
 
 
 	function LoginUser(e){
@@ -89,21 +89,21 @@ export default function Login(props){
 			.then(data => {
 				//console.log(data)
 
-				if(data.isAdmin === true){
+				/*if(data.isAdmin === true){*/
 				setUser({
 					id: data._id,
 					isAdmin: data.isAdmin,
 					userName: data.firstName + " " + data.lastName,
 					email: data.email
 				})
-				} else {
+				/*} else {
 					setUser({
 					id: data._id,
 					isAdmin: data.isAdmin,
 					userName: data.firstName + " " + data.lastName,
 					email: data.email
 					})
-				}
+				}*/
 
 
 
@@ -164,7 +164,7 @@ export default function Login(props){
 			<Form.Label><h5>Email Address:</h5></Form.Label>
 			<Form.Text className="text-muted d-block">Please use registered email.
 			</Form.Text>
-			<Form.Control type="email" placeholder="Enter your email here" required value={email} onChange={e => setEmail(e.target.value)}/>
+			<Form.Control type="email" placeholder="Enter your email here" autocomplete required value={email} onChange={e => setEmail(e.target.value)}/>
 			</Form.Group>
 
 			<Form.Group className="my-2" controlId="password">

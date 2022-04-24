@@ -60,7 +60,7 @@ useEffect(()=> {
 
   }//end of else if statement
   else{
-    console.log("ok")
+    console.log("User Clear")
   }
 
 

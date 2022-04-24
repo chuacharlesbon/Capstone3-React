@@ -94,8 +94,8 @@ const enroll = (courseId) => {
 
 
 useEffect(() => {
-	console.log(courseId)
-	console.log(cardType)
+	//console.log(courseId)
+	//console.log(cardType)
 fetch(`https://immense-lake-17505.herokuapp.com/orders/thisOrder/${courseId}`, {
 	method: "GET",
 		headers: {
