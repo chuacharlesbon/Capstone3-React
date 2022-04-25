@@ -89,7 +89,7 @@ export default function UserPvtMessage(){
 
 			<Form.Group controlId="sender">
 			<Form.Label>Sender Email: {user.userName}</Form.Label>
-			<Form.Control type="email" value={user.email} disabled required onChange={e => setSender(user.email)}/>
+			<Form.Control type="email" value={user.email} disabled onChange={e => setSender(user.email)}/>
 			</Form.Group>
 
 			<Form.Group controlId="receiver">

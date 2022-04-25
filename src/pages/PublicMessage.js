@@ -65,14 +65,14 @@ export default function PublicMessage(){
 	}
 
 	useEffect(() => {
-		if(content !== "" && receiver !== "") {
+		if(content !== "") {
 			setIsActive(true)
 		} else {
 			setIsActive(false)
 
 		}
 
-	}, [ isActive, content, receiver ])
+	}, [ isActive, content ])
 
 	return(
 		<>
@@ -103,7 +103,7 @@ export default function PublicMessage(){
 
 			<Form.Group controlId="receiver">
 			<Form.Label>Receiver Name:</Form.Label>
-			<Form.Control type="text" disabled required value="Admin" onChange={e => setReceiver("Admin")}/>
+			<Form.Control type="text" disabled value="Admin" onChange={e => setReceiver("Admin")}/>
 			<Form.Text className="text-muted">Must not contain special characters ( &#60; 	&#62; &#38;	&#34; &#39; ' " )
 			</Form.Text>
 			</Form.Group>
