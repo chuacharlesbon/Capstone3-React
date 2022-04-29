@@ -13,7 +13,7 @@ export default function PublicMessage(){
 
 	const [isActive, setIsActive] = useState(false)
 	const [sender, setSender] = useState('')
-	const [receiver, setReceiver] = useState('')
+	const [receiver, setReceiver] = useState('Admin')
 	const [content, setContent] = useState('')
 
 	function sendPMessage(e){
