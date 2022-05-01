@@ -37,7 +37,8 @@ export default function Terms(){
 		{/*<p>Credentials:</p>*/}
 		<p>App versions:</p>
 		<p>Updated: Sat Apr 23 2022 20:43:56 GMT+0800 (Singapore Standard Time)</p>
-	
+		
+		<p>ver. 1.3.7: Bug fix, ChatBot System</p>
 		<p>ver. 1.3.5 : Bug fix, Logs and Routing updates </p>
 		<p>ver. 1.2.0 : Meesaging System</p>
 		<p>ver. 1.0.0</p>

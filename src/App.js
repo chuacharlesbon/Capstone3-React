@@ -38,6 +38,7 @@ import SearchOrder from './pages/SearchOrder'
 import RefreshLog from './pages/RefreshLog'
 import About from './pages/About'
 import Terms from './pages/Terms'
+import Logo from './components/ChatBot'
 
 import { UserProvider } from './UserContext'
 
@@ -132,6 +133,7 @@ useEffect(() => {
       </Routes>
       </Container>
       <Footer/>
+      <Logo/>
     </Router>
     </UserProvider>
     )

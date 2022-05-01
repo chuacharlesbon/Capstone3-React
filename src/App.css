@@ -58,11 +58,22 @@ body {
 /*#form-login, #form-register {
   background-color: rgba(0, 0, 0, 0.2);
 }*/
+@media screen and (max-width: 561px) /*Mobile (+/-) 6inch Setting section*/
+{
+.chatBox {
+  width:  97% !important;
+  right: 0 !important;
+}
+}
+
 
 @media screen and (min-width: 561px) /*Mobile (+/-) 6inch Setting section*/
 {
 #form-login, #form-register, #clear-order, #form-create {
   width:  60vw !important;
+}
+.chatBox {
+  width:  70vw !important;
 }
 }
 
@@ -77,6 +88,9 @@ body {
 {
 #form-login, #form-register, #clear-order, #form-create{
   width:  40vw !important;
+}
+.chatBox {
+  width:  30vw !important;
 }
 }
 
@@ -204,4 +218,59 @@ body {
 .image-banner {
   width: 40rem;
   height: 27rem;
+}
+
+
+.logo {
+  z-index: 5;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: rgba(255, 255, 0, 0.5);
+  padding: .6rem;
+  border-radius: .5rem;
+}
+
+.actChat:hover  .logo {
+  background-color: rgba(255, 255, 0, 1.0);
+  padding: .3rem;
+}
+
+.actChat:active  .logo {
+  padding: .5rem;
+}
+
+/*.chatBox, .actChat {
+  z-index: 5;
+}*/
+.chatBox {
+  position: fixed;
+  width: 30%;
+  height: 25rem;
+  bottom: 4rem;
+  right: 4rem;
+  z-index: 5;
+}
+
+.closeicon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.botchan {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.chatContent {
+  overflow-y: scroll;
+  height: 8rem;
+  border-bottom: 0.1rem solid #ffc107;
+  border-top: 0.1rem solid #ffc107;
+}
+
+.closeicon:active {
+  width: 1.4rem;
+  height: 1.4rem;
 }
