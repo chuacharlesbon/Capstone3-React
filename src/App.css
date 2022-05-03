@@ -62,7 +62,7 @@ body {
 {
 .chatBox {
   width:  97% !important;
-  right: 0 !important;
+  right: 0.3rem !important;
 }
 }
 
@@ -265,7 +265,7 @@ body {
 
 .chatContent {
   overflow-y: scroll;
-  height: 8rem;
+  height: 11rem;
   border-bottom: 0.1rem solid #ffc107;
   border-top: 0.1rem solid #ffc107;
 }
@@ -273,4 +273,16 @@ body {
 .closeicon:active {
   width: 1.4rem;
   height: 1.4rem;
+}
+
+.chatreply {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.marginL {
+  margin-left: 2.5rem;
+}
+
+.marginR {
+  right: 0;
 }
