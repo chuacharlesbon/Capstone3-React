@@ -205,6 +205,7 @@ useEffect(()=> {
           <NavDropdown.Item  as={Link} to="/messages/UserMes" >New Messages <Badge bg="danger"></Badge></NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/messages/UserMesClear" >Message Inbox <Badge bg="danger"></Badge></NavDropdown.Item>
           <NavDropdown.Item  as={Link} to="/messages/newMessage" >Create Message </NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/chatList" >Chats </NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item  as={Link} to="/messages/newMessage" disabled>Request Admin<br/>to Retailer Account </NavDropdown.Item>
           <NavDropdown.Divider />

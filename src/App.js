@@ -39,6 +39,7 @@ import RefreshLog from './pages/RefreshLog'
 import About from './pages/About'
 import Terms from './pages/Terms'
 import Logo from './components/ChatBot'
+import ChatList from './pages/ChatList'
 
 import { UserProvider } from './UserContext'
 
@@ -129,6 +130,7 @@ useEffect(() => {
         <Route exact path="/about" element={<About/>} />
         <Route exact path="/terms" element={<Terms/>} />
         <Route exact path="/refreshlog" element={<RefreshLog/>} />
+        <Route exact path="/chatList" element={<ChatList/>} />
         <Route exact path="*" element={<ErrorPage/>}/>
       </Routes>
       </Container>

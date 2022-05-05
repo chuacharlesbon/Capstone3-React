@@ -53,6 +53,9 @@ export default function CourseCard ({courseProp}) {
 			<Button  as= {Link} to={`/products/orderFull/${_id}`} className="d-block my-2 bg-light text-dark card-btn" >Buy Item</Button>
 			</Col>
 
+			{/*<Link to={name} className="mx-auto">Visit Seller Shop</Link>*/}
+			<Link to='/products' className="mx-auto">Visit Seller Shop</Link>
+
 			</Row>
 			
 		</Card.Body>
