@@ -12,7 +12,7 @@ export default function ChatList () {
 	const [clear, setClear] = useState(false)
 
 	function refreshData(){
-		fetch('http://localhost:4000/chats/userChatList',{
+		fetch('https://immense-lake-17505.herokuapp.com/chats/userChatList',{
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${localStorage.getItem("token")}`
