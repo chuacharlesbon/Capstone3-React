@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&family=Open+Sans&family=Poppins&display=swap');
+
 * {
   margin:  0;
   padding: 0;
@@ -58,6 +60,14 @@ body {
 /*#form-login, #form-register {
   background-color: rgba(0, 0, 0, 0.2);
 }*/
+@media screen and (max-width: 320px) /*Mobile (+/-) 6inch Setting section*/
+{
+.video-card {
+  width: 15rem !important;
+  height: 10rem !important;
+}
+}
+
 @media screen and (max-width: 561px) /*Mobile (+/-) 6inch Setting section*/
 {
 .chatBox {
@@ -212,8 +222,8 @@ body {
 }
 
 .image-ads {
-  width: 16rem;
-  height: 3.2rem;
+  width: 17rem !important;
+  height: 6rem !important;
 }
 
 .card-payorder{
@@ -244,7 +254,7 @@ body {
 
 #image-profile2 {
   width: 15rem;
-  height: 15rem;
+  height: 14rem;
 }
 
 .aboutback {
@@ -359,7 +369,7 @@ body {
   animation: fadeLeft 0.7s ease-in both;
 }
 
-.background-section, .aboutback, .training-section, .message-section, .about-message, .message-banner, .public-message, .ads, .highlights-fade, .search-banner, .products-banner, #prodComp  {
+.background-section, .aboutback, .training-section, .message-section, .about-message, .message-banner, .public-message, .ads, .highlights-fade, .search-banner, .products-banner, #prodComp, .about-me-row .cards-about {
   animation: fadeIn 0.7s ease-in both;
 }
 
@@ -402,7 +412,7 @@ body {
 }
 
 .newfont {
-  font-family: 'Garamond';
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .bg-tech {
@@ -417,4 +427,48 @@ body {
   background-image: url('../public/cardback3.jpg');
   background-size: cover;
   background-attachment: scroll;
+}
+
+.cards-1 {
+  background-image: url('../public/85193172_p0.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+}
+.cards-3 {
+  background-image: url('../public/275891701_289352820005158_1122565277362170702_n.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+}
+.cards-2 {
+  background-image: url('../public/74369180_p0.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+.cards-about {
+  min-height: 20rem;
+}
+
+.about-me-row .cards-about:nth-child(2) {
+  animation-delay: 1s;
+}
+.about-me-row .cards-about:nth-child(3) {
+  animation-delay: 1.8s;
+}
+
+.video-card {
+  width: 18rem;
+  height: 12rem;
+}
+
+.bg-pink {
+  background-color: rgba(240, 100, 180, 0.5);
+}
+.closeButton:hover {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.closeButton:active {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: white !important;
+  border: 0.2rem inset white;
 }

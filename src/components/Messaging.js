@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext} from 'react'
-import { Form, Button, Row, Col} from 'react-bootstrap'
+import { Form, Button, Row, Col, Nav} from 'react-bootstrap'
 import Swal from "sweetalert2"
 import Advertisement from '../components/Advertisement'
 import AboutMessage from '../components/AboutMessage'
@@ -123,6 +123,8 @@ export default function PublicMessage(){
 				</Button>
 			}
 			</Form.Group>
+
+			<Nav.Link href="mailto:charlessbonnchua@gmail.com?cc=chuacharlesbon@gmail.com&subject=Client%20Inquiry" target="_top">Click to send via Gmail</Nav.Link>
 		</Form>
 
 		</Col>

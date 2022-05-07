@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {Row, Col, Card, Container, Navbar, Nav, NavDropdown} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import {Link} from 'react-router-dom'
@@ -5,9 +6,27 @@ import Messaging from '../components/Messaging'
 import backlogo from '../components/backlogo.png'
 import zuittCert from '../components/zuiit-completion-cert.jpeg'
 import clogo from '../components/c-logo.jpg'
-import botchan from '../components/botchan.jpg'
+import download from '../components/download-icon.png'
+import close from '../components/closeicon.png'
 
 export default function About2(){
+
+	const [isActive, setIsActive] = useState({
+		display: "none"
+	})
+
+	function activeItem(){
+		if(isActive.display === "none"){
+			setIsActive({
+				display: "block"
+			})
+		}else{
+		setIsActive({
+		display: "none"
+		})
+		}
+	}
+
 
 	return(
 
@@ -46,7 +65,7 @@ export default function About2(){
 	      <Nav className="me-auto d-flex">
 	        <Nav.Link href="https://chuacharlesbon.github.io/portfolio-chua/#project" target="_blank" className="profile-nav">My Projects</Nav.Link>
 	        <Nav.Link href="https://www.linkedin.com/in/charles-chua-12116122a/" target="_blank" className="profile-nav">My Skills</Nav.Link>
-	         <Nav.Link href="#" target="_blank" className="profile-nav">More About Me</Nav.Link>
+	         <Nav.Link  onClick={() => activeItem()} target="_blank" className="profile-nav">More About Me</Nav.Link>
 	        <NavDropdown title="Social" id="basic-nav-dropdown">
 	          <NavDropdown.Item href="https://gitlab.com/chuacharlesbon"  target="_blank" className="profile-nav">GitLab</NavDropdown.Item>
 	          <NavDropdown.Item href="https://github.com/chuacharlesbon"  target="_blank" className="profile-nav">GitHub</NavDropdown.Item>
@@ -58,6 +77,52 @@ export default function About2(){
 	    </Navbar.Collapse>
 	  </Container>
 	</Navbar>
+
+	<Container style={isActive}>
+	<Col xs={1} className="bg-secondary mt-2 rounded closeButton" onClick={() => activeItem()}>
+	<Image src={close} className="closeicon m-2 " title="Close ChatBox" />
+	<span className="">Close</span>
+	</Col>
+
+
+
+	<Row className="align-items-center justify-content-center mt-5 mx-1 about-me-row">
+
+	<Col lg={4} md={6} xs={12} className="cards-about cards-1 bg-info my-2 text-center">
+	
+	<iframe
+      src={`https://www.youtube.com/embed/CejkspNOJ8Y`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Embedded youtube"
+      className="mx-auto text-center mt-3 video-card"
+    />
+    <h4 className="newfont text-danger bg-pink mt-3">My Programming Languages</h4>
+	</Col>
+
+	<Col lg={4} md={6} xs={12} className="cards-about cards-2 bg-info my-2 text-center">
+	<video className="video-card mt-3" controls>
+		  <source src="#" type="video"/>
+		  Your browser does not support the video tag.
+		</video>
+	<h4 className="newfont text-danger bg-pink mt-3">My Favorite Anime</h4>
+	</Col>
+
+	<Col lg={4} md={6} xs={12} className="cards-about cards-3 bg-info my-2 mx-auto text-center">
+	<iframe
+      src={`https://www.youtube.com/embed/JIVpTLEV2Ac`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Embedded youtube"
+      className="mx-auto text-center mt-3 video-card"
+    />
+    <h4 className="newfont text-danger bg-pink mt-3">A Sneek Peek of Me!</h4>
+	</Col>
+
+	</Row>
+	</Container>
 
 
 	<div className="d-block d-lg-flex align-items-center my-5 bg-back">
@@ -112,14 +177,18 @@ export default function About2(){
 	</Col>
 
 	</Col>
-	
+
+	<div className="mx-auto">
 	<Row className="d-flex align-items-center justify-content-center">
-	<Col xs={12} md={6} lg={4} className=" mx-auto bg-info text-center p-2">
-	<Image src={botchan} className="botchan rounded-circle" title="Hi there!"/>
-	<Link to="/chua-cv-web-dev.pdf" target="_blank" download className="profile-nav">Click to Download CV</Link>
+	<Col xs={12} md={6} lg={4} className=" m-auto bg-info text-center p-2">
+	{/*<Image src={botchan} className="botchan rounded-circle" title="Hi there!"/>*/}
+	<Link to="/chua-cv-web-dev.pdf" target="_blank" download className="profile-nav mx-2">Click to Download CV</Link>
+	<Image src={download} className="closeicon" title="Hi there!"/>
 	</Col>
 	</Row>
-	
+	</div>
+
+
 	</Row>
 
 	<Row className="my-3 p-3 align-items-center justify-content-center about-photos">
@@ -130,6 +199,8 @@ export default function About2(){
 
 
 	</div>
+
+	
 
 
 	
