@@ -8,6 +8,7 @@ import zuittCert from '../components/zuiit-completion-cert.jpeg'
 import clogo from '../components/c-logo.jpg'
 import download from '../components/download-icon.png'
 import close from '../components/closeicon.png'
+import settings from '../components/settingsicon.png'
 
 export default function About2(){
 
@@ -79,7 +80,7 @@ export default function About2(){
 	</Navbar>
 
 	<Container style={isActive}>
-	<Col xs={1} className="bg-secondary mt-2 rounded closeButton" onClick={() => activeItem()}>
+	<Col xs={3} md={2} xl={1} className="bg-secondary mt-2 rounded closeButton text-center" onClick={() => activeItem()}>
 	<Image src={close} className="closeicon m-2 " title="Close ChatBox" />
 	<span className="">Close</span>
 	</Col>
@@ -98,15 +99,26 @@ export default function About2(){
       title="Embedded youtube"
       className="mx-auto text-center mt-3 video-card"
     />
-    <h4 className="newfont text-danger bg-pink mt-3">My Programming Languages</h4>
+    <h4 className="newfont text-danger bg-pink mt-3 p-2 aboutlist">My Programming Languages</h4>
 	</Col>
 
 	<Col lg={4} md={6} xs={12} className="cards-about cards-2 bg-info my-2 text-center">
-	<video className="video-card mt-3" controls>
-		  <source src="#" type="video"/>
-		  Your browser does not support the video tag.
-		</video>
-	<h4 className="newfont text-danger bg-pink mt-3">My Favorite Anime</h4>
+	
+	<h4 className="newfont text-danger bg-pink2 mt-2 mb-5 py-2"> &#10038; Facts About Me &#10038;</h4>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1 mt-3">Work Experience</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Education</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Awards</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Hobbies</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Fun Facts</p>
+
+	<div className=' d-flex justify-content-end'>
+	<div className="bg-white game-size p-1 mt-4 rounded">
+	<Image src={download} className="closeicon mx-1" title="Download Game"/>
+	<Image src={settings} className="closeicon mx-1" title="Game Settings"/>
+	<Image src={close} className="closeicon mx-1" title="Close Game" onClick={() => activeItem()} />
+	</div>
+	</div>
+
 	</Col>
 
 	<Col lg={4} md={6} xs={12} className="cards-about cards-3 bg-info my-2 mx-auto text-center">
@@ -118,7 +130,7 @@ export default function About2(){
       title="Embedded youtube"
       className="mx-auto text-center mt-3 video-card"
     />
-    <h4 className="newfont text-danger bg-pink mt-3">A Sneek Peek of Me!</h4>
+    <h4 className="newfont text-danger bg-pink mt-3 p-2 aboutlist">A Sneek Peek of Me!</h4>
 	</Col>
 
 	</Row>
