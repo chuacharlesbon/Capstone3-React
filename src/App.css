@@ -64,6 +64,9 @@ body {
   width:  97% !important;
   right: 0.3rem !important;
 }
+.training-section {
+  border:  lightgoldenrodyellow 1rem solid;
+}
 }
 
 
@@ -74,6 +77,9 @@ body {
 }
 .chatBox {
   width:  70vw !important;
+}
+.training-section {
+  border:  lightgoldenrodyellow 1rem solid;
 }
 }
 
@@ -94,12 +100,49 @@ body {
 }
 }
 
-/*@media screen and (min-width: 1024px) 
+@media screen and (min-width: 1024px) 
 {
-#form-login, #form-register, #clear-order, #form-create {
-  width:  35vw !important;
+
+.background-section:hover, .training-section:hover, .training-section2:hover {
+  
+  width: 70%; 
 }
+.background-section{
+  width:  100%;
+  transition: width 0.7s;
+}
+
+.training-section {
+  width:  100%;
+  transition: width 0.7s;
+  border:  lightgoldenrodyellow 1rem solid;
+}
+.training-section2 {
+  width:  100%;
+  transition: width 0.7s;
+}
+/*.training-section:hover{
+  width: 70%;
+  margin-left: 29%;
 }*/
+.about-photos {
+  display: none !important;
+}
+
+.background-section:hover + .about-photos{
+  display: block !important;
+  margin:  auto;
+}
+
+.training-section:hover + .about-photos{
+  display: block !important;
+  margin:  auto;
+}
+.training-section2:hover + .about-photos{
+  display: block !important;
+  margin:  auto;
+}
+}
 
 .nav-btn, .navhome-btn {
   transition: 0.8s;
@@ -198,7 +241,8 @@ body {
     width: 6.5rem;
 }
 
-.image-profile {
+
+#image-profile2 {
   width: 15rem;
   height: 15rem;
 }
@@ -275,7 +319,7 @@ body {
   height: 1.4rem;
 }
 
-.chatreply {
+.chatreply, .shadowbox {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
@@ -285,4 +329,92 @@ body {
 
 .marginR {
   right: 0;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-10%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.banner-fade, #form-search{
+  animation: fadeLeft 0.7s ease-in both;
+}
+
+.background-section, .aboutback, .training-section, .message-section, .about-message, .message-banner, .public-message, .ads, .highlights-fade, .search-banner, .products-banner, #prodComp  {
+  animation: fadeIn 0.7s ease-in both;
+}
+
+.clearback {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.backlogo-img {
+  width: 12rem;
+  height: 12rem;
+}
+
+.aboutMe {
+  background-color: lightblue;
+}
+
+.resize-row {
+  width: 99%;
+}
+
+.bg-blue {
+  background-color: lightblue;
+}
+.clogo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.cbrand:active {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+.cbrand:hover {
+  background-color: lightblue;
+}
+.profile-nav:hover {
+  border-bottom: 0.2rem solid skyblue;
+}
+.profile-nav:active {
+  border: 0.1rem inset skyblue;
+}
+
+.newfont {
+  font-family: 'Garamond';
+}
+
+.bg-tech {
+  background-image: url('../public/cardback2.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+}
+.bg-tech2 {
+  background-color: rgba(137, 207, 240, 0.4);
+}
+.bg-back {
+  background-image: url('../public/cardback3.jpg');
+  background-size: cover;
+  background-attachment: scroll;
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Container, Row, Col, Form, Button} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
+import Swal from 'sweetalert2'
 import logo from './PinClipart.com_computer-images-clip-art_1651962.png'
 import close from './closeicon.png'
 import botchan from './botchan.jpg'
@@ -58,31 +59,75 @@ function sendChat(e){
 		<Replies key={reply.content} chatProp={reply}/>
 		)
 }))*/
-	if(content === "A"){
+	if(content.toUpperCase() === "A"){
 		replies.push({content : content, adminContent : "Hi there! Thank you for using ShopNetwork. To Get Started, please proceed to Register Section to Create an Account with Us!. After a successful registration, you can now login and have an effortless Shopping experience!"})
 		setContent("")
 	}
-	else if (content === "B"){
+	else if (content.toUpperCase() === "B"){
 		replies.push({content : content, adminContent : "Hi there! Thank you for using ShopNetwork. To Buy Products, first you need to create an account to register your details such as name and delivery address. You can proceed to Register section to create account. \nIf you already have an account, you can now proceed to Products section and order options will now be enabled to login users.\nAdd to cart option does not require purchase and transactions.\nBuy Item and Order options require purchase and transaction requirements like amount to be paid, bank details and user credentials."})
 		setContent("")
 	}
-	else if (content === "C"){
+	else if (content.toUpperCase() === "C"){
 		replies.push({content : content, adminContent: "Hi there! If you're having trouble with a transaction, First, you may confirm the transaction through the Order Section and select Transaction History. You can forward the concern to our Admin using the Contact Admin link at the footer with the message content of Transaction ID number and about the issue. A message ticket will be provided. Your concern may take 1-2 business days depending on the issue. Thank you very much! " })
 		setContent("")
 	}
-	else if (content === "D"){
+	else if (content.toUpperCase() === "D"){
 		replies.push({content : content, adminContent: "Hi there, To know the details of your Orders, you may find the details (such as Order/Transactions Number, Status, and Payment Info) at the ORDER section. You can forward any concern to our Admin using the Contact Admin link at the footer with the message content of Transaction ID number and about the issue. A message ticket will be provided. Your concern may take 1-2 business days depending on the issue. Thank you very much! " })
 		setContent("")
 	}
-	else if (content === "E"){
-		replies.push({content : content, adminContent: "Hi there, To ask for further Assistance, you may message us directly via Contact Admin link provided below the page footer. A message ticket will be provided. Your concern may take 1-2 business days depending on the issue. Thank you very much!" })
+	else if (content.toUpperCase() === "E"){
+
+		replies.push({content : content, adminContent: "Hi there, we've received your message. To ask for further Assistance, you may message us directly via Contact Admin link provided below the page footer. A message ticket will be provided. Your concern may take 1-2 business days depending on the issue. Thank you very much!" })
+		setContent("")
+	}
+	else if (content.length > 5) {
+		fetch('https://immense-lake-17505.herokuapp.com/messages', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${localStorage.getItem("token")}`
+			},
+			body: JSON.stringify({
+				sender: "Client",
+				receiver: "Admin",
+				content: content
+			})
+		})
+		.then(res => {
+			//console.log(res)
+			return res.json()
+		})
+		.then(data => {
+			if(data.receiver === "Admin"){
+				Swal.fire({
+				  position: 'top-end',
+				  icon: 'success',
+				  title: 'Your message was sent',
+				  showConfirmButton: false,
+				  timer: 1000
+				})
+			}
+			else{
+				Swal.fire({
+				  position: 'top-end',
+				  icon: 'warning',
+				  title: 'Chat Unknown',
+				  showConfirmButton: false,
+				  timer: 1000
+				})
+			}
+		})
+		replies.push({content : content, adminContent: "Hi there, we received your message. We'll get back to you as soon as we can" })
+		setContent("")
+	}
+	else if (content.length > 2) {
+		replies.push({content : content, adminContent: "Hi there, it seems you've entered an invalid keyword" })
 		setContent("")
 	}
 	else {
-		replies.push({content : content, adminContent: "Hi there, it seems the keyword you entered is Invalid." })
+		replies.push({content : content, adminContent: "Hi there! It seems you've entered an invalid keyword" })
 		setContent("")
 	}
-
 	/*setContent("")*/
 }
 

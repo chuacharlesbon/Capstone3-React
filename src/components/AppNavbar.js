@@ -3,6 +3,7 @@ import {Navbar, Container, Nav, NavDropdown, Badge} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 /*v5 navlink,link*/
 import UserContext from '../UserContext'
+import slogo from './s-logo.png'
 
 export default function AppNavbar(){
 	
@@ -71,7 +72,14 @@ useEffect(()=> {
     <>
 		<Navbar className="bg-info" expand="lg" sticky="top" >
     <Container>
-    <Navbar.Brand as={Link} to="/">ShopNetwork</Navbar.Brand>
+    <Navbar.Brand href="/" className=" p-1 align-items-center d-flex">
+            <img
+              src={slogo}
+              className="d-inline-block align-top clogo rounded-circle img-fluid"
+              alt="S Logo"
+            />
+            <span className="mx-2">ShopNetwork</span>
+          </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
@@ -152,7 +160,14 @@ useEffect(()=> {
 <>
 <Navbar className="bg-warning" expand="lg" sticky="top" >
     <Container>
-    <Navbar.Brand as={Link} to="/">ShopNetwork</Navbar.Brand>
+    <Navbar.Brand href="/" className=" p-1 align-items-center d-flex">
+            <img
+              src={slogo}
+              className="d-inline-block align-top clogo rounded-circle img-fluid"
+              alt="S Logo"
+            />
+            <span className="mx-2">ShopNetwork</span>
+          </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
@@ -226,7 +241,14 @@ useEffect(()=> {
 <>
 <Navbar className="bg-warning" expand="lg" sticky="top" >
     <Container>
-    <Navbar.Brand as={Link} to="/">ShopNetwork</Navbar.Brand>
+    <Navbar.Brand href="/" className=" p-1 align-items-center d-flex">
+            <img
+              src={slogo}
+              className="d-inline-block align-top clogo rounded-circle img-fluid"
+              alt="S Logo"
+            />
+            <span className="mx-2">ShopNetwork</span>
+          </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
@@ -256,7 +278,14 @@ useEffect(()=> {
 <>
 <Navbar className="bg-warning" expand="lg" sticky="top" >
     <Container>
-    <Navbar.Brand as={Link} to="/">ShopNetwork</Navbar.Brand>
+    <Navbar.Brand href="/" className=" p-1 align-items-center d-flex">
+            <img
+              src={slogo}
+              className="d-inline-block align-top clogo rounded-circle img-fluid"
+              alt="S Logo"
+            />
+            <span className="mx-2">ShopNetwork</span>
+          </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">

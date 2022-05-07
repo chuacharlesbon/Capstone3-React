@@ -6,7 +6,7 @@ import Image from "react-bootstrap/Image";
 export default function Highlights () {
 
 	return (
-		<Row className="mt-3 mb-3">
+		<Row className="mt-3 mb-3 highlights-fade">
 
 		<Col xs={12}  md={6} lg={4} className="text-center mx-auto my-3">
 			<Card className="cardHighlight p-3">

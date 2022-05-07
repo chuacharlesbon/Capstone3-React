@@ -47,7 +47,7 @@ export default function SearchItem() {
 	
 	return (
 		<>
-		<Accordion defaultActiveKey={['0']} alwaysOpen className="my-2">
+		<Accordion defaultActiveKey={['0']} alwaysOpen className="my-2 search-banner">
   		<Accordion.Item eventKey="0">
     	<Accordion.Header id="searchhead" className="bg-warning"><h6 className="text-dark">Search Item by Name </h6></Accordion.Header>
     	<Accordion.Body>

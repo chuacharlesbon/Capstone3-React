@@ -3,6 +3,7 @@ import {useContext } from 'react'
 import Banner from '../components/Banner'
 import Highlights from '../components/Highlights'
 import AdminHome from '../components/AdminHome'
+import Advertisement from '../components/Advertisement'
 import UserContext from '../UserContext'
 //import LogDisplay from './components/LogDisplay'
 
@@ -24,6 +25,7 @@ const {user} = useContext(UserContext)
 			{/*<LogDisplay/>*/}
 			<Banner/>
 			<Highlights/>
+			<Advertisement/>
 		</>	
 		}
 		</Fragment>

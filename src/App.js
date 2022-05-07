@@ -36,7 +36,7 @@ import SearchItem2 from './pages/SearchItem2'
 import AdminProducts from "./pages/AdminProducts"
 import SearchOrder from './pages/SearchOrder'
 import RefreshLog from './pages/RefreshLog'
-import About from './pages/About'
+import About from './pages/About2'
 import Terms from './pages/Terms'
 import Logo from './components/ChatBot'
 import ChatList from './pages/ChatList'

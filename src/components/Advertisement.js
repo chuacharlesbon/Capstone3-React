@@ -10,7 +10,7 @@ export default function Advertisement ({orderProp}) {
 
 	return (
 	
-		<Row className="text-center mx-auto justify-content-center mt-5 banner">
+		<Row className="text-center mx-auto justify-content-center mt-5 banner ads">
 		
 		<Col xs={12}/* md={6}*/  className="text-center mx-auto justify-content-center m-2 p-2">
 		<p>This is an advertisement</p>

@@ -1,6 +1,8 @@
-import {Row, Col, Card} from 'react-bootstrap'
+import {Row, Col, Card, Container} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import Messaging from '../components/Messaging'
+import backlogo from '../components/backlogo.png'
+import zuittCert from '../components/zuiit-completion-cert.jpeg'
 
 export default function About(){
 
@@ -8,7 +10,8 @@ export default function About(){
 
 	<>
 
-	<Row className="align-items-end mt-2 mb-5 aboutback p-3">
+	<Row className="align-items-end mt-2 mb-5 aboutback p-3 ">
+	
 	<Col xs={0} lg={4} xl={3} className="d-none d-lg-flex text-center justify-contents-center">
 	<Image src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t1.6435-9/199210599_4425407134144695_9189103713052183258_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFcrJ_3GBq4U8rp8COAinIQjTAUCp-maZiNMBQKn6ZpmJ02F9pyoJE6vLgjBM3Wo6rVty7QUZ55fBneORUxCZiv&_nc_ohc=XZTjvs1iy0YAX93BjM5&_nc_ht=scontent.fmnl17-1.fna&oh=00_AT9xJLv49DCyD9GuH5VbVq3qv6NLpkhaV05NKQcO78ebFQ&oe=62872F9A" className="mx-auto text-center d-none d-lg-block image-profile rounded-circle img-fluid"/>
 	</Col>
@@ -16,23 +19,38 @@ export default function About(){
 	<Col xs={12} md={6} lg={6} xl={7} className="bg-warning p-3 text-center text-lg-start mx-auto rounded" >
 	<h4>Charles Bon Chua</h4>
 	<p>Full Stack Web Developer</p>
+	<hr/>
+	<p>Designing &diams; Web Developer &diams; Programming &diams; Supervisor &diams; Writing</p>
 	</Col>
+	
 	</Row>
 
-	<Row className="mt-5 py-4 banner">
-	<h3 className="text-center orderbanner">Background</h3>
+
+	<div className="d-block d-lg-flex align-items-center">
+	<Row className="mt-5 p-4 banner background-section">
+	<Container className="bg-light shadowbox">
+	<h3 className="text-center orderbanner my-3">Background</h3>
 	<Col xs={12} md={10} lg={8} xl={7} className="text-center mx-auto py-4">
 	<Card.Text>
 	Charles Bon Chua (born Filipino on May 12) studied Full-Stack Web Development at Zuitt Learning Institute Inc. He has also served as an On-Site Supervisor in JCW Inc. He was also known as an academic tutor in mathematics; assistant head chef and trainer in the food industry.
 	</Card.Text>
 	</Col>
+	</Container>
 	</Row>
+
+	<Row className="my-3 banner p-3 align-items-center justify-content-center about-photos">
+	<Col className="mx-auto text-center">
+	<Image src={backlogo} className="img-fluid mx-auto text-center backlogo-img"/>
+	</Col>
+	</Row>
+
+	</div>
 
 	{/*<Row className="banner my-3 p-3">
 	
 	</Row>*/}
-
-	<Row className="banner my-3 justify-contents-center p-3	align-items-center">
+	<div className="d-block d-lg-flex align-items-center">
+	<Row className="bg-light my-3 justify-contents-center p-4 shadowbox align-items-center training-section">
 	<h3 className="text-center orderbanner mb-5">Trainings</h3>
 	<Col xs={12} md={6} lg={3} className="p-1 mx-auto text-center ">
 	<Image src="https://d3ojsfl21hfxhc.cloudfront.net/assets/zuitt/zuittlogo.png" className="mx-2 image-zuitt img-fluid"/>
@@ -61,6 +79,17 @@ export default function About(){
 
 	</Col>
 	</Row>
+
+	<Row className="my-3 banner p-3 align-items-center justify-content-center about-photos">
+	<Col className="mx-auto text-center">
+	<Image src={zuittCert} className="img-fluid mx-auto text-center backlogo-img"/>
+	</Col>
+	</Row>
+
+
+	</div>
+	
+
 
 	<Messaging/>
 	</>

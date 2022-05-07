@@ -27,7 +27,7 @@ export default function Courses () {
 
 	return (
 		<>
-			<Container id="prodFood">
+			<Container id="prodFood" className="products-banner">
 			<Container>
 			<Row className="justify-content-center text-center mx-auto my-3">
 

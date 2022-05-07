@@ -4,7 +4,7 @@ import { Row, Col, Container, Button, Carousel } from 'react-bootstrap';
 export default function Banner(){
 
 	return (
-		<Row className="banner row align-items-center justify-content-center">
+		<Row className="banner row align-items-center justify-content-center banner-fade">
 		<Col lg={4} xs={12} className="">
 			<Container className="my-3 p-3">
 				<h1>ShopNetwork Inc</h1>

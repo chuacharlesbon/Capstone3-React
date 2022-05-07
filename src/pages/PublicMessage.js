@@ -78,7 +78,7 @@ export default function PublicMessage(){
 		<>
 		<MessageBanner/>
 
-		<Row className="justify-content-center">
+		<Row className="justify-content-center public-message">
 		<Col xs={12} md={8} lg={6} xl={5}>
 
 		<Form id="form-message" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => sendPMessage(e)}>

@@ -78,10 +78,10 @@ export default function PublicMessage(){
 		<>
 		<AboutMessage/>
 
-		<Row className="justify-content-center">
+		<Row className="justify-content-center message-section">
 		<Col xs={12} md={8} lg={6} xl={5}>
 
-		<Form id="form-message" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => sendPMessage(e)}>
+		<Form className="border border-secondary p-3 my-3 mx-auto bg-info" onSubmit={e => sendPMessage(e)}>
 			
 			{ (userId !== null)?
 
