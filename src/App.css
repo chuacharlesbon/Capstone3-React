@@ -364,8 +364,18 @@ body {
     transform: translate3d(0, 0, 0);
   }
 }
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translate3d(+10%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
 
-.banner-fade, #form-search{
+.banner-fade, #form-search, .cards{
   animation: fadeLeft 0.7s ease-in both;
 }
 
@@ -402,7 +412,7 @@ body {
   height: 2.3rem;
 }
 .cbrand:hover {
-  background-color: lightblue;
+  background-color: skyblue;
 }
 .profile-nav:hover {
   border-bottom: 0.2rem solid skyblue;
@@ -422,6 +432,11 @@ body {
 }
 .bg-tech2 {
   background-color: rgba(137, 207, 240, 0.4);
+  transition: 0.7s;
+}
+
+.bg-tech2:hover {
+  background-color: rgba(137, 207, 240, 1.0);
 }
 .bg-back {
   background-image: url('../public/cardback3.jpg');
@@ -463,9 +478,11 @@ body {
 
 .bg-pink {
   background-color: rgba(240, 100, 180, 0.5);
+  transition: 0.7s;
 }
 .bg-pink2 {
   background-color: pink;
+  transition: 0.7s;
 }
 .closeButton:hover {
   background-color: rgba(0, 0, 0, 0.5) !important;
@@ -486,4 +503,33 @@ body {
 }
 .game-size {
   width: 30%;
+}
+
+.card-body1 {
+  background-image: url('../public/industry.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  width: 20rem;
+}
+.card-body2 {
+  background-image: url('../public/kuyaj.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  width: 20rem;
+}
+.card-body3 {
+  background-image: url('../public/training2.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  width: 20rem;
+}
+.card-body4 {
+  background-image: url('../public/ck2015.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+  width: 20rem;
 }

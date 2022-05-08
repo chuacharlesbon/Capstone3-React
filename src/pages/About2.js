@@ -16,6 +16,14 @@ export default function About2(){
 		display: "none"
 	})
 
+	const [activeWork, setActiveWork] = useState({
+		display: "none"
+	})
+
+	const [activeEduc, setActiveEduc] = useState({
+		display: "none"
+	})
+
 	function activeItem(){
 		if(isActive.display === "none"){
 			setIsActive({
@@ -28,6 +36,37 @@ export default function About2(){
 		}
 	}
 
+	function activeWorks(){
+		if(activeWork.display === "none"){
+			setActiveWork({
+				display: "block"
+			})
+			setActiveEduc({
+				display: "none"
+			})
+
+		}else{
+		setActiveWork({
+		display: "none"
+		})
+
+		}
+	}
+
+	function activeEducs(){
+		if(activeEduc.display === "none"){
+			setActiveEduc({
+				display: "block"
+			})
+			setActiveWork({
+				display: "none"
+			})
+		}else{
+		setActiveEduc({
+		display: "none"
+		})
+		}
+	}
 
 	return(
 
@@ -102,11 +141,11 @@ export default function About2(){
     <h4 className="newfont text-danger bg-pink mt-3 p-2 aboutlist">My Programming Languages</h4>
 	</Col>
 
-	<Col lg={4} md={6} xs={12} className="cards-about cards-2 bg-info my-2 text-center">
+	<Col lg={4} md={6} xs={12} className="cards-about cards-2 bg-info my-2 text-center d-md-none d-lg-block d-none">
 	
 	<h4 className="newfont text-danger bg-pink2 mt-2 mb-5 py-2"> &#10038; Facts About Me &#10038;</h4>
-	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1 mt-3">Work Experience</p>
-	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Education</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1 mt-3" onClick={() => activeWorks()}>Work Experience</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1" onClick={() => activeEducs()}>Education</p>
 	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Awards</p>
 	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Hobbies</p>
 	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Fun Facts</p>
@@ -133,7 +172,128 @@ export default function About2(){
     <h4 className="newfont text-danger bg-pink mt-3 p-2 aboutlist">A Sneek Peek of Me!</h4>
 	</Col>
 
+	<Col lg={4} md={6} xs={12} className="cards-about cards-2 bg-info my-2 text-center d-block d-md-block d-lg-none">
+	
+	<h4 className="newfont text-danger bg-pink2 mt-2 mb-5 py-2"> &#10038; Facts About Me &#10038;</h4>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1 mt-3" onClick={() => activeWorks()}>Work Experience</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1" onClick={() => activeEducs()}>Education</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Awards</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Hobbies</p>
+	<p className="newfont text-danger bg-pink m-0 rounded aboutlist mb-1">Fun Facts</p>
+
+	<div className=' d-flex justify-content-end'>
+	<div className="bg-white game-size p-1 mt-4 rounded">
+	<Link to="/chua-cv-web-dev.pdf" target="_blank" download className="profile-nav mx-2">|<Image src={download} className="closeicon mx-1" title="Download Game"/></Link>
+	<Image src={settings} className="closeicon mx-1" title="Game Settings"/>
+	<Image src={close} className="closeicon mx-1" title="Close Game" onClick={() => activeItem()} />
+	</div>
+	</div>
+
+	</Col>
 	</Row>
+
+	<Container style={activeWork}>
+	<h2 className="newfont orderbanner text-primary text-center mt-5">WORK EXPERIENCES</h2>
+
+	<Row className="align-items-center justify-content-center my-5">
+
+	<Col xs={12} md={6} lg={5} className="cards d-flex justify-content-center my-3">
+	<Card className="card-body1 cards-about">
+	<Card.Body className=" bg-tech2">
+	<Card.Title className="text-center my-5 text-primary">
+	On-Site Supervisor
+	</Card.Title>
+	<Card.Subtitle>
+	• Managed a part of the restaurant branch's inventory and reports<br/>
+	• Handled the employees' training and certification
+	</Card.Subtitle>
+	</Card.Body>
+	</Card>
+	</Col>
+
+	<Col xs={12} md={6} lg={5}  className="cards d-flex justify-content-center my-3">
+	<Card className="card-body2 cards-about">
+	<Card.Body className="bg-tech2">
+	<Card.Title className="text-center my-5 text-primary">
+	Assitant Head Chef
+	</Card.Title>
+	<Card.Subtitle>
+	• Around three years of expertise in food standards and production in the food industry.<br/>
+	• Trained a set of individuals teaching different skills in terms of cooking and creativity.
+	</Card.Subtitle>
+	</Card.Body>
+	</Card>
+	</Col>
+
+	<Col xs={12} md={6} lg={5}  className="cards d-flex justify-content-center my-3">
+	<Card className="card-body3 cards-about">
+	<Card.Body className=" bg-tech2">
+	<Card.Title className="text-center my-5 text-primary">
+	Line Cook
+	</Card.Title>
+	<Card.Subtitle>
+	• Displayed goal-oriented mentality through diligence and completion of several tasks<br/>
+	• Assigns roles and tasks to employees suited to their capabilities through leadership.
+	</Card.Subtitle>
+	</Card.Body>
+	</Card>
+	</Col>
+
+	<Col xs={12} md={6} lg={5} className="cards d-flex justify-content-center my-3">
+	<Card className="card-body4 cards-about ">
+	<Card.Body className="bg-tech2">
+	<Card.Title className="text-center my-5 text-primary">
+	Kitchen Staff
+	</Card.Title>
+	<Card.Subtitle>
+	• Time Management with Academic schedule and Work Hours<br/>
+	• Handled the basic duties as a food prep
+	</Card.Subtitle>
+	</Card.Body>
+	</Card>
+	</Col>
+	</Row>
+	</Container>
+
+	<Container style={activeEduc}>
+	<h2 className="newfont orderbanner text-danger text-center mt-5">EDUCATIONAL BACKGROUND</h2>
+
+	<Row className="align-items-center justify-content-center my-5">
+
+	<Col xs={12} md={6} lg={5} className="cards d-flex justify-content-center my-3">
+	<Card className="card-body1 cards-about">
+	<Card.Body className=" bg-pink aboutlist">
+	<Card.Title className="text-center my-5 text-danger">
+	Technological Institute of the Philippines - QC
+	</Card.Title>
+	<Card.Subtitle>
+	• Bachelor of Science in Civil Engineering
+	</Card.Subtitle>
+	</Card.Body>
+	</Card>
+	</Col>
+
+	<Col xs={12} md={6} lg={5}  className="cards d-flex justify-content-center my-3">
+	<Card className="card-body2 cards-about">
+	<Card.Body className="bg-pink aboutlist">
+	<Card.Title className="text-center my-5 text-danger">
+	Saint Rita College - Manila
+	</Card.Title>
+	<Card.Subtitle>
+	• School Year 2009-2013.<br/>
+	• High School Diploma, First Honorable Mention Award.
+	</Card.Subtitle>
+	</Card.Body>
+	</Card>
+	</Col>
+
+	</Row>
+	</Container>
+
+
+
+
+
 	</Container>
 
 
