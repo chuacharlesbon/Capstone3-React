@@ -4,6 +4,7 @@ import { Form, Button, Col, Container} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import Swal from "sweetalert2"
 import UserContext from '../UserContext'
+import Advertisement from '../components/Advertisement'
 
 export default function Login(props){
 
@@ -198,7 +199,7 @@ export default function Login(props){
 		:
 
 		<>
-		<Container className="d-flex px-1 bg-light justify-content-center align-items-center text-center mt-5">
+		<Container className="d-flex px-1 bg-light justify-content-center align-items-center text-center mt-5 loginbody">
 		
 
 		<Col lg={5} className="d-none d-lg-block mx-auto">
@@ -245,6 +246,7 @@ export default function Login(props){
 		</Col>
 		
 		</Container>
+		<Advertisement/>
 
 		</>
 

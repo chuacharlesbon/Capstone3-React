@@ -375,7 +375,7 @@ body {
   }
 }
 
-.banner-fade, #form-search, .cards{
+.banner-fade, #form-search, .cards, .loginbody{
   animation: fadeLeft 0.7s ease-in both;
 }
 
@@ -532,4 +532,10 @@ body {
   background-attachment: scroll;
   background-position: center;
   width: 20rem;
+}
+.myModal {
+  background-image: url('https://thumbs.dreamstime.com/b/hand-person-use-vote-ballot-box-elections-election-philippines-man-putting-his-waved-flag-background-166012416.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
 }

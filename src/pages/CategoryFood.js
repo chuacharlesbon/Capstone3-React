@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import CourseCard from "../components/CourseCard"
 import SearchBanner from "../components/SearchBanner"
 import Image from "react-bootstrap/Image";
+import Advertisement from '../components/Advertisement'
 
 export default function Courses () {
 	const [courses, setCourses] = useState([])
@@ -76,7 +77,7 @@ export default function Courses () {
 			<Row className="justify-content-md-center">
 			{courses}
 			</Row>
-			
+			<Advertisement/>
 		</>
 		)
 }

@@ -3,7 +3,8 @@ import { Form, Button} from 'react-bootstrap'
 import { Navigate } from 'react-router-dom'
 import Swal from "sweetalert2"
 import UserContext from "../UserContext"
-
+import Advertisement from '../components/Advertisement'
+import Banner from '../components/Banner'
 
 export default function Register(){
 
@@ -126,6 +127,9 @@ export default function Register(){
 		<Navigate to="/login"/>
 
 		: (user.id === undefined || user.isAdmin === undefined || user.email === undefined)?
+
+		<>
+
 		
 		<Form id="form-register" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => registerUser(e)}>
 			<h1 className="text-center">Registration Section</h1>
@@ -217,13 +221,20 @@ export default function Register(){
 			</Form.Group>
 		</Form>
 
+		<Advertisement/>
+		</>
+
 		: (user.id !== null)?
 
 		<Navigate to="/login"/>
 
 		:
 
-		<Form id="form-register" className="border border-secondary p-3 my-3 mx-auto" onSubmit={e => registerUser(e)}>
+		<>
+
+		<Banner/>
+
+		<Form id="form-register" className="border border-secondary p-3 my-3 mx-auto loginbody" onSubmit={e => registerUser(e)}>
 			<h1 className="text-center">Registration Section</h1>
 			<Form.Group controlId="firstName">
 			<Form.Label>First Name:</Form.Label>
@@ -310,6 +321,9 @@ export default function Register(){
 			}
 			</Form.Group>
 		</Form>
+
+		<Advertisement/>
+		</>
 		)
 }
 
