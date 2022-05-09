@@ -18,8 +18,9 @@ export default function Replies({chatProp}) {
 
 		<>
 		<Container className="p-0 m-0 text-end">
-		<Image src={person} className="botchan rounded-circle mx-2" title="Hi there!"/>
-		<span className="rounded chatreply p-3 d-inline-block marginR bg-primary text-light mt-1">{contentA}</span><br/>
+		
+		<span className="rounded chatreply p-2 d-inline-block marginR bg-primary text-light mt-1" title={dateSent}>{contentA}</span>
+		<Image src={person} className="botchan rounded-circle mx-2" title="Hi there!"/><br/>
 		</Container>
 		</>
 		
@@ -28,7 +29,7 @@ export default function Replies({chatProp}) {
 		<>
 		<Container className="p-0 m-0">
 		<Image src={person} className="botchan rounded-circle mx-2" title="Hi there!"/>
-		<span className="rounded chatreply p-3 d-inline-block marginL">{contentA}</span><br/>
+		<span className="rounded chatreply p-2 d-inline-block marginL"  title={dateSent}>{contentA}</span><br/>
 		</Container>
 		</>
 
@@ -37,7 +38,7 @@ export default function Replies({chatProp}) {
 		<>
 		<Container className="p-0 m-0">
 		<Image src={person} className="botchan rounded-circle mx-2" title="Hi there!"/>
-		<span className="rounded chatreply p-3 d-inline-block marginL">{contentA}</span><br/>
+		<span className="rounded chatreply p-2 d-inline-block marginL"  title={dateSent}>{contentA}</span><br/>
 		</Container>
 		</>
 		

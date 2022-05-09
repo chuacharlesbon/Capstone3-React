@@ -18,7 +18,7 @@ const {chatId} = useParams()
 const [content, setContent] = useState('')
 
 useEffect(()=>{
-	fetch(`http://localhost:4000/chats/viewChat/${chatId}`,{
+	fetch(`https://immense-lake-17505.herokuapp.com/chats/viewChat/${chatId}`,{
       method: 'GET',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -48,7 +48,7 @@ useEffect(()=>{
 function sendReply(e){
 	e.preventDefault()
 
-	fetch(`http://localhost:4000/chats/replyChat/${chatId}`, {
+	fetch(`https://immense-lake-17505.herokuapp.com/chats/replyChat/${chatId}`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -63,7 +63,7 @@ function sendReply(e){
 		})
 	})
 
-	fetch(`http://localhost:4000/chats/updateDateChat/${chatId}`, {
+	fetch(`https://immense-lake-17505.herokuapp.com/chats/updateDateChat/${chatId}`, {
 		method: "PUT",
 		headers: {
 			Authorization: `Bearer ${localStorage.getItem("token")}`,
