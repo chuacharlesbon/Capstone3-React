@@ -539,3 +539,8 @@ body {
   background-attachment: scroll;
   background-position: center;
 }
+
+.reply-body {
+  height: 12rem;
+  overflow-y: scroll;
+}

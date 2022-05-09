@@ -10,11 +10,30 @@ export default function ChatCard ({chatProp}) {
 	const {user} = useContext(UserContext)
 
 	const {userName1, userId1, userName2, userId2, content, lastChatDate, _id} = chatProp
+
+	let count = chatProp.replies.length-1
+	const {contentA} = chatProp.replies[count]
 	//console.log(courseProp)
-
-
+	/*const {sender, receiver, contentA, dateSent, view} = chatProp.replies[0]
+	const {sender, receiver, contentA, dateSent, view} = chatProp.replies[1]
+	const {sender, receiver, contentA, dateSent, view} = chatProp.replies[1]*/
+	
 
 	/*const lastReply = replies[replies.length-1]*/
+
+	/*console.log(chatProp.replies[0])
+		console.log(chatProp.replies[1])
+			console.log(chatProp.replies[2])*/
+
+	/*chatProp.replies.map(reply => {
+		let count = 0
+		const {sender, receiver, contentA, dateSent, view} = chatProp.replies[count]
+		count++
+	})*/
+
+	
+
+	/*const {sender, receiver, contentA, dateSent, view} = chatProp.replies[0]*/
 
 	function setMarkRead(_id){
 		fetch(`https://immense-lake-17505.herokuapp.com/messages/markRead/${_id}`, {
@@ -98,8 +117,9 @@ export default function ChatCard ({chatProp}) {
 			<p>
 			Message Ticket: {_id}<br/>
 			Date Sent: {lastChatDate}<br/>
-			Message: <br/>
-			{content}
+			Last Message: <br/>
+			{contentA}
+
 			</p>
 			</Card.Text>
 
