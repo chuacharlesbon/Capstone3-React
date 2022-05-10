@@ -36,12 +36,13 @@ export default function Terms(){
 		<Container className="bg-light p-3 text-left">
 		{/*<p>Credentials:</p>*/}
 		<p>App versions:</p>
-		<p>Updated: Sat May 03 2022 20:43:56 GMT+0800 (Singapore Standard Time)</p>
+		<p>Updated: Sat May 10 2022 20:43:56 GMT+0800 (Singapore Standard Time)</p>
 		
+		<p>ver. 1.6.5 : Summer Themes, Upgraded Interactive User Chats</p>
 		<p>ver. 1.4.2 : Upgraded ChatBot System</p>
 		<p>ver. 1.3.7 : Bug fix, ChatBot System</p>
 		<p>ver. 1.3.5 : Bug fix, Logs and Routing updates </p>
-		<p>ver. 1.2.0 : Meesaging System</p>
+		<p>ver. 1.2.0 : Messaging System</p>
 		<p>ver. 1.0.0</p>
 
 		</Container>

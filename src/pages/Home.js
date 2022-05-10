@@ -56,17 +56,17 @@ function Example() {
           <Modal.Title className="newfont">{greeting}</Modal.Title>
         </Modal.Header>
         <Modal.Body className="background-play">
-         <h5 className="text-center text-danger">Mabuhay!</h5>
-         <p>Today is May 9, 2022 Monday. Philippine National Elections 2022</p>
+         <h5 className="text-center text-danger">It's Summer Time</h5>
+         <p className="text-center">Time to checkout the New Featured Items on the Shop today!</p>
 
 
-   			<p className="text-center">One Vote can Make a Difference. Vote Wisely!</p>
+   			<p className="text-center">Summer fun has begun.</p>
 
    			<Row className=" text-center justify-content-center">
-   			<Image src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/05/13/08/Philippines-elections.jpg?width=1200" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
-   			<Image src="http://assets.rappler.com/612F469A6EA84F6BAE882D2B94A4B421/img/47FCFE6D14334A7BACE50FB09464A2F8/voter-ballot-20160605-1.jpg" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
+   			<Image src="https://www.fashionhombre.com/wp-content/uploads/2019/07/Cool-And-Stylish-Beach-Outfit-For-Men-1.png" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
+   			<Image src="https://i.insider.com/5d0d47d39c51010d09528d05?width=700" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
    			</Row>
-   			<p className="text-secondary mt-5">A Friendly reminder from ShopNetwork</p>
+   			
 
         </Modal.Body>
         <Modal.Footer>
