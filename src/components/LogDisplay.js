@@ -12,7 +12,7 @@ export default function LogDisplay() {
 		(user.id === null)?
 
 		<>
-		<Row className="mb-3 banner justify-contents-center mx-auto text-center align-items-center ">
+		<Row className="mb-3 banner justify-contents-center mx-auto text-center align-items-center resize-row">
 
 		<p className="mt-1 mb-0">Welcome!</p>
 
@@ -33,7 +33,7 @@ export default function LogDisplay() {
 		: (user.id !== undefined && user.id !== null)?
 
 		<>
-		<Row className="mb-3 banner px-3">
+		<Row className="mb-3 banner px-3 resize-row">
 		<Col>
 		<p  className="mt-1 mb-0 ">You are currently logged in.</p>
 		</Col>
@@ -83,7 +83,7 @@ export default function LogDisplay() {
 		:
 
 		<>
-		<Row className="mb-3 banner justify-contents-center mx-auto text-center">
+		<Row className="mb-3 banner justify-contents-center mx-auto text-center resize-row">
 
 		<p>Welcome!</p>
 

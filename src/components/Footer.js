@@ -15,7 +15,7 @@ export default function Footer () {
 	(isAdmin === true && userId !== null)?
 
 		<>
-		<Row id="footer" className="mt-3 bg-info pt-1 mx-auto">
+		<Row id="footer" className="mt-3 bg-info pt-1 mx-auto resize-row">
 
 		<Col xs={12}  md={6} lg={4} className="text-center mx-auto my-3">
 		<p><Button variant="info" as={Link} to="/about">About the Developer</Button></p>
@@ -45,7 +45,7 @@ export default function Footer () {
 
 		:
 		<>
-		<Row className="mt-3 bg-warning pt-1">
+		<Row className="mt-3 bg-warning pt-1 resize-row mx-auto">
 
 		<Col xs={12}  md={6} lg={4} className="text-center mx-auto my-2">
 		<p><Button variant="warning" as={Link} to="/about">About the Developer</Button></p>
