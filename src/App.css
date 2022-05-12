@@ -541,6 +541,17 @@ body {
   background-position: center;
 }
 
+.myModal1 {
+  background-image: url('../public/241652650_4451289188324202_9220034429890536712_n.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center;
+}
+
+.bg-violet {
+  background-color: #CA92F8;
+}
+
 .reply-body {
   height: 12rem;
   overflow-y: scroll;

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {Row, Col, Card, Container, Navbar, Nav, NavDropdown} from 'react-bootstrap'
+import {Row, Col, Card, Container, Navbar, Nav, NavDropdown, Modal, Button} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import {Link} from 'react-router-dom'
 import Messaging from '../components/Messaging'
@@ -9,8 +9,29 @@ import clogo from '../components/c-logo.jpg'
 import download from '../components/download-icon.png'
 import close from '../components/closeicon.png'
 import settings from '../components/settingsicon.png'
+import botchan from '../components/botchan.jpg'
 
 export default function About2(){
+
+	const [style] = useState({
+
+			width: "10rem",
+			height: "10rem",
+			objectFit: "cover"
+			
+		})
+
+	const time = new Date().getHours();
+
+	let greeting;
+
+	if (time < 10) {
+	  greeting = "Good morning!";
+	} else if (time < 18) {
+	  greeting = "Good day!";
+	} else {
+	  greeting = "Good evening!";
+	}
 
 	const [isActive, setIsActive] = useState({
 		display: "none"
@@ -67,6 +88,56 @@ export default function About2(){
 		})
 		}
 	}
+
+	function Example() {
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
+
+
+
+  return (
+    <>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+        centered
+        className="myModal1"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title className="newfont">{greeting}
+          <Image src={botchan} className="botchan" alt="cute-logo"/>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="bg-violet">
+         <h5 className="text-center text-danger">Today is the Developers's Birthday!</h5>
+         <p className="text-center">Say something Inspiring to him today!</p>
+
+
+   			<p className="text-center">You may leave a message through the form below</p>
+
+   			<Row className=" text-center justify-content-center">
+   			<Image src="https://images4.alphacoders.com/118/1187146.jpg" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
+   			<Image src="https://i.pinimg.com/550x/d5/db/4a/d5db4af6682ab02f8fa85f00a27a0432.jpg" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
+   			</Row>
+   			
+
+        </Modal.Body>
+        <Modal.Footer>
+      
+        <Button variant="info" onClick={handleClose}>
+            Got It!
+          </Button>
+
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
+
 
 	return(
 
@@ -378,6 +449,7 @@ export default function About2(){
 	
 
 	<Messaging/>
+	<Example/>
 
 	</div>
 	
