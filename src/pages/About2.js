@@ -13,6 +13,8 @@ import botchan from '../components/botchan.jpg'
 
 export default function About2(){
 
+	const [show, setShow] = useState(true);
+
 	const [style] = useState({
 
 			width: "10rem",
@@ -90,7 +92,7 @@ export default function About2(){
 	}
 
 	function Example() {
-  const [show, setShow] = useState(true);
+  
 
   const handleClose = () => setShow(false);
 
