@@ -115,11 +115,16 @@ export default function About2(){
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-violet">
-         <h5 className="text-center text-danger">Today is the Developers's Birthday!</h5>
-         <p className="text-center">Say something Inspiring to him today!</p>
+         <h5 className="text-center text-danger">Thank you for visiting this Page!</h5>
+         <p className="text-center">You may also see HTML version of the Profile with the link below.</p>
 
 
-   			<p className="text-center">You may leave a message through the form below</p>
+   			<p className="text-center">Click
+   			<a href="https://chuacharlesbon.github.io/portfolio-chua/#project" title="Go to Developer's Profile" target="_blank" className="mx-1" rel="noreferrer">
+   			here
+   			</a>
+   			to Developer's Profile with HTML5
+   			</p>
 
    			<Row className=" text-center justify-content-center">
    			<Image src="https://images4.alphacoders.com/118/1187146.jpg" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
