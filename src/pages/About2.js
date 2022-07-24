@@ -155,10 +155,10 @@ export default function About2(){
 	<Helmet>
 		<meta
 		  name="title"
-		  content="ShopNetwork Inc. | PH" />
+		  content="ShopNetwork Inc. | Developer's Profile" />
 		<meta
 		  name="description"
-		  content="Checkout the New Featured Items on Sale today!"
+		  content="Developed By Charles Chua"
 		/>
 	  <meta
 	    property="og:type"
@@ -174,7 +174,7 @@ export default function About2(){
 	  />
 	  <meta
 	    property="og:description"
-	    content="Checkout the New Featured Items on Sale today!"
+	    content="Developed By Charles Chua"
 	  />
 	  <meta
 	    property="og:url"

@@ -32,10 +32,10 @@ export default function Courses () {
 			<Helmet>
 				<meta
 				  name="title"
-				  content="ShopNetwork Inc. | PH" />
+				  content="ShopNetwork Inc. | Food Products" />
 				<meta
 				  name="description"
-				  content="Checkout the New Featured Items on Sale today!"
+				  content="Gain the freedom to access awesome products across the globe."
 				/>
 				<meta
 				  property="og:type"

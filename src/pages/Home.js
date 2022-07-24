@@ -94,7 +94,7 @@ function Example() {
       <Helmet>
         <meta
           name="title"
-          content="ShopNetwork Inc. | PH" />
+          content="ShopNetwork Inc. | Home" />
         <meta
           name="description"
           content="Checkout the New Featured Items on Sale today!"

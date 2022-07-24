@@ -84,7 +84,7 @@ export default function PublicMessage(){
 			  content="ShopNetwork Inc. | Messages" />
 			<meta
 			  name="description"
-			  content="Message us today!"
+			  content="Feel Free to Contact Us. Message us today!"
 			/>
 		  <meta
 		    property="og:type"
@@ -100,7 +100,7 @@ export default function PublicMessage(){
 		  />
 		  <meta
 		    property="og:description"
-		    content="Feel Free to Contact Us"
+		    content="Feel Free to Contact Us. Message us today!"
 		  />
 		  <meta
 		    property="og:url"
