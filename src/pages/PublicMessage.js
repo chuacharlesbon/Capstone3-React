@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext} from 'react'
 import { Form, Button, Row, Col} from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import Swal from "sweetalert2"
 import Advertisement from '../components/Advertisement'
 import MessageBanner from '../components/MessageBanner'
@@ -76,6 +77,37 @@ export default function PublicMessage(){
 
 	return(
 		<>
+
+		<Helmet>
+			<meta
+			  name="title"
+			  content="ShopNetwork Inc. | Messages" />
+			<meta
+			  name="description"
+			  content="Message us today!"
+			/>
+		  <meta
+		    property="og:type"
+		    content="website"
+		  />
+		  <meta
+		    property="og:title"
+		    content="ShopNetwork PH | Messages"
+		  />
+		  <meta
+		    property="og:image"
+		    content="https://thumbs.dreamstime.com/b/smiling-guy-office-typing-his-laptop-happy-latin-salesman-sitting-his-home-office-desk-chatting-206706035.jpg"
+		  />
+		  <meta
+		    property="og:description"
+		    content="Feel Free to Contact Us"
+		  />
+		  <meta
+		    property="og:url"
+		    content="https://react-shopnetwork-chua.vercel.app/messages"
+		  />
+		</Helmet>
+
 		<MessageBanner/>
 
 		<Row className="justify-content-center public-message">

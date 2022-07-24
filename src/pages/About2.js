@@ -153,6 +153,13 @@ export default function About2(){
 	<div className="aboutMe">
 
 	<Helmet>
+		<meta
+		  name="title"
+		  content="ShopNetwork Inc. | PH" />
+		<meta
+		  name="description"
+		  content="Checkout the New Featured Items on Sale today!"
+		/>
 	  <meta
 	    property="og:type"
 	    content="website"
@@ -171,7 +178,7 @@ export default function About2(){
 	  />
 	  <meta
 	    property="og:url"
-	    content="%PUBLIC_URL%/about"
+	    content="https://react-shopnetwork-chua.vercel.app/about"
 	  />
 	</Helmet>
 	<Row className="align-items-end mt-2 mb-5 resize-row p-3 mx-auto aboutback">

@@ -31,6 +31,13 @@ export default function Courses () {
 		<>
 			<Helmet>
 				<meta
+				  name="title"
+				  content="ShopNetwork Inc. | PH" />
+				<meta
+				  name="description"
+				  content="Checkout the New Featured Items on Sale today!"
+				/>
+				<meta
 				  property="og:type"
 				  content="website"
 				/>
