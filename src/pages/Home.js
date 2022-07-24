@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import {useContext,  useState } from 'react'
+import {Helmet} from "react-helmet";
 import {Button, Modal, Row} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import Banner from '../components/Banner'
@@ -90,6 +91,20 @@ function Example() {
 
 		:
 		<>
+      <Helmet>
+        <meta
+          property="og:title"
+          content="ShopNetwork PH | Home"
+        />
+        <meta
+          property="og:image"
+          content="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/online-grocery-store-shopping-ad-template-design-b684c058a210822ad6fc29cb19952daf_screen.jpg?ts=1589560466"
+        />
+        <meta
+          property="og:description"
+          content="Checkout the New Featured Items on Sale today!"
+        />
+      </Helmet>
 			{/*<LogDisplay/>*/}
 			<Banner/>
 			<Highlights/>
