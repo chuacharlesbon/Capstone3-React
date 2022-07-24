@@ -104,6 +104,10 @@ function Example() {
           property="og:description"
           content="Checkout the New Featured Items on Sale today!"
         />
+        <meta
+          property="og:url"
+          content="https://react-shopnetwork-chua.vercel.app"
+        />
       </Helmet>
 			{/*<LogDisplay/>*/}
 			<Banner/>

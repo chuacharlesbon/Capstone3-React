@@ -42,6 +42,10 @@ export default function Courses () {
 					property="og:description"
 					content="Gain the freedom to access awesome products across the globe."
 				/>
+				<meta
+				  property="og:url"
+				  content="https://react-shopnetwork-chua.vercel.app/products/categoryFood"
+				/>
 			</Helmet>
 
 			<Container id="prodFood" className="products-banner">
