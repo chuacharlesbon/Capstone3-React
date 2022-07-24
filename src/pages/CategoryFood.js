@@ -31,6 +31,10 @@ export default function Courses () {
 		<>
 			<Helmet>
 				<meta
+				  property="og:type"
+				  content="website"
+				/>
+				<meta
 					property="og:title"
 					content="ShopNetwork PH | Food Products"
 				/>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {Helmet} from "react-helmet";
 import {Row, Col, Card, Container, Navbar, Nav, NavDropdown, Modal, Button} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import {Link} from 'react-router-dom'
@@ -150,6 +151,29 @@ export default function About2(){
 
 	
 	<div className="aboutMe">
+
+	<Helmet>
+	  <meta
+	    property="og:type"
+	    content="website"
+	  />
+	  <meta
+	    property="og:title"
+	    content="ShopNetwork PH | Developer's Profile"
+	  />
+	  <meta
+	    property="og:image"
+	    content="https://github.com/chuacharlesbon/portfolio-chua/blob/master/images/og-image.png?raw=true"
+	  />
+	  <meta
+	    property="og:description"
+	    content="Checkout the New Featured Items on Sale today!"
+	  />
+	  <meta
+	    property="og:url"
+	    content="%PUBLIC_URL%/about"
+	  />
+	</Helmet>
 	<Row className="align-items-end mt-2 mb-5 resize-row p-3 mx-auto aboutback">
 	<Image src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t1.6435-9/199210599_4425407134144695_9189103713052183258_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFcrJ_3GBq4U8rp8COAinIQjTAUCp-maZiNMBQKn6ZpmJ02F9pyoJE6vLgjBM3Wo6rVty7QUZ55fBneORUxCZiv&_nc_ohc=XZTjvs1iy0YAX93BjM5&_nc_ht=scontent.fmnl17-1.fna&oh=00_AT9xJLv49DCyD9GuH5VbVq3qv6NLpkhaV05NKQcO78ebFQ&oe=62872F9A" className="mx-auto text-center d-block d-lg-none image-profile2 rounded-circle img-fluid" id="image-profile2"/>
 	

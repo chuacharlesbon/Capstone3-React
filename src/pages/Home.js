@@ -93,6 +93,10 @@ function Example() {
 		<>
       <Helmet>
         <meta
+          property="og:type"
+          content="website"
+        />
+        <meta
           property="og:title"
           content="ShopNetwork PH | Home"
         />
@@ -106,7 +110,7 @@ function Example() {
         />
         <meta
           property="og:url"
-          content="https://react-shopnetwork-chua.vercel.app"
+          content="%PUBLIC_URL%"
         />
       </Helmet>
 			{/*<LogDisplay/>*/}

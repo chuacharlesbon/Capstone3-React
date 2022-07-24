@@ -1,4 +1,5 @@
 import {Row, Col, Card, Container} from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import Image from "react-bootstrap/Image";
 import Messaging from '../components/Messaging'
 import backlogo from '../components/backlogo.png'
@@ -9,6 +10,29 @@ export default function About(){
 	return(
 
 	<>
+
+	<Helmet>
+	  <meta
+	    property="og:type"
+	    content="website"
+	  />
+	  <meta
+	    property="og:title"
+	    content="ShopNetwork PH | Developer's Profile"
+	  />
+	  <meta
+	    property="og:image"
+	    content="https://github.com/chuacharlesbon/portfolio-chua/blob/master/images/og-image.png?raw=true"
+	  />
+	  <meta
+	    property="og:description"
+	    content="Checkout the New Featured Items on Sale today!"
+	  />
+	  <meta
+	    property="og:url"
+	    content="%PUBLIC_URL%/about"
+	  />
+	</Helmet>
 
 	<Row className="align-items-end mt-2 mb-5 aboutback p-3 ">
 	
