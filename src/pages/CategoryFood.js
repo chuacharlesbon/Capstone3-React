@@ -1,6 +1,7 @@
 import { useState, useEffect} from 'react'
 import {Row, Col, Container, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import {Helmet} from "react-helmet";
 import CourseCard from "../components/CourseCard"
 import SearchBanner from "../components/SearchBanner"
 import Image from "react-bootstrap/Image";
@@ -28,6 +29,21 @@ export default function Courses () {
 
 	return (
 		<>
+			<Helmet>
+				<meta
+					property="og:title"
+					content="ShopNetwork PH | Food Products"
+				/>
+				<meta
+					property="og:image"
+					content="https://thumbs.dreamstime.com/b/asian-man-success-working-home-office-happy-smiling-laptop-computer-asian-man-success-working-home-office-happy-183396771.jpg"
+				/>
+				<meta
+					property="og:description"
+					content="Gain the freedom to access awesome products across the globe."
+				/>
+			</Helmet>
+
 			<Container id="prodFood" className="products-banner">
 			<Container>
 			<Row className="justify-content-center text-center mx-auto my-3">
