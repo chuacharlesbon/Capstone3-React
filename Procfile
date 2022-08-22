@@ -1,1 +1,1 @@
-web:node app
+ENV_SILENT=true npm run server

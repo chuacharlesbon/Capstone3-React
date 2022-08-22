@@ -4,7 +4,7 @@ const fs = require("fs");
 const { getPostById } = require('./stub/posts');
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 const indexPath  = path.resolve(__dirname, '..', 'build', 'index.html');
 
 // static resources should just be served as they are
