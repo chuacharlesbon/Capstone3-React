@@ -50,6 +50,10 @@ export default function Courses () {
 					content="https://thumbs.dreamstime.com/b/asian-man-success-working-home-office-happy-smiling-laptop-computer-asian-man-success-working-home-office-happy-183396771.jpg"
 				/>
 				<meta
+					property="og:image:secure_url"
+					content="https://thumbs.dreamstime.com/b/asian-man-success-working-home-office-happy-smiling-laptop-computer-asian-man-success-working-home-office-happy-183396771.jpg"
+				/>
+				<meta
 					property="og:description"
 					content="Gain the freedom to access awesome products across the globe."
 				/>
