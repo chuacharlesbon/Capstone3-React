@@ -98,6 +98,7 @@ useEffect(() => {
        {/* <Banner/>
         <Highlights/>*/}
         <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/post" element={<Home/>}/>
         <Route exact path="/products" element={<Courses/>}/>
         <Route exact path="/messages/AdminMes" element={<AdminMessages/>}/>
         <Route exact path="/messages/UserMes" element={<UserMessages/>}/>
