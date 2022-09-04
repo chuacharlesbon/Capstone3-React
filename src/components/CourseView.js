@@ -86,14 +86,6 @@ fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${cour
 
 		<Navigate to="/orders/searchOrder"/>
 
-		: ( added === true && user.id !== null)?
-
-		<Navigate to="/products"/>
-
-		:  (user.id === null)?
-
-		<Navigate to="/login"/>
-
 		:
 
 		<Container className="mt-5">
