@@ -54,28 +54,28 @@ return(
 
 	<Container>
 		<p>Sounds</p>
-		<Button className='mx-1' onClick={playBite}>Bite</Button>
-		<Button className='mx-1' onClick={playBoop}>Boop</Button>
-		<Button className='mx-1' onClick={playDrums}>Drums</Button>
-		<Button className='mx-1' onClick={playDun}>Dun</Button>
-		<Button className='mx-1' onClick={playFanfare}>Fanfare</Button>
-		<Button className='mx-1' onClick={playGlug}>Glug</Button>
-		<Button className='mx-1' onClick={playGlugA}>GlugA</Button>
-		<Button className='mx-1' onClick={playGlugB}>GlugB</Button>
-		<Button className='mx-1' onClick={playGuitar}>Guitar</Button>
-		<Button className='mx-1' onClick={playMenu}>Menu</Button>
-		<Button className='mx-1' onClick={playMeow}>Meow</Button>
-		<Button className='mx-1' onClick={playPfff}>Pfff</Button>
-		<Button className='mx-1' onClick={playPlunger}>Plunger</Button>
-		<Button className='mx-1' onClick={playPop}>Pop</Button>
-		<Button className='mx-1' onClick={playPopdown}>Popdown</Button>
-		<Button className='mx-1' onClick={playPopoff}>Popoff</Button>
-		<Button className='mx-1' onClick={playPopon}>Popon</Button>
-		<Button className='mx-1' onClick={playPopupon}>Popupon</Button>
-		<Button className='mx-1' onClick={playPopupoff}>Popupoff</Button>
-		<Button className='mx-1' onClick={playRising}>Rising</Button>
-		<Button className='mx-1' onClick={playSwitchoff}>Switchoff</Button>
-		<Button className='mx-1' onClick={playSwitchon}>Switchon</Button>
+		<Button className='m-1' onClick={playBite}>Bite</Button>
+		<Button className='m-1' onClick={playBoop}>Boop</Button>
+		<Button className='m-1' onClick={playDrums}>Drums</Button>
+		<Button className='m-1' onClick={playDun}>Dun</Button>
+		<Button className='m-1' onClick={playFanfare}>Fanfare</Button>
+		<Button className='m-1' onClick={playGlug}>Glug</Button>
+		<Button className='m-1' onClick={playGlugA}>GlugA</Button>
+		<Button className='m-1' onClick={playGlugB}>GlugB</Button>
+		<Button className='m-1' onClick={playGuitar}>Guitar</Button>
+		<Button className='m-1' onClick={playMenu}>Menu</Button>
+		<Button className='m-1' onClick={playMeow}>Meow</Button>
+		<Button className='m-1' onClick={playPfff}>Pfff</Button>
+		<Button className='m-1' onClick={playPlunger}>Plunger</Button>
+		<Button className='m-1' onClick={playPop}>Pop</Button>
+		<Button className='m-1' onClick={playPopdown}>Popdown</Button>
+		<Button className='m-1' onClick={playPopoff}>Popoff</Button>
+		<Button className='m-1' onClick={playPopon}>Popon</Button>
+		<Button className='m-1' onClick={playPopupon}>Popupon</Button>
+		<Button className='m-1' onClick={playPopupoff}>Popupoff</Button>
+		<Button className='m-1' onClick={playRising}>Rising</Button>
+		<Button className='m-1' onClick={playSwitchoff}>Switchoff</Button>
+		<Button className='m-1' onClick={playSwitchon}>Switchon</Button>
 	</Container>
 
 	)
