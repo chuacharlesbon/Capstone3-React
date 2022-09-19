@@ -41,6 +41,7 @@ import Terms from './pages/Terms'
 import Logo from './components/ChatBot'
 import ChatList from './pages/ChatList'
 import ChatReply from './components/ChatReply'
+import Sounds from './pages/Sounds'
 
 import { UserProvider } from './UserContext'
 
@@ -133,6 +134,7 @@ useEffect(() => {
         <Route exact path="/terms" element={<Terms/>} />
         <Route exact path="/refreshlog" element={<RefreshLog/>} />
         <Route exact path="/chatList" element={<ChatList/>} />
+        <Route exact path="/sounds" element={<Sounds/>} />
         <Route exact path="/chats/replyChat/:chatId" element={<ChatReply/>} />
         <Route exact path="*" element={<ErrorPage/>}/>
       </Routes>
