@@ -23,7 +23,16 @@ import Popupoff from '../sounds/pop-up-off.mp3'
 import Rising from '../sounds/rising-pops.mp3'
 import Switchoff from '../sounds/switch-off.mp3'
 import Switchon from '../sounds/switch-on.mp3'
-
+import Sound1 from '../sounds/sound-1.mp3'
+import Sound2 from '../sounds/sound-2.mp3'
+import Sound3 from '../sounds/sound-3.mp3'
+import Sound4 from '../sounds/sound-4.mp3'
+import Sound5 from '../sounds/sound-5.mp3'
+import Sound6 from '../sounds/sound-6.mp3'
+import Sound7 from '../sounds/sound-7.mp3'
+import Sound8 from '../sounds/sound-8.mp3'
+import Sound9 from '../sounds/sound-9.mp3'
+import Sound10 from '../sounds/sound-10.mp3'
 
 export default function Sounds(){
 
@@ -49,6 +58,16 @@ export default function Sounds(){
 	const [playRising] = useSound(Rising);
 	const [playSwitchoff] = useSound(Switchoff);
 	const [playSwitchon] = useSound(Switchon);
+	const [playSound1] = useSound(Sound1);
+	const [playSound2] = useSound(Sound2);
+	const [playSound3] = useSound(Sound3);
+	const [playSound4] = useSound(Sound4);
+	const [playSound5] = useSound(Sound5);
+	const [playSound6] = useSound(Sound6);
+	const [playSound7] = useSound(Sound7);
+	const [playSound8] = useSound(Sound8);
+	const [playSound9] = useSound(Sound9);
+	const [playSound10] = useSound(Sound10);
 
 return(
 
@@ -76,6 +95,17 @@ return(
 		<Button className='m-1' onClick={playRising}>Rising</Button>
 		<Button className='m-1' onClick={playSwitchoff}>Switchoff</Button>
 		<Button className='m-1' onClick={playSwitchon}>Switchon</Button>
+		<Button className='m-1' onClick={playSound1}>Sound1</Button>
+		<Button className='m-1' onClick={playSound2}>Sound2</Button>
+		<Button className='m-1' onClick={playSound3}>Sound3</Button>
+		<Button className='m-1' onClick={playSound4}>Sound4</Button>
+		<Button className='m-1' onClick={playSound5}>Sound5</Button>
+		<Button className='m-1' onClick={playSound6}>Sound6</Button>
+		<Button className='m-1' onClick={playSound7}>Sound7</Button>
+		<Button className='m-1' onClick={playSound8}>Sound8</Button>
+		<Button className='m-1' onClick={playSound9}>Sound9</Button>
+		<Button className='m-1' onClick={playSound10}>Sound10</Button>
+
 	</Container>
 
 	)
