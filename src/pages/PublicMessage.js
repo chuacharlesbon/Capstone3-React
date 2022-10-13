@@ -1,7 +1,11 @@
-import { useState, useEffect, useContext} from 'react'
+import React, { useState, useEffect, useContext} from 'react'
 import { Form, Button, Row, Col} from 'react-bootstrap'
 import {Helmet} from "react-helmet";
 import Swal from "sweetalert2"
+import ReactQuill from "react-quill"
+import 'react-quill/dist/quill.snow.css'
+import EmojiPicker from 'emoji-picker-react';
+import { useCaretPosition } from 'react-use-caret-position';
 import Advertisement from '../components/Advertisement'
 import MessageBanner from '../components/MessageBanner'
 import UserContext from '../UserContext'
@@ -16,6 +20,17 @@ export default function PublicMessage(){
 	const [sender, setSender] = useState('')
 	const [receiver, setReceiver] = useState('Admin')
 	const [content, setContent] = useState('')
+
+	const Newtext = content;
+
+	const { ref: inputRef, updateCaret, start } = useCaretPosition();
+
+	const handleChange = e => {
+	    const inputToUpperCase = content.slice(0,start)+e.emoji+content.slice(start);
+	    setContent(inputToUpperCase);
+	  };
+
+	console.log(start)
 
 	function sendPMessage(e){
 		e.preventDefault()
@@ -142,8 +157,12 @@ export default function PublicMessage(){
 
 			<Form.Group controlId="content">
 			<Form.Label>Message:</Form.Label>
-			<Form.Control as="textarea" placeholder="Hi Admin, (Your message)" required value={content} onChange={e => setContent(e.target.value)}/>
+			<Form.Control as="textarea" ref={inputRef} placeholder="Hi Admin, (Your message)" required value={content} onChange={e => setContent(e.target.value)} onClick={() => updateCaret()} />
 			</Form.Group>
+
+			<div>
+			  <EmojiPicker onEmojiClick={(e) => handleChange(e)} />
+			</div>
 
 {/*rendering submit button based on isActive*/}
 			<Form.Group className="text-center d-block">
@@ -157,8 +176,18 @@ export default function PublicMessage(){
 			</Form.Group>
 		</Form>
 
+		<div className='py-4 px-2 bg-light'>
+		<ReactQuill
+		  theme='snow'
+		  value={content}
+		  onChange={setContent}
+		  style={{minHeight: '300px'}}
+		/>
+		</div>
+
 		</Col>
 		</Row>
+
 
 		<Advertisement/>
 		</>
