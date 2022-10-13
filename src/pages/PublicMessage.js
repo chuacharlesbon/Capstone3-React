@@ -157,12 +157,12 @@ export default function PublicMessage(){
 
 			<Form.Group controlId="content">
 			<Form.Label>Message:</Form.Label>
-			<Form.Control as="textarea" ref={inputRef} placeholder="Hi Admin, (Your message)" required value={content} onChange={e => setContent(e.target.value)} onClick={() => updateCaret()} />
+			<Form.Control as="textarea" /*ref={inputRef}*/ placeholder="Hi Admin, (Your message)" required value={content} onChange={e => setContent(e.target.value)} /*onClick={() => updateCaret()}*/ />
 			</Form.Group>
 
-			<div>
+			{/*<div className='d-none'>
 			  <EmojiPicker onEmojiClick={(e) => handleChange(e)} />
-			</div>
+			</div>*/}
 
 {/*rendering submit button based on isActive*/}
 			<Form.Group className="text-center d-block">
@@ -176,14 +176,14 @@ export default function PublicMessage(){
 			</Form.Group>
 		</Form>
 
-		<div className='py-4 px-2 bg-light'>
+		{/*<div className='py-4 px-2 bg-light d-none'>
 		<ReactQuill
 		  theme='snow'
 		  value={content}
 		  onChange={setContent}
 		  style={{minHeight: '300px'}}
 		/>
-		</div>
+		</div>*/}
 
 		</Col>
 		</Row>
