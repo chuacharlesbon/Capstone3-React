@@ -56,16 +56,16 @@ function Example() {
         <Modal.Header closeButton>
           <Modal.Title className="newfont">{greeting}</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="background-play">
-         <h5 className="text-center text-danger">It's Summer Time</h5>
-         <p className="text-center">Time to checkout the New Featured Items on the Shop today!</p>
+        <Modal.Body className="christmas">
+         <h4 className="text-center text-danger">Christmas Season</h4>
+         <p className="text-center text-warning">Holidays are memory-making days. May this Christmas give you new ones to treasure</p>
 
 
-   			<p className="text-center">Summer fun has begun.</p>
+   			<p className="text-center text-warning">Time to checkout the New Featured Items on the Shop today!</p>
 
    			<Row className=" text-center justify-content-center">
-   			<Image src="https://www.fashionhombre.com/wp-content/uploads/2019/07/Cool-And-Stylish-Beach-Outfit-For-Men-1.png" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
-   			<Image src="https://i.insider.com/5d0d47d39c51010d09528d05?width=700" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
+   			<Image src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4bbfb44c-9f38-42ab-85bd-a4a858f73c5c/air-zoom-gt-cut-2-basketball-shoes-KDW90P.png" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
+   			<Image src="https://cdn.igp.com/f_auto,q_auto,t_prodm/products/p-personalized-love-led-bottle-109917-m.jpg" className="text-center mx-2 shadowbox rounded-circle" style={style}/>
    			</Row>
    			
 

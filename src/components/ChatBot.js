@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Container, Row, Col, Form, Button} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import Swal from 'sweetalert2'
-import logo from './PinClipart.com_computer-images-clip-art_1651962.png'
+import logo from '../images/chatlogo.png'
 import close from './closeicon.png'
 import botchan from './botchan.jpg'
 import Replies from './Replies'

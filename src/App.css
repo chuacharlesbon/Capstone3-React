@@ -16,6 +16,13 @@ body {
 
 }
 
+.christmas {
+  background-image: url('https://media.istockphoto.com/vectors/green-christmas-background-with-snowflakes-and-stars-vector-vector-id1031426362?k=20&m=1031426362&s=612x612&w=0&h=uXIjBMqSWZzxanq5zlnaIMXabEpiFTuD179aU6VWrSE=');
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center top;
+}
+
 .cardHighlight {
   min-height: 100%;
 }
@@ -279,13 +286,13 @@ body {
 
 .logo {
   z-index: 5;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   position: fixed;
   bottom: 3rem;
   right: 3rem;
   background-color: rgba(255, 255, 0, 0.5);
-  padding: .6rem;
+  padding: .2rem;
   border-radius: .5rem;
 }
 
@@ -536,7 +543,7 @@ body {
   width: 20rem;
 }
 .myModal {
-  background-image: url('https://wallpapercave.com/wp/wp3381579.jpg');
+  background-image: url('https://keiseeeinthecity.files.wordpress.com/2017/12/facade.jpg');
   background-size: cover;
   background-attachment: scroll;
   background-position: center;
@@ -556,4 +563,40 @@ body {
 .reply-body {
   height: 12rem;
   overflow-y: scroll;
+}
+
+.z-1 {
+  z-index: 1rem;
+}
+
+@media screen and (max-width: 425px) /*Mobile (+/-) 6inch Setting section*/
+{
+.video-card {
+  width: 15rem !important;
+  height: 10rem !important;
+}
+}
+
+@media screen and (min-width: 426px) /*Mobile (+/-) 6inch Setting section*/
+{
+.video-card {
+  width: 20rem !important;
+  height: 14rem !important;
+}
+}
+
+@media screen and (min-width: 768px) /*Mobile (+/-) 6inch Setting section*/
+{
+.video-card {
+  width: 24rem !important;
+  height: 17rem !important;
+}
+}
+
+@media screen and (min-width: 1024px) /*Mobile (+/-) 6inch Setting section*/
+{
+.video-card {
+  width: 30rem !important;
+  height: 20rem !important;
+}
 }

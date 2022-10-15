@@ -116,7 +116,7 @@ fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${cour
 }, [courseId])
 
 	return(
-		( added === true && user.id !== null)?
+		/*( added === true && user.id !== null)?
 
 		<Navigate to="/orders"/>
 
@@ -124,7 +124,7 @@ fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${cour
 
 		<Navigate to="/login"/>
 
-		:
+		:*/
 
 		<Container className="mt-5">
 		<Row>
