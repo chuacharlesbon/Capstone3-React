@@ -47,7 +47,7 @@ import { UserProvider } from './UserContext'
 
 function App() {
 
-  const [user, setUser] = useState({id: null, isAdmin: null, email: null, userName: null})
+  const [user, setUser] = useState({id: null, isAdmin: null, email: null, userName: null, firstName: null, lastName: null, mobileNo: null})
 
   const unsetUser = () => {
     localStorage.clear()
@@ -71,16 +71,22 @@ useEffect(() => {
       setUser({
         id: data._id,
         isAdmin: data.isAdmin,
+        userName: data.firstName + " " + data.lastName,
+        firstName: data.firstName,
+        lastName: data.lastName,
         email: data.email,
-        userName: data.firstName + " " + data.lastName
+        mobileNo: data.mobileNo
       })
     }else {
       console.log("User Null")
       setUser({
       id: null,
       isAdmin: null,
+      userName: null,
+      firstName: null,
+      lastName: null,
       email: null,
-      userName: null
+      mobileNo: null
       })
      
     }

@@ -95,7 +95,10 @@ export default function Login(props){
 					id: data._id,
 					isAdmin: data.isAdmin,
 					userName: data.firstName + " " + data.lastName,
-					email: data.email
+					firstName: data.firstName,
+					lastName: data.lastName,
+					email: data.email,
+					mobileNo: data.mobileNo
 				})
 				/*} else {
 					setUser({

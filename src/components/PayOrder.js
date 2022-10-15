@@ -1,10 +1,15 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {Container, Row, Col, Card, Button, Form} from 'react-bootstrap'
 import {useParams, Navigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import UserContext from '../UserContext'
+import useScript from '../hooks/useScript.js'
 
 export default function PayOrder(){
 
+const Xffiliate = useScript('https://xffiliate-api.xtendly.com/webhooks/conversionscript.js')
+
+const {user} = useContext(UserContext)
 const [quantity, setQuantity] = useState('')
 const [payment, setPayment] = useState('')
 const [cardType, setCardType] = useState('')
@@ -49,8 +54,8 @@ const enroll = (courseId) => {
 	})
 	.then(res => res.json())
 	.then(data => {
-		//console.log(data)
-		const { balance } = data
+		console.log(data)
+		const { balance, _id } = data
 
 		if( balance === 0){
 			Swal.fire({
@@ -59,7 +64,29 @@ const enroll = (courseId) => {
 				text: `Your order is now on process. You may check the details in the Order Page`
 			})
 			setQuantity('')
-			setAdded(true)
+			if(localStorage.getItem("xffiliate") !== null)	
+			{	
+				console.log('trigger')
+				const merchant_key = 'ajiHgX0dyY2644BYZUAUgPQ5G15dqeK9ZaMKUeIU4SvSWzAeyd'
+				const productdetails = [{name, quantity}]
+				const content = {
+
+					firstname: user.firstName, 
+					lastname: user.lastName, 
+					email: user.email,	
+					phone_number: user.mobileNo, 
+					store_name: 'Shop Network Philippines',
+					orders: productdetails,
+					paymentmode : cardType,    
+					transaction_id: _id
+						
+					};
+
+			   const retry = 0;	
+			   Xffiliate.productConversion(content, retry, merchant_key);
+			   setAdded(true)		
+			}	
+
 		}else if ( balance > 0) {
 			Swal.fire({
 				title: "This is a Full Order Option",
