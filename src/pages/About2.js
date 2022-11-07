@@ -49,6 +49,10 @@ export default function About2(){
 		display: "none"
 	})
 
+	const downloadImage = () => {
+	      saveAs('https://xffiliate-api.xtendly.com/file_storage/k9xKa.png', 'image.jpg') // Put your image url here.
+	}
+
 	function activeItem(){
 		if(isActive.display === "none"){
 			setIsActive({
@@ -98,9 +102,7 @@ export default function About2(){
 
   const handleClose = () => setShow(false);
 
-  const downloadImage = () => {
-      saveAs('https://xffiliate-api.xtendly.com/file_storage/k9xKa.png', 'image.jpg') // Put your image url here.
-  }
+
 
   return (
     <>
