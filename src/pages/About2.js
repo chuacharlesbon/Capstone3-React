@@ -3,6 +3,7 @@ import {Helmet} from "react-helmet";
 import {Row, Col, Card, Container, Navbar, Nav, NavDropdown, Modal, Button} from 'react-bootstrap'
 import Image from "react-bootstrap/Image";
 import {Link} from 'react-router-dom'
+import { saveAs } from 'file-saver'
 import Messaging from '../components/Messaging'
 import backlogo from '../components/backlogo.png'
 import zuittCert from '../components/zuiit-completion-cert.jpeg'
@@ -97,7 +98,9 @@ export default function About2(){
 
   const handleClose = () => setShow(false);
 
-
+  const downloadImage = () => {
+      saveAs('https://xffiliate-api.xtendly.com/file_storage/k9xKa.png', 'image.jpg') // Put your image url here.
+  }
 
   return (
     <>
@@ -469,6 +472,15 @@ export default function About2(){
 	</Row>
 	</div>
 
+	<div className="mx-auto">
+	<Row className="d-flex align-items-center justify-content-center">
+	<Col xs={12} md={6} lg={4} className=" m-auto bg-info text-center p-2">
+	{/*<Image src={botchan} className="botchan rounded-circle" title="Hi there!"/>*/}
+	<span className="profile-nav mx-2" onClick={downloadImage}>Click to Download Test</span>
+	<Image src={download} className="closeicon" title="Hi there!"/>
+	</Col>
+	</Row>
+	</div>
 
 	</Row>
 
