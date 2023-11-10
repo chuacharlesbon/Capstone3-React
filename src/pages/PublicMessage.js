@@ -35,7 +35,7 @@ export default function PublicMessage(){
 	function sendPMessage(e){
 		e.preventDefault()
 
-		fetch('https://immense-lake-17505.herokuapp.com/messages', {
+		fetch('https://nomadic-autumn-404208.uc.r.appspot.com/messages', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

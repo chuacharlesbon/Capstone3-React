@@ -20,7 +20,7 @@ export default function AppNavbar(){
 
 useEffect(()=> {
   if(user.isAdmin === true && user.id !== null){
-    fetch('https://immense-lake-17505.herokuapp.com/products/getAllProductsLists',{
+    fetch('https://nomadic-autumn-404208.uc.r.appspot.com/products/getAllProductsLists',{
       method: 'GET',
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -34,7 +34,7 @@ useEffect(()=> {
     })
   }//end of if statement
   else if (user.isAdmin !== true && user.id !== null){
-    fetch('https://immense-lake-17505.herokuapp.com/orders/getCart', {
+    fetch('https://nomadic-autumn-404208.uc.r.appspot.com/orders/getCart', {
       method: "GET",
       headers: {
           /*Authorization: `Bearer ${token}`*/
@@ -46,7 +46,7 @@ useEffect(()=> {
       //console.log(data)
       setUserCartList(data.length)
     })
-    fetch('https://immense-lake-17505.herokuapp.com/orders/getUserOrders', {
+    fetch('https://nomadic-autumn-404208.uc.r.appspot.com/orders/getUserOrders', {
       method: "GET",
       headers: {
           /*Authorization: `Bearer ${token}`*/

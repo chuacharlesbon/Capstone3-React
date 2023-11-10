@@ -15,7 +15,7 @@ export default function CartOrder () {
 	
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')
-		fetch('https://immense-lake-17505.herokuapp.com/orders/getCart', {
+		fetch('https://nomadic-autumn-404208.uc.r.appspot.com/orders/getCart', {
 			method: "GET",
 			headers: {
 					/*Authorization: `Bearer ${token}`*/

@@ -10,7 +10,7 @@ export default function UserMesCard ({courseProp}) {
 	//console.log(courseProp)
 
 	function setMarkRead(_id){
-		fetch(`https://immense-lake-17505.herokuapp.com/messages/markRead/${_id}`, {
+		fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/messages/markRead/${_id}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ export default function UserMesCard ({courseProp}) {
 	}
 
 	function deleteItem(_id){
-		fetch(`https://immense-lake-17505.herokuapp.com/messages/delete/${_id}`, {
+		fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/messages/delete/${_id}`, {
 			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',

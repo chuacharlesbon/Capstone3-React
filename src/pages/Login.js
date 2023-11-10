@@ -34,7 +34,7 @@ export default function Login(props){
 	function LoginUser(e){
 		e.preventDefault()
 
-		fetch('https://immense-lake-17505.herokuapp.com/users/login', {
+		fetch('https://nomadic-autumn-404208.uc.r.appspot.com/users/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ export default function Login(props){
 		setPassword('')
 
 		const retrieveUserDetails = (token) => {
-			fetch('https://immense-lake-17505.herokuapp.com/users/details', {
+			fetch('https://nomadic-autumn-404208.uc.r.appspot.com/users/details', {
 				method: "POST",
 				headers: {
 					Authorization: `Bearer ${token}`

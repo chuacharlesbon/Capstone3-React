@@ -29,7 +29,7 @@ const [height] =useState({
 const {courseId} = useParams()
 
 const enroll = (courseId) => {
-	fetch(`https://immense-lake-17505.herokuapp.com/orders/cancelOrder/${courseId}`, {
+	fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/orders/cancelOrder/${courseId}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
@@ -65,7 +65,7 @@ const enroll = (courseId) => {
 			setAdded(false)
 		}
 	})
-	fetch(`https://immense-lake-17505.herokuapp.com/products/${newProdId}`, {
+	fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/products/${newProdId}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
@@ -83,7 +83,7 @@ const enroll = (courseId) => {
 useEffect(() => {
 	//console.log(courseId)
 	//console.log(cardType)
-fetch(`https://immense-lake-17505.herokuapp.com/orders/thisOrder/${courseId}`, {
+fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/orders/thisOrder/${courseId}`, {
 	method: "GET",
 		headers: {
 			"Content-Type": "application/json",
@@ -101,7 +101,7 @@ fetch(`https://immense-lake-17505.herokuapp.com/orders/thisOrder/${courseId}`, {
 	setPrice(data[0].balance)
 })
 
-fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${newProdId}`, {
+fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/products/getSingleProduct/${newProdId}`, {
 	method: "GET",
 		headers: {
 			"Content-Type": "application/json",

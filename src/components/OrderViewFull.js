@@ -39,7 +39,7 @@ const [height] =useState({
 const {courseId} = useParams()
 
 const enroll = (courseId) => {
-	fetch(`https://immense-lake-17505.herokuapp.com/orders/orderFull/${courseId}`, {
+	fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/orders/orderFull/${courseId}`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -81,7 +81,7 @@ const enroll = (courseId) => {
 			setAdded(false)
 		}
 	})
-	fetch(`https://immense-lake-17505.herokuapp.com/products/${newProdId}`, {
+	fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/products/${newProdId}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",
@@ -100,7 +100,7 @@ const enroll = (courseId) => {
 useEffect(() => {
 
 	//console.log(courseId)
-fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${courseId}`)
+fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/products/getSingleProduct/${courseId}`)
 .then(res => res.json())
 .then(data => {
 	//console.log(data)

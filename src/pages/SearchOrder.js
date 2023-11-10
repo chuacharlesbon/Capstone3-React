@@ -20,7 +20,7 @@ export default function SearchItem() {
 		//console.log(searchItem)
 		e.preventDefault()
 
-		fetch(`https://immense-lake-17505.herokuapp.com/orders/searchOrderId/${searchItem}`,{
+		fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/orders/searchOrderId/${searchItem}`,{
 			method: "GET",
 			headers: {
 			"Content-Type": "application/json",

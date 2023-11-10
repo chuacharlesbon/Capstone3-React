@@ -25,7 +25,7 @@ export default function AdminCreateProd(){
 	function createItem(e){
 		e.preventDefault()
 
-		fetch('https://immense-lake-17505.herokuapp.com/products', {
+		fetch('https://nomadic-autumn-404208.uc.r.appspot.com/products', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

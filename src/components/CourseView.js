@@ -38,7 +38,7 @@ const [height] =useState({
 const {courseId} = useParams()
 
 const retrieveUserDetails = (token) => {
-	fetch('https://immense-lake-17505.herokuapp.com/users/details', {
+	fetch('https://nomadic-autumn-404208.uc.r.appspot.com/users/details', {
 		method: "POST",
 		headers: {
 			Authorization: `Bearer ${token}`
@@ -73,7 +73,7 @@ const retrieveUserDetails = (token) => {
 }
 
 const enroll = (courseId) => {
-	fetch(`https://immense-lake-17505.herokuapp.com/orders/${courseId}`, {
+	fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/orders/${courseId}`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -107,7 +107,7 @@ const enroll = (courseId) => {
 
 useEffect(() => {
 	//console.log(courseId)
-fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${courseId}`)
+fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/products/getSingleProduct/${courseId}`)
 .then(res => res.json())
 .then(data => {
 	//console.log(data)
@@ -138,7 +138,7 @@ fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${cour
 	function registerUser(e){
 		e.preventDefault()
 
-		fetch('https://immense-lake-17505.herokuapp.com/users/register', {
+		fetch('https://nomadic-autumn-404208.uc.r.appspot.com/users/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -191,7 +191,7 @@ fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${cour
 				})
 			}
 		})
-		fetch('https://immense-lake-17505.herokuapp.com/messages', {
+		fetch('https://nomadic-autumn-404208.uc.r.appspot.com/messages', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -210,7 +210,7 @@ fetch(`https://immense-lake-17505.herokuapp.com/products/getSingleProduct/${cour
 		.then(data => {
 			if(data.receiver === email){
 				console.log("User Welcome message sent.")
-						fetch('https://immense-lake-17505.herokuapp.com/users/login', {
+						fetch('https://nomadic-autumn-404208.uc.r.appspot.com/users/login', {
 							method: 'POST',
 							headers: {
 								'Content-Type': 'application/json'

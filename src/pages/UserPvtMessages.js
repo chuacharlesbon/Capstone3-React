@@ -17,7 +17,7 @@ export default function UserPvtMessage(){
 	function sendPvtMessage(e){
 		e.preventDefault()
 
-		fetch('https://immense-lake-17505.herokuapp.com/messages/newMessage', {
+		fetch('https://nomadic-autumn-404208.uc.r.appspot.com/messages/newMessage', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

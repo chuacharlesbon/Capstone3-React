@@ -9,7 +9,7 @@ export default function CartCard ({orderProp}) {
 	const {username, productName, quantity, totalPrice, dateOrder, dateCancelled, _id } = orderProp
 
 	function cancelCart(id){
-		fetch(`https://immense-lake-17505.herokuapp.com/orders/cancelOrder/${id}`, {
+		fetch(`https://nomadic-autumn-404208.uc.r.appspot.com/orders/cancelOrder/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",

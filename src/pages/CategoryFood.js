@@ -12,7 +12,7 @@ export default function Courses () {
 
 	useEffect(() => {
 		//fetch('http://localhost:4000/courses')
-		fetch('https://immense-lake-17505.herokuapp.com/products/categoryFood')
+		fetch('https://nomadic-autumn-404208.uc.r.appspot.com/products/categoryFood')
 		.then(res => res.json())
 		.then(data => {
 			//console.log(data)

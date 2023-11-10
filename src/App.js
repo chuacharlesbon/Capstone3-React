@@ -56,7 +56,7 @@ function App() {
 
 
 useEffect(() => {
-  fetch('https://immense-lake-17505.herokuapp.com/users/details', {
+  fetch('https://nomadic-autumn-404208.uc.r.appspot.com/users/details', {
     method: "POST",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`
